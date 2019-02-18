@@ -1,0 +1,655 @@
+/*
+
+       Small Device dimensions, switch for portrait vs landscape
+
+       iPad                                1024 * 768
+       iPhone3/3G, iPhone 4/4S     480 * 320
+       iPhone4s                          480 * 320
+       iPhone5s/iPhone5s             568 * 320
+       Galaxy3                           640 * 360
+       Galaxy4                           960 * 540
+
+*/
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Disable Quicklook in iPad and below; Targeting specific devices and lower */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:1024px) and (max-height:768px) {
+
+    /* Remove Quicklook Icon, Disables Quicklook */
+    .plpQuicklookIcon {
+        display: none!important;
+    }
+
+}
+
+@media only screen and (max-width:768px) and (max-height:1024px) {
+
+    /* Remove Quicklook Icon, Disables Quicklook */
+    .plpQuicklookIcon {
+        display: none!important;
+    }
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Apply to any browser 1024 or less (iPad and all smart phones) */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:1024px) {
+
+    /* Remove left and right margins that are used throughout the site */
+    #eCommerceOuterBasicBevelWrap {
+        margin: 0;
+    }
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Apply to any browser 999px or less (for arrangement of homepage content spots)
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:999px) {
+
+    /* Removes Home Page Spot #3 */
+    #eCommerceHomeSpot_3 {
+        display: none;
+    }
+
+
+    /* #eCommerceHomeSpot_1 width to 25% */
+    #eCommerceHomeSpot_1 {
+        width: 25%;
+    }
+
+    /* #eCommerceHomeSpot_2 width to 75% */
+    #eCommerceHomeSpot_2 {
+        width: 75%;
+    }
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Apply to any browser 799px or less (for arrangement of homepage content spots)
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:799px) {
+
+    /* Removes Home Page Spot #1 */
+    #eCommerceHomeSpot_1 {
+        display: none;
+    }
+
+    /* #eCommerceHomeSpot_2 width to 100% */
+    #eCommerceHomeSpot_2 {
+        width: 100%;
+    }
+
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Apply to any device 768 or less (iPad Portrait and all smart phones) */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:768px) {
+
+     /* Disables inline zoom and allows for image flexibility */
+    .zoomPad {
+        display: block !important;
+        float: none;
+        position: static;
+        }
+      
+      /* Disables inline zoom and allows for image flexibility */
+    .zoomWindow {
+        display: none !important;
+        }
+
+     /* Disables inline zoom and allows for image flexibility */
+    .WriteReviewProduct.group.group3 {
+        margin: 0;
+        width: 100%;
+        }
+
+     /* Adjusts margin of Add to Bag to all for proper wrapping */
+    .pdpAddToCart .addToCart {
+        margin: 0;
+        }
+
+	 /* Removes First and Last buttons from paging options */
+	.pagingLinks .pagingBtn.first,
+	.pagingLinks .pagingBtn.last {
+		display: none;        
+	}
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices 640 pixels AND LESS -- targeting smartphones in LANDSCAPE mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:640px) {
+
+	/* 100% Width forces inputs below labels. */
+	/* Applies to all entry forms and displayActionList components (e.g. promo-code on checkout) */
+	.entryForm .entry label, 
+	.displayActionList li div label {
+		width: 100%!important;
+		text-align: left;
+	}
+
+	/* Removes entryfield margin, not needed as error messages default beneath input fields */
+	.entryField {
+		margin: 0;
+	} 
+
+	/* Keeps default styling */
+	label.radioOptionLabel, label.checkboxOptionLabel {
+		text-align: inherit;
+		width: auto !important;
+	}
+
+	/* exposes nav bar widget to show/hide navigation */ 
+	#eCommerceNavBarWidget {
+		display: block;
+	}
+	
+	/* hides primary navigation navigation list */
+	#eCommerceNavBar #eCommerceNavBarMenu {
+		display: none;
+	}
+
+	/* Puts Navigation into one column */ 
+	#eCommerceNavBarMenu li.topLevel {
+		float: none;
+		border-bottom: 1px solid #a60000;
+		width: 100%!important;
+	}
+
+	/* Puts Navigation into one column */ 
+	#eCommerceNavBarMenu li.topLevel:first-child {
+		border-top: 1px solid #a60000;
+	}
+
+	/* Left Aligns Navigation */ 
+	#eCommerceNavBarMenu li.topLevel a {
+		font-size: medium;
+		padding: 4px;
+		text-align: left;
+	}
+
+	/* Removes Sub Menus */ 
+	#eCommerceNavBarMenu ul {
+		display: none;
+	}
+
+	/* Removes Last Degree of Bread Crumb */ 
+	#breadcrumb li:last-child {
+		display: none;
+	}
+
+	/* Removes Cart Label */ 
+	#siteShoppingCart p {
+		display: none;
+	}
+
+	/* Expands Search container  */
+	.SiteHeader.group3 {
+                float: none!important;
+                clear: both;
+	}
+
+	/* Expands Search container  */
+	.siteHeaderSearch {
+                clear: both;
+                float: none;
+                margin: 10px 0;
+                padding: 0 10px;
+                width: 100% !important;
+	}
+
+	/* Expands Search  children */
+	#searchContainer,
+	#searchContainer input[type="text"] {
+		width: 100%!important;
+	}
+
+	/* Properly aligns and centers multi-addressshipping pages */
+	.multiAddressItems.group2,
+	.multiShipOptionsOptions.group2,
+	.shippingGroupShipGroupItem.group2,
+	.shippingGroupShipGroupItem.group2 .shippingGroupSummary,
+	.shippingGroupCartItem.group2 .shippingGroupSummary,
+	.multiAddressItemAddress, .multiShipOptionsShipOptions {
+               width: 100%!important;
+	}
+
+	/* Properly aligns and centers multi-addressshipping pages */
+	.radioOptionText {
+               width: auto !important;
+	}
+
+	/* wraps shipping method if it gets too long */
+        #shippingOptionDisplay .radioOptionText,
+	.shipOption .radioOptionText {
+               max-width: 50%;
+	}
+
+	/* adds space to add new address button */
+        .addressSelector .standardBtn.action {
+               margin: 5px 0 0 0;
+	}
+
+	/* wraps shipping method if it gets too long */
+	.multiShipOptions .radioOptionTextAdditional {
+               float: right;
+	}
+
+	/* Aligns shipping options */
+	.shipOption span {
+               display: inline;
+	}
+	/* Adjusts all label & span alignments left for single column */
+	 .date label,
+ 	 .date span,
+	 .number label,
+	 .number span,
+	 .displayList li.number div a,
+	 .orderDetailShippingGroupOrderItemsItemPrice span,
+	 .orderDetailShippingGroupOrderItemsItemPrice label {
+   		 text-align: left;
+	}
+ 
+	/* Adjusts all label & span alignments left for single column */
+	.boxListItemTabular.cartItem .group1 .displayList li,
+	.boxListItemTabular.cartItem .group2 .displayList li,
+ 	.boxListItemTabular.orderItem .group1 .displayList li,
+	.boxListItemTabular.orderItem .group2 .displayList li {
+               float: left;
+	}
+
+	/* Puts Lists Items in groups two in one column; must be assigned to every page */
+	.ShowCartOrderItems.group.group2 li,
+        .OrderSummaryOrderItems.group.group2 li,
+        .OrderConfirmOrderItems.group.group2 li,
+        .ShowWishlistOrderItems.group.group2 li,
+        .multiAddressItems.group.group2 li,
+        .multiShipOptionsOptions.grouping.grouping2,
+        .multiAddressItems.group.group3,
+        .shippingGroupCartItem.group.group2 li,
+        .shippingGroupShipGroupItem.grouping.grouping2,
+        .shippingGroupCartItem.grouping.grouping2,
+        .OrderHistoryOrderDetails.group.group2 li,
+        .OrderDetailShippingGroupOrderItems.group.group2 li,
+        .ReorderItems.group.group2 li,
+        .GiftMessageOrderItems.group.group2 li {
+		float: none!important;
+                display: block;
+                width: auto!important;
+	}
+
+	.ShowCartOrderItems.group.group2 li span,
+	.ShowCartOrderItems.group.group2 li label,
+        .OrderSummaryOrderItems.group.group2 li span,
+        .OrderSummaryOrderItems.group.group2 li label,
+        .OrderConfirmOrderItems.group.group2 li span,
+        .OrderConfirmOrderItems.group.group2 li label,
+        .ShowWishlistOrderItems.group.group2 li span,
+        .ShowWishlistOrderItems.group.group2 li label,
+        .GiftMessageOrderItems.group.group2 li label,
+        .GiftMessageOrderItems.group.group2 li span {
+                text-align: left;
+	}
+        #eCommerceFooter .footerBar * {
+          padding: 0;
+         }
+
+       .footerBar .entryHelper {
+         margin: 0 0 0 30px;
+         width: 100%;
+        }
+
+       #newsletterSignupEntryBox {
+         margin: 0 0 0 30px;
+         width: 100%;
+        }
+
+       #newsletterSignupSubmit{
+         margin: 0 0 0 20px;
+        }
+
+       h3 {
+         width: 100%;
+        }
+       .siteHeaderMailingList {
+        display: none;
+       }
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices 600 pixels or less (targeting all smartphones) */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:600px) {
+
+	/* Hide left Facet Navigation bar for CLP and PLP */
+	#eCommerceLeftPanel {
+		display: none;
+    }
+
+	/* Since facet bar is hidden, allow CLP and PLP to use 100% of space available */
+	#eCommercePageBody #eCommerceMainPanel.leftPanel,
+	#eCommercePageBody #eCommerceMainPanel.mainPanel {
+		width: 100%;
+		margin: 10px 0;
+    }
+
+	/* Remove lightbox component */
+	/* Needs Class Moved */
+
+	/* Removes Home Page Spot #1 */
+	#eCommerceHomeSpot_2 {
+		display: none;
+    }
+
+	/* Puts remaining content spots in single column */
+	#eCommerceHotSpot {
+		width: 100%!important;
+    }
+
+	/* Positions sorting options and paging links on their own line */
+	.sortingOptions,
+	.pagingLinks {
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+   
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices 480 pixels AND LESS -- targeting smartphones in LANDSCAPE mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:480px) {
+    
+   /* removes Scroll to Top button */
+   #scrollToTop {
+       display: none!important;
+   }
+
+     /* removes see Larger Image feature */
+    .pdpSeeLargerImage {
+        visibility: hidden;
+    }
+
+     /* removes breadcrumb navigation */ 
+    .breadcrumbs {
+        display: none;
+    }
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices LESS THAN 480 pixels -- targeting smartphones in PORTRAIT mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:479px) {
+
+     /* removes float; allows container to fill width */
+    .PDP.group2,
+    .WriteReviewProduct.group.group2 {
+        width: 100%;
+    }    
+
+     /* removes margin needed on desktop */
+    .action.pdpAddToCart {
+        margin: 0;
+    }
+
+     /* Needed to make the image flexible; see below */
+   .pdpMainImage .pdpMainImage,
+   .pdpMainImage .pdpMainImage>div,
+   .writeReviewProductThumbImage .pdpMainImage,
+   .writeReviewProductThumbImage .pdpMainImage>div {
+        display: block!important;
+    }
+
+     /* Makes the PDP Main image flexible */
+    .js_productLargeImage {
+        height: auto;
+        max-width: 100%;
+    }
+
+	/* decreases paging font size */
+	.pagingLinks li,
+	.pagingLinks li a {
+		font-size: small;
+	}
+
+	/* removes margin from show all link */
+	.pagingBtn.showall {
+		margin: 0;
+	}
+
+	/* adds padding for next icon */
+	.pagingBtn.next a {
+		padding: 0 15px 0 0;
+	}
+
+	/* decreases space for pages display */
+	.pagingLinks li.pages {
+
+	}
+}	
+
+
+/* === Instance Specific RWD CSS === */
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Apply to any device 768 or less (iPad Portrait and all smart phones) */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:768px) {
+
+    /* Instance specific: clears complimentary products and makes them appear in a row */
+   .PDP.group5 {
+        margin: 20px 0 0 0;
+        width: 100%;
+    }
+
+    /* Instance specific: removes right-margin needed on desktop */
+   .PDP.group3 {
+        margin: 0 0 20px 0;
+    }
+
+	/* removes width from free shipping content */
+	#freeShipping {
+		margin: 0;
+		width: auto!important;
+	}
+
+	/* hides extraneous wording in content */
+	#freeShipping span.mobileRemove {
+		display: none!important;
+	}
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Apply to any device 670 or less (Custom Width for Header Links; Engages before links wrap) */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:670px) {
+
+	/* Removes Less Important Header Links */
+	#siteHeaderLinks li.mobileRemove {
+		display: none;
+	}
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices 640 pixels AND LESS -- targeting smartphones in LANDSCAPE mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:640px) {
+
+	/* exposes nav bar widget to show/hide navigation */ 
+	#eCommerceNavBarWidget a {
+		display: inline-block;
+		height: 40px;
+		position: relative;
+		text-align: left;
+		width: 40px;
+	}
+
+   	/* exposes nav bar widget to show/hide navigation */ 
+	#eCommerceNavBarWidget a.showNavWidget {
+		background: url("/osafe_theme/images/user_content/images/showNavWidget.png") 0 0 no-repeat;
+	}
+
+   	/* exposes nav bar widget to show/hide navigation */ 
+	#eCommerceNavBarWidget a.hideNavWidget {
+		background: url("/osafe_theme/images/user_content/images/hideNavWidget.png") 0 0 no-repeat;
+	}
+
+   	/* hides text in Nav Widget */ 
+	#eCommerceNavBarWidget a span {
+                color: #ffffff;
+		display: inline-block;
+                font-size: medium;
+		margin: 10px 0 0 55px;	
+	}
+
+   	/* Styles menu to appear over content; not push it down */ 
+	#eCommerceNavBar #eCommerceNavBarMenu {
+		background: inherit;
+		position: absolute!important;
+		-webkit-box-shadow: 0px 4px 7px -2px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow:    0px 4px 7px -2px rgba(50, 50, 50, 0.75);
+		box-shadow:         0px 4px 7px -2px rgba(50, 50, 50, 0.75);
+		width: auto!important; /* Menu is only as wide the products in the LIs */
+	}
+
+   	/* Styles Below cancel out the above styles/behaviors on the home page; They must come after to override */ 
+
+
+	.eCommerceHomePage #eCommerceNavBar {
+		border: none!important;
+	}
+
+	/* Positions Cart to left in header */
+	.siteHeaderCart {
+		float: right!important;
+		margin: -10px 10px 5px !important;
+	}
+
+	/* gives logo container full width of header */
+	.siteHeaderLogo {
+		margin: 0;
+		padding: 0 10px;
+		width: 100%;
+	}
+
+	/* resizes image with a limit to accommodate shipping content */
+	.siteHeaderLogo img {
+		height: auto;
+                width: 100px;
+	} 
+
+	/* cancels out resize for fed ex logo */
+	#freeShipping > img {
+		  width: auto;
+		 transform: none;
+	} 
+
+	/* Cancels out margins of mailing list/live help/toll free number */
+	.siteHeaderMailingList {
+		clear: none;
+                margin-top: 0;
+                top: 0;
+	}
+
+	/* Remove Live Help Button and 1800 number */
+	.SiteHeader.group4 {
+		display: none;
+	}
+
+	/* Decreases H1 font size */
+    	h1 {
+		font-size: 24px!important;   
+
+        #eCommerceFooter .footerBar * {
+          padding: 0;
+         }
+
+       .footerBar .entryHelper {
+         margin: 0 0 0 30px;
+         width: 100%;
+        }
+
+
+       #newsletterSignupEntryBox {
+         margin: 0 0 0 30px;
+         width: 100%;
+        }
+
+       #newsletterSignupSubmit{
+         margin: 0 0 0 20px;
+        }
+
+       h3 {
+         width: 100%;
+        }
+
+       .siteHeaderMailingList {
+        display: none;
+       }
+
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices LESS THAN 640 pixels -- targeting smartphones in Landscape mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:639px) {
+
+
+	/* adds space between links and logo */
+	.siteHeaderLinks ul {
+    		margin: 0 15px 10px 0;
+	}
+
+
+	/* repositions free shipping content */
+	#freeShipping {
+		position: relative;
+		float: right;
+		width: 110px !important;
+	} 
+
+	/* repositions toll free number */
+	#headerPhoneNumber {
+		font-size: 16px;
+		margin: 4px 0 0;
+	} 
+
+} 
+
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices 480 pixels AND LESS -- targeting smartphones in LANDSCAPE mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:480px) {
+
+    /* Instance Specific: cancels out width on all content divs; makes one column*/
+    .PDP.group.group4 li.string {
+        padding: 0;
+        width: 100%!important;
+    }
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices LESS THAN 480 pixels -- targeting smartphones in PORTRAIT mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:479px) {
+
+    /* Instance Specific: cancels out margin needed on desktop */
+    .pdpContent01 {
+        margin: 0;
+    }
+
+}

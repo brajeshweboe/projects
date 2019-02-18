@@ -1,0 +1,909 @@
+/*
+
+       Small Device dimensions, switch for portrait vs landscape
+
+       iPad                                1024 * 768
+       iPhone3/3G, iPhone 4/4S     480 * 320
+       iPhone4s                          480 * 320
+       iPhone5s/iPhone5s             568 * 320
+       Galaxy3                           640 * 360
+       Galaxy4                           960 * 540
+
+*/
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Apply to any browser 1024 or less (iPad and all smart phones) */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:1024px) {
+
+    /* Remove left and right margins that are used throughout the site */
+    #eCommerceOuterBasicBevelWrap {
+ margin: 0;
+ width:98%;
+}
+ .content.links.siteHeaderLinks {
+ padding-right: 0px;
+ float:right;
+}
+ #eCommercePageBody, #eCommerceFooter,  #eCommerceHeader {
+ width: 100%;
+}
+#eCommercePageBody{
+   padding-left:3px;
+}
+#eCommerceNavBarMenu li.topLevel a {
+padding-right:15px;
+}
+.SignIn.group.group2, .SignIn.group.group1 {
+width:100%;
+margin-right:0px;
+}
+
+.lightcarticon{
+     display:none;
+}
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    Apply to any device 995 or less (iPad Portrait and all smart phones) */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:995px) {
+
+    /* Instance specific: clears complimentary products and makes them appear in a row */
+   .PDP.group5 {
+ margin: 20px 0 0 0;
+ width: 100%;
+}
+
+    /* Instance specific: removes right-margin needed on desktop */
+   .PDP.group3 {
+ margin: 0 0 20px 0;
+}
+
+     /* Disables inline zoom and allows for image flexibility */
+    .zoomPad {
+ display: block !important;
+ float: none;
+ position: static;
+}
+.siteHeaderSearch
+{
+clear:none;
+float:right;
+margin-bottom:0px;
+}
+.siteHeaderCart {
+    clear: right;
+    padding-top: 0;
+    width: auto;
+}
+/*-----  Cart -----*/
+.boxListItemTabular.cartItem .group1{
+    width: 12%;
+}
+.boxListItemTabular.cartItem .group3{
+    width:15%;
+}
+boxListItemTabular.cartItem .group2 {
+    width: 47%;
+}
+.boxListItemTabular.cartItem .group5 {
+    float: right;
+    padding-top: 0;
+}
+.showCartOrderItemsItemName{
+    width: 44% !important;
+}
+.displayList.summary span{
+width:85px;
+}
+.displayList.summary label {
+width:114px;
+}
+.OrderHistoryOrderDetails li{
+     min-width:13%;
+}
+.pdpMainImage, .pdpLongDescription, .pdpSelectableFeature, .pdpProductName, .pdpInternalName, .pdpDistinguishingFeature, .pdpPriceList, .pdpPriceSavingMoney {
+float: left;
+height:auto;
+width:100%;
+}
+ .defaultDevice.showLightBoxCart1 {
+width:204px;
+}
+#eCommerceNavBarMenu li.topLevel > a {
+padding-left:4px;
+border-right:0px;
+}
+#eCommerceNavBarMenu li {
+border-right: 1px solid #c2c2c2;
+}
+#eCommerceNavBarMenu > li.topLevel.navlastitem {
+border-right:none;
+}
+#searchContainer input[type="text"] {
+width:280px;
+}
+ #searchContainer {
+width:320px;
+}
+ #siteShoppingCart .defaultDevice.about,  #siteShoppingCart .defaultDevice.login {
+ display:none;
+}
+#siteShoppingCart {
+float:right;
+}
+#eCommerceHomeSpot_2, #eCommerceHomeSpot_5, #eCommerceHomeSpot_6, #eCommerceHomeSpot_7, #eCommerceHomeSpot_8 {
+display:none;
+}
+ #eCommerceHomeSpot_9 {
+width:100%;
+}
+ .footerColumn.greylogo {
+ display: none;
+}
+ #eCommerceLoginContainer .displayBoxList .container {
+min-width:0px;
+width:100%;
+margin:0px;
+min-height:0px;
+}
+ .container.accessory {
+display:none;
+}
+ #eCommerceNavBarMenu li.topLevel>a {
+font-size: 14px;
+}
+#eCommerceMainPanel .container.promoCode, .container.shippingAddress.orderSummaryShippingAddress 
+{
+width:100%;
+}
+
+/*--- LightCart---*/
+
+#js_lightBoxCartContainerId, .lightcarticon {
+display:none !important;
+}
+#SPRightContent img {
+width:525px;
+}
+
+/*----------PDP---------- */
+.pdpComplement{
+    padding-top:10px;
+}
+ #eCommerceHomeSpot_16 {
+display:inline-block;
+width:100%;
+}
+ #eCommerceHomeSpot_9, #eCommerceHomeSpot_2, #eCommerceHomeSpot_3, #eCommerceHomeSpot_4, #eCommerceHomeSpot_5, #eCommerceHomeSpot_6, #eCommerceHomeSpot_7, #eCommerceHomeSpot_8 {
+display:none;
+}
+.entryForm .entry label {
+text-align:left;
+}
+.mobilecontainer {
+float:left;
+margin-top:2px;
+margin-bottom:2px;
+padding:10px;
+font-family:Calibri, Helvetica, sans-serif;
+font-size:14px;
+line-height:18px;
+background-color:#eaeaea;
+width:100%;
+}
+.icon-container {
+background-color: #F7F7F7;
+ border-right: 3px solid #FFFFFF;
+ float: left;
+ margin-bottom: 12px;
+ padding-top: 10px;
+ text-align: center;
+ width: 50%;
+}
+.icon-container p {
+font-size:14px;
+margin:0px;
+padding:0px;
+padding-top:5px;
+padding-bottom:20px;
+font-weight:bold;
+}
+.icon-column {
+text-align:center;
+}
+.itemName {
+width:174px !important;
+}
+#eCommerceNavBarWidget{
+display:block;
+}
+#eCommerceNavBarWidget a {
+    display: inline-block;
+    height: 40px;
+    position: relative;
+    text-align: left;
+    width: 40px;
+}
+#eCommerceNavBarWidget a.showNavWidget {
+    background: url("/grocery_theme/images/user_content/images/showNavWidget.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+#eCommerceNavBarWidget a.hideNavWidget {
+    background: url("/grocery_theme/images/user_content/images/hideNavWidget.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+#eCommerceNavBarWidget a span {
+    display: inline-block;
+    margin: 12px 0 0 55px;
+}
+#eCommerceNavBar #eCommerceNavBarMenu {
+    background: inherit;
+    box-shadow: 0 4px 7px -2px rgba(50, 50, 50, 0.75);
+    position: absolute !important;
+    width: auto !important;
+    display:none;
+}
+.eCommerceHomePage #eCommerceNavBar {
+    border: medium none !important;
+}
+ #eCommerceNavBar {
+margin-top: 5px;
+background-color:transparent;
+}
+ #eCommerceNavBar ul#eCommerceNavBarMenu {
+ width:100%;
+ z-index:99999;
+}
+ #eCommerceNavBarMenu li.topLevel,  #eCommerceNavBar {
+ width:100%;
+}
+ .action.itemAddToCartButton.showWishlistOrderItemsItemAddToCartButton {
+display: visible;
+}
+
+
+/*----------------------------- cart -------------------------*/
+ .orderSummaryOrderItemsItemOfferPrice {
+ clear:both;
+}
+#shippingAddress span, #shippingMethod.next span, #payment.off span, #shippingMethod.current span, #shippingMethod.on span, #payment.next span, #payment.current span {
+padding-left:0px;
+padding-top:0px;
+}
+.OrderSummary.group.group1, .ShowCart.group.group1 {
+ width: 100%;
+}
+.OrderSummary.group.group2, .ShowCart.group.group2{
+     width: 100%;
+     margin-left:0px;
+     margin-top:3px;
+}
+.OrderSummaryOrderItems.group.group4{
+     width:68% !important;
+}
+.showCartOrderItemsItemOfferPrice div{
+     text-align:left !important;
+}
+
+
+/*----------------------------- My Account -------------------------*/
+.myaccount_navbar {
+ min-height:0px;
+ width:100%;
+}
+.myAccountAvailableLoyaltyPoints .updateLoginEmailAddress label {
+padding-top:10px;
+}
+.myaccount_navbar ul li {
+ display: block;
+ float:left;
+ width:100%;
+}
+.currency label
+{
+text-align: left !important;
+}
+.orderHistoryOrderDetails span
+{
+float:left;
+text-align: left !important;
+}
+.orderHistoryOrderDetails label {
+    float: left;
+    text-align: left !important;
+    width: 36%;
+   padding-left:0px;
+}
+.orderHistoryOrderDetails li, .OrderHistoryOrderDetails li div
+{
+width:100% !important;
+float:left;
+min-height:10px;
+}
+.orderHistoryOrderDetailsReorderButton.firstRow {
+padding-top:0px;
+}
+.editLoginInfo .entryField {
+clear:both;
+}
+.entryHelper {
+display:block;
+}
+#eCommerceShoppingListSearchContainer #ptsShopListSearch {
+width:66%;
+float:left;
+padding:10px;
+}
+.editLoginInfo .entryField .fieldErrorMessage{
+        float:none;
+}
+#SPRightContent, .myAccountUpdateLogin, #eCommerceMyAccountContainer .displayBoxList, #eCommerceEditAddressBookContainer #checkoutInfoForm, #eCommerceUpdateAddressBook .entryForm, #eCommerceEditCustomerInfoContainer .entryForm, .orderHistoryOrderDetails, .container.availableLoyaltyPoints.myAccountAvailableLoyaltyPoints {
+width:100%;
+min-height:0px;
+}
+#eCommerceConfirmContainer, #js_BILLING_ADDRESS_ENTRY, #eCommerceReOrder, #forgotPasswordEntry, #eCommerceEditCustomerInfoContainer, #eCommerceEditAddressBookContainer, #eCommerceOrderHistoryContainer, #contactUsEntry, #aboutYouEntry, .emailSubscriber, #changePassword {
+padding:0px 0px 0px 3px;
+}
+#lightCart_dialog {
+display:none;
+}
+ .offerproductwrapper {
+display:none;
+}
+ .pagingBtn.showall, .pagingBtn.last, .pagingBtn.first {
+display:none;
+}
+ #eCommerceNavBarMenu li.topLevel>a {
+ font-size: 15px;
+ font-weight:bold;
+}
+ .boxListItemGrid {
+margin: 0 0px 5px 5px;
+}
+ .serviceArea {
+display:none;
+}
+.displayList.cartItemList li {
+min-width:0px;
+}
+.displayList.cartItemList > li
+{
+margin-top:0px;
+margin-bottom:0px;
+}
+    /* puts all boxListItemTabular LIs (cart items, order items) on their own row */
+   .boxListItemTabular .displayList li {
+ max-width: none;
+ padding-left:5px;
+}
+
+    /* gives itemQty a smaller fixed width in order to share a line with refresh icon */
+   .boxListItemTabular .displayList li.itemQty {
+}
+
+/*  Wish List  */
+.showWishlistOrderItemsItemTotal {
+clear:both;
+}
+.showWishlistOrderItemsItemPrice
+{
+float:left;
+clear:both;
+}
+ .image.itemImage.showCartOrderItemsItemImage {
+width: auto !important;
+height: 120px;
+}
+.ShowCartOrderItems .itemQty {
+clear:both;
+}
+.entry.itemQty {
+width:auto !important;
+}
+.ShowCartOrderItems.group.group2 li, .OrderSummaryOrderItems.group.group2 li, .OrderConfirmOrderItems.group.group2 li, .ShowWishlistOrderItems.group.group2 li, .multiAddressItems.group.group2 li, .multiShipOptionsOptions.grouping.grouping2, .multiAddressItems.group.group3, .shippingGroupCartItem.group.group2 li, .shippingGroupShipGroupItem.grouping.grouping2, .shippingGroupCartItem.grouping.grouping2, .OrderHistoryOrderDetails.group.group2 li, .OrderDetailShippingGroupOrderItems.group.group2 li, .ReorderItems.group.group2 li {
+    display: block;
+}
+ .orderList .firstRow label, .reOrderList .firstRow label, .cartList .firstRow label {
+padding-bottom: 0px;
+text-align:left;
+font-size:14px;
+}
+.cartList .firstRow label, .cartList .itemPrice label, .cartList .itemOfferPrice label, .reOrderList .firstRow label, .itemQty div label, .showCartOrderItemsItemPrice label, .orderList label, .reOrderList label, .cartList label {
+text-align:left !important;
+}
+.showCartOrderItemsItemPrice, .orderSummaryOrderItemsItemPrice{
+   float:left;
+}
+.reorderItemsItemImage {
+height:auto;
+}
+.ReorderItems .group3, .ReorderItems .group4, .ReorderItems .group5{
+     width:55%;
+}
+.showCartOrderItemsItemTotal label, .orderSummaryOrderItemsItemTotal label, .orderConfirmOrderItemsItemTotal label {
+text-align:left!important;
+color:#333 !important;
+}
+.cartList label, .cartList .firstRow label {
+width:auto !important;
+}
+ .boxListItemTabular.cartItem .group1, .OrderDetailShippingGroupOrderItems .group1 {
+float:left;
+width:72px !important;
+height:215px;
+}
+.boxListItemTabular.cartItem .group2, .OrderDetailShippingGroupOrderItems .group2 {
+width: 74% !important;
+}
+.boxListItemTabular.cartItem .group3 {
+width: 23%;
+float: left;
+}
+.boxListItemTabular.cartItem .group4 {
+width: 52%;
+float: left;
+}
+.boxListItemTabular.cartItem .group5 {
+width: 73%;
+float: left;
+}
+    /* gives itemAddToCartButton a smaller fixed width in order to share a line with delete icon */
+   .boxListItemTabular .displayList li.itemAddToCartButton {
+ width: 80%;
+ padding-bottom: 10px;
+ padding-top: 0px;
+ margin: 0px;
+}
+
+    /* gives icons a smaller fixed width in order to share a line itemQty and itemTotal */
+   .boxListItemTabular .displayList li.itemUpdateButton,  .boxListItemTabular .displayList li.itemRemoveButton {
+ width: 26px!important;
+ padding: 0px;
+}
+
+    /* gives orderTotalAmount a smaller width in order to float it right over the order/add to cart button */
+   .boxListItemTabular .displayList li.orderTotalAmount,  .boxListItemTabular .displayList li.itemTotal {
+ float:left;
+}
+ .boxListItemTabular .displayList li div a,  .boxListItemTabular span {
+ display: inline;
+}
+ .itemUpdateButton .update {
+ margin: 5px;
+}
+
+    /* left aligns components that default to right or center alignment */
+    .itemCheckbox div input,  .itemQty div input {
+ text-align: left;
+ margin: 0px;
+ display: inline;
+}
+ .orderList label, .reOrderList label, .cartList label {
+color: #000000;
+font-size: 14px;
+font-weight: bold;
+}
+.ReorderItems .group1 {
+	width:55px;
+        height:325px;
+}
+.ReorderItems .group2 {
+	width:225px;
+}
+.reOrderList .itemPrice label
+{
+text-align:left !important;
+}
+.reorderItemsItemLastOrderDate {
+margin-left:0px;
+}
+.reorderItemsItemName, .reorderItemsItemLastOrderDate, .reorderItemsItemCheckbox, .reorderItemsItemQty, .reorderItemsItemPrice {
+clear:both;
+}
+.productFeature{
+   padding-left:0px !important;
+}
+.reorderItemsItemName.firstRow label {
+width:auto;
+}
+.reorderItemsItemQty.firstRow, .ReorderItems .reorderItemsItemPrice, .ReorderItems .reorderItemsItemQty {
+margin-left:0px !important;
+}
+.reorderItemsItemCheckbox.firstRow label, .reorderItemsItemQty{
+width:auto;
+}
+.reorderItemsItemPrice label {
+width:auto !important;
+}
+#reOrderItemForm .boxListItemTabular .displayList li {
+padding-right:0px;
+}
+ .itemRemoveButton .delete {
+margin:0px;
+}
+ #eCommerceLoginContainer .displayBoxList .container {
+min-height: 0px !important;
+margin-bottom:10px !important;
+}
+ #orderCompleteForm .paymentOptions, .container.shippingAddress.orderConfirmShippingAddress, .container.shippingAddress.orderSummaryShippingAddress, #eCommerceMainPanel .container.promoCode, .container.orderItemsSummary {
+float: left;
+width: 100%;
+}
+ .displayList.cartItemList .currency div {
+min-width: 0px;
+}
+.currency label, .currency span
+{
+text-align:left;
+}
+.itemPrice label, .itemOfferPrice label {
+min-width: 0px !important;
+}
+.showCartOrderItemsItemOfferPrice, .showCartOrderItemsItemPrice {
+clear:both;
+}
+ .showCartOrderItemsItemPrice span {
+padding: 0px;
+}
+.showCartOrderItemsItemTotal span {
+padding-left:0px;
+}
+.showCartOrderItemsItemTotal label {
+color:#000 !important;
+}
+.siteHeaderLinks .mobiledevice {
+display:none;
+}
+.siteHeaderLinks ul li a {
+padding-right:3px;
+padding-left:3px;
+}
+.siteHeaderLinks .signin ul li {
+margin-left:-77px;
+}
+.siteHeaderLinks .signinresponsive {
+margin-left:20px;
+}
+.mobilesignout {
+display:block !important;
+}
+.signInFacebook {
+margin-top:0px !important;
+margin-right:0px !important;
+}
+/*--------------- Guest Checkout----------------*/
+#eCommerceLoginContainer .displayBoxList .container.withGuestCheckoutOption {
+width:100%;
+margin-bottom:10px;
+}
+
+/*--------------- Registration -------------------*/
+.addressSelector .radioOptionText {
+width:auto;
+}
+.radioOptionText {
+width:220px;
+text-align:left;
+}
+.addressCheckbox label {
+text-align:left !important;
+width:93px !important;
+}
+#TERM_AND_CONDITION_CHECK {
+margin-top:4px;
+float:left;
+}
+.radioOptionLabel {
+clear:both;
+}
+.shippingAddressInfoAddressSelector .radioOptionLabel{
+    clear:none;
+}
+.shippingAddressInfoAddressSelector .radioOption{
+    float:left !important;
+    width:100%;
+}
+
+/*--------------- STATIC pages------------------*/
+
+#SPRightContent img, #SPRightContent table {
+width:300px;
+}
+.pdpQty {
+clear:both;
+}
+.popular-brands ul li {
+height:40px;
+}
+
+/*---------------- Delivery Slot-----------------*/
+.slotAvailability {
+padding-left:0px;
+}
+.deliverySlot .deliverySlotHeading {
+padding:5px;
+width:19%;
+}
+
+/*------------- Shopping list search ----------------*/
+
+#shoppingListSearch {
+float:left;
+margin-top:3px;
+margin-left:5px;
+}
+/*------------------- Pagination ------------------*/
+#resultsNavigationTop, #resultsNavigationBottom {
+padding-left:0px;
+}
+/*----------------- Jolter Search ----------------*/
+#eCommerceShoppingListSearchContainer #shoppingListSearch {
+width:66%;
+clear:both;
+overflow:hidden;
+}
+.shoppingListSearchSubmitButton {
+padding-right:0px;
+}
+.entryField .fieldErrorMessage {
+padding-left:0px;
+}
+/*---------------- Sign In --------------------*/
+#offlineUserYes
+{
+margin-left:0px;
+}
+
+
+/*----------------------------- Social icons -------------------------*/
+.socialMediaList .facebook img {
+width:100px;
+}
+ .pdpRecentlyViewed, .pdpComplement, .pdpAccessory {
+ display:none;
+}
+ .ecommerceMegaMenu {
+ display:none;
+}
+
+
+
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices 600 pixels or less (targeting all smartphones) */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:640px) {
+
+
+
+    /* Hide left Facet Navigation bar for CLP and PLP */
+    #eCommerceLeftPanel {
+ display: none;
+}
+ .content.links.siteHeaderLinks {
+ display:block;
+}
+ .mobileSignIn {
+display:none;
+float:right;
+padding-bottom: 27px;
+font-size: 14px;
+}
+#eCommerceProductListContainer{
+     min-height:300px;
+}
+    /* Since facet bar is hidden, allow CLP and PLP to use 100% of space available */
+    #eCommerceMainPanel.leftPanel {
+ width: 100%;
+}
+ #eCommerceFooter {
+ padding-top:0px;
+}
+.sortingOptions {
+display:block;
+}
+.pagingLinks {
+clear: both;
+ display: block;
+ float: left;
+ margin-bottom: 15px;
+ padding-top: 5px;
+ text-align: left;
+}
+.pdpLongDescription, .pdpSelectableFeature, .pdpProductName, .pdpInternalName, .pdpDistinguishingFeature, .pdpPriceList, .pdpPriceSavingMoney {
+float: left;
+width:100%;
+height:auto;
+}
+.pdpPriceOnline {
+width:auto!important;
+}
+.siteHeaderSearch {
+ margin-left:0px;
+ width:100%;
+ padding-top:0px;
+ margin-bottom:0px;
+}
+ .siteHeaderCart {
+float: right;
+margin-bottom:10px;
+}
+.viewcartimage {
+float:left;
+padding-left:45px;
+margin-left:5px;
+}
+#siteShoppingCartSize2 {
+padding-left:0px;
+text-align:left;
+float:left;
+}
+.shoppingcart-text {
+padding-left:0px;
+}
+#siteShoppingCart .price {
+float:left;
+padding-left:5px;
+}
+.siteHeaderLogo {
+ padding:0px 5px 0px 5px;
+ margin-top:0px;
+}
+#siteLogo img {
+ height: auto;
+ width:170px;
+}
+.defaultDevice.showLightBoxCart {
+padding:0px;
+}
+.defaultDevice.showLightBoxCart1 {
+width:180px;
+}
+#breadcrumb {
+height:27px;
+}
+ #searchContainer {
+ width:100%;
+}
+#pincodeChecker_displayDialog {
+width:292px !important;
+overflow:hidden;
+}
+ #eCommercePageBody #eCommerceMainPanel.homePage {
+ margin: 0 0 15px 0;
+ min-height:0px;
+}
+ #eCommerceNavBarMenu li.topLevel>a {
+border-bottom:1px solid #ffffff;
+}
+ #searchContainer input[type="text"] {
+ width:90%;
+}
+ #searchContainer input.searchSubmit {
+ width:10%;
+ background-position:center;
+}
+ .mainCategory,  #siteShoppingCart .defaultDevice.about,  #siteShoppingCart .defaultDevice.login {
+ display:none;
+}
+
+
+/*----------------------------- footer -------------------------*/
+ .footerColumn {
+min-width:0px;
+width:33%;
+padding-top:0px;
+}
+.footerColumn img{
+     max-width:100%;
+}
+.footer-social-icon{
+     margin-left:9px;
+}
+ .footerColumn aboutUs {
+ display: visible;
+}
+
+
+
+
+
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices 480 pixels AND LESS -- targeting smartphones in LANDSCAPE mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:480px) {
+    
+   /* removes Scroll to Top button */
+   #scrollToTop {
+ display: none!important;
+}
+
+    /* Instance Specific: cancels out width on all content divs; makes one column*/
+    .PDP.group.group4 li.string {
+ padding: 0;
+ width: 100%!important;
+}
+.radioOptionText {
+width:auto;
+}
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/*    For devices LESS THAN 480 pixels -- targeting smartphones in PORTRAIT mode */
+/* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width:479px) {
+
+    /* 100% Width forces inputs below labels. */
+    /* Applies to all entry forms and displayActionList components (e.g. promo-code on checkout) */
+   .entryForm .entry label,  .displayActionList li div label {
+ width: 100%;
+ text-align: left;
+}
+
+     /* removes float; allows container to fill width */
+    .PDP.group2 {
+ float: none;
+}
+
+
+     /* removes margin needed on desktop */
+    .pdpAddToCart .addToCart {
+ margin: 0;
+}
+
+     /* Needed to make the image flexible; see below */
+   .mainImage.pdpMainImage .pdpMainImage,  .mainImage.pdpMainImage .pdpMainImage>div {
+ display: block!important;
+}
+
+     /* Makes the PDP Main image flexible */
+    .js_productLargeImage {
+ height: auto;
+ max-width: 100%;
+}
+
+     /* Disables inline zoom and allows for image flexibility */
+    .zoomPad {
+ display: block !important;
+ float: none;
+ position: static;
+}
+
+    /* Instance Specific: cancels out margin needed on desktop */
+    .pdpContent01 {
+ margin: 0;
+}
+ .footerColumn {
+ background: url("/grocery_theme/images/user_content/images/footer-border.jpg") no-repeat scroll 0 47px rgba(0, 0, 0, 0);
+ float: left;
+ height: 233px;
+}
+.footerCaption {
+display:block;
+height:49px;
+}
+.topBrands .footerCaption {
+margin-right:0px !important;
+text-align:left !important;
+}
+.topBrands2col {
+margin-top:0px !important
+}
+ .addressCheckbox label {
+width:35% !important;
+}
+ .deliverySlot {
+min-height: 0px;
+float: left;
+width: 100%;
+padding-top:15px;
+}
+ .itemOfferPrice label {
+display: block;
+}
+}

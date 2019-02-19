@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <EntitySyncInclude entitySyncId="1500" entityOrPackage="org.apache.ofbiz." applEnumId="ESIA_INCLUDE" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+    <EntitySyncInclude entitySyncId="1500" entityOrPackage="org.apache.ofbiz.entity" applEnumId="ESIA_EXCLUDE" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+    <EntitySyncInclude entitySyncId="1500" entityOrPackage="org.apache.ofbiz.service" applEnumId="ESIA_EXCLUDE" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+    <EntitySyncInclude entitySyncId="1500" entityOrPackage="ServerHit" applEnumId="ESIA_EXCLUDE" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+    <EntitySyncInclude entitySyncId="1500" entityOrPackage="ServerHitBin" applEnumId="ESIA_EXCLUDE" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+</entity-engine-xml>

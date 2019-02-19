@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ContactListParty contactListId="9000" partyId="DemoCustAgent" fromDate="2001-05-13 00:00:00.0" statusId="CLPT_ACCEPTED" preferredContactMechId="9023" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <ContactListParty contactListId="9000" partyId="DemoCustCompany" fromDate="2001-05-13 00:00:00.0" statusId="CLPT_ACCEPTED" preferredContactMechId="9021" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <ContactListParty contactListId="9000" partyId="DemoCustomer" fromDate="2001-05-13 00:00:00.0" statusId="CLPT_ACCEPTED" preferredContactMechId="9026" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+</entity-engine-xml>

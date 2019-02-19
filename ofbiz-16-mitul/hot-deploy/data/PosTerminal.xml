@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PosTerminal posTerminalId="pos-1" facilityId="MyRetailStore" terminalName="Pos Terminal 1" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <PosTerminal posTerminalId="pos-2" facilityId="MyRetailStore" terminalName="Pos Terminal 2" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <PosTerminal posTerminalId="pos-3" facilityId="MyRetailStore" terminalName="Pos Terminal 3" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+</entity-engine-xml>

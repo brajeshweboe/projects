@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <DeductionType deductionTypeId="CAFE_PLAN" description="Cafeteria Plan" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <DeductionType deductionTypeId="FED_TAX" description="Federal Tax" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <DeductionType deductionTypeId="INSURANCE" description="Insurance" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <DeductionType deductionTypeId="STATE_TAX" description="State Tax" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+</entity-engine-xml>

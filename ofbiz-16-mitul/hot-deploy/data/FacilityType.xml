@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <FacilityType facilityTypeId="BRANCH" hasTable="N" description="Branch" lastUpdatedStamp="2019-01-13 21:10:57.0" lastUpdatedTxStamp="2019-01-13 21:10:57.0" createdStamp="2019-01-13 21:10:57.0" createdTxStamp="2019-01-13 21:10:57.0"/>
+    <FacilityType facilityTypeId="BUILDING" hasTable="N" description="Building" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <FacilityType facilityTypeId="CALL_CENTER" hasTable="N" description="Call Center" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <FacilityType facilityTypeId="CITY" hasTable="N" description="City" lastUpdatedStamp="2019-01-13 21:10:57.0" lastUpdatedTxStamp="2019-01-13 21:10:57.0" createdStamp="2019-01-13 21:10:57.0" createdTxStamp="2019-01-13 21:10:57.0"/>
+    <FacilityType facilityTypeId="FLOOR" hasTable="N" description="Floor" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <FacilityType facilityTypeId="HUB" hasTable="N" description="Hub" lastUpdatedStamp="2019-01-13 21:10:57.0" lastUpdatedTxStamp="2019-01-13 21:10:57.0" createdStamp="2019-01-13 21:10:57.0" createdTxStamp="2019-01-13 21:10:57.0"/>
+    <FacilityType facilityTypeId="OFFICE" hasTable="N" description="Office" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <FacilityType facilityTypeId="PLANT" hasTable="N" description="Plant" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <FacilityType facilityTypeId="RETAIL_STORE" hasTable="N" description="Retail Store" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <FacilityType facilityTypeId="ROOM" hasTable="N" description="Room" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <FacilityType facilityTypeId="STATIONS" hasTable="N" description="Stations" lastUpdatedStamp="2019-01-13 21:10:57.0" lastUpdatedTxStamp="2019-01-13 21:10:57.0" createdStamp="2019-01-13 21:10:57.0" createdTxStamp="2019-01-13 21:10:57.0"/>
+    <FacilityType facilityTypeId="WAREHOUSE" hasTable="N" description="Warehouse" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+</entity-engine-xml>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductFeatureCategoryAppl productCategoryId="CATALOG1_SEARCH" productFeatureCategoryId="8000" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:34.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:34.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <ProductFeatureCategoryAppl productCategoryId="CATALOG1_SEARCH" productFeatureCategoryId="9000" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:34.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:34.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+</entity-engine-xml>

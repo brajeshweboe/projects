@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <WebAnalyticsType webAnalyticsTypeId="BACKEND_ANALYTICS" parentTypeId="WEB_ANALYTICS" hasTable="N" description="Backend Analytics" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <WebAnalyticsType webAnalyticsTypeId="BING_ANALYTICS" parentTypeId="WEB_ANALYTICS" hasTable="N" description="Bing Analytics" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <WebAnalyticsType webAnalyticsTypeId="GOOGLE_ANALYTICS" parentTypeId="WEB_ANALYTICS" hasTable="N" description="Google Analytics" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <WebAnalyticsType webAnalyticsTypeId="WEB_ANALYTICS" hasTable="N" description="Web Analytics" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+</entity-engine-xml>

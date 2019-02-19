@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentStatus statusId="PURCH_SHIP_CREATED" shipmentId="9997" statusDate="2009-08-13 17:46:28.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <ShipmentStatus statusId="PURCH_SHIP_RECEIVED" shipmentId="9997" statusDate="2009-08-13 17:47:47.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <ShipmentStatus statusId="PURCH_SHIP_SHIPPED" shipmentId="9997" statusDate="2009-08-13 17:46:29.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <ShipmentStatus statusId="SHIPMENT_INPUT" shipmentId="9996" statusDate="2009-08-17 16:35:36.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <ShipmentStatus statusId="SHIPMENT_PACKED" shipmentId="9996" statusDate="2009-08-17 16:35:39.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <ShipmentStatus statusId="SHIPMENT_PICKED" shipmentId="10000" statusDate="2019-01-10 21:59:00.0" changeByUserLoginId="admin" lastUpdatedStamp="2019-01-10 21:59:00.0" lastUpdatedTxStamp="2019-01-10 21:59:00.0" createdStamp="2019-01-10 21:59:00.0" createdTxStamp="2019-01-10 21:59:00.0"/>
+    <ShipmentStatus statusId="SHIPMENT_SHIPPED" shipmentId="9996" statusDate="2009-08-17 16:35:42.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+</entity-engine-xml>

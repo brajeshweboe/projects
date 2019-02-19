@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+    <description>Gaadizo Services</description>
+    <vendor></vendor>
+    <version>1.0</version>
+    
+    <service name="createAndEditJobCard" engine="java"
+            location="com.gaadizo.services.ProcessCardServices" invoke="createAndEditJobCard" auth="false" use-transaction="false">
+        <description>Imports all entity xml files contained in a directory</description>
+        <!-- permission-service service-name="entityMaintPermCheckForVishal" main-action="CREATE"/ -->
+        <attribute name="jobCardId" type="String" mode="IN" optional="true"/>
+        <attribute name="orderId" type="String" mode="IN" optional="true"/>
+        <attribute name="maintainTimeStamps" type="String" mode="IN" optional="true"/>
+        <attribute name="createDummyFks" type="String" mode="IN" optional="true"/>
+        <attribute name="checkDataOnly" type="String" mode="IN" optional="true"/>
+        <attribute name="deleteFiles" type="String" mode="IN" optional="true"/>
+        <attribute name="txTimeout" type="Integer" mode="IN" optional="true"/>
+        <attribute name="filePause" type="Long" mode="IN" optional="true"/>
+        <attribute name="messages" type="List" mode="OUT" optional="false"/>
+    </service>
+   <service name="createJobCard" engine="simple"
+            location="component://gaadizo/minilang/party/PartyServices.xml" invoke="createJobCard" auth="true" use-transaction="false" default-entity-name="JobCard">
+        <description>Create job cad</description>
+        <auto-attributes include="pk" mode="IN" optional="true"/>
+        <auto-attributes include="nonpk" mode="IN" optional="true"/>
+        
+        <attribute name="jobCardId" type="String" mode="OUT" optional="false"/>
+        <attribute name="resultMapJC" type="Map" mode="OUT" optional="true"/>
+        
+    </service> 
+   <service name="updateJobCard" engine="java"
+            location="com.gaadizo.services.ProcessCardServices" invoke="updateJobCard" auth="true" use-transaction="false" default-entity-name="JobCard">
+        <description>Imports all entity xml files contained in a directory</description>
+        <auto-attributes include="pk" mode="IN" optional="false"/>
+        <auto-attributes include="nonpk" mode="IN" optional="true"/>
+    </service>
+    <service name="createCustomerAndVehicleFromJC" engine="simple" default-entity-name="JobCard"   
+            location="component://gaadizo/minilang/party/PartyServices.xml" invoke="createCustomerAndVehicleFromJC" auth="true" use-transaction="false">
+        <description>Imports all entity xml files contained in a directory</description>
+        <attribute name="contactNumber" type="String" mode="IN" optional="true"/>
+        <attribute name="emailAddress" type="String" mode="IN" optional="true"/>
+        <attribute name="customerName" type="String" mode="IN" optional="true"/>
+        <attribute name="address" type="String" mode="IN" optional="true"/>
+        <attribute name="city" type="String" mode="IN" optional="true"/>
+        <attribute name="postalCode" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleManufacturer" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleModel" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleId" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleName" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleVariant" type="String" mode="IN" optional="true"/>
+        <attribute name="registationNumber" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleRegYear" type="String" mode="IN" optional="true"/>
+        <attribute name="AnnivDate" type="String" mode="IN" optional="true"/>
+        <attribute name="serviceDate" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleInsuranceComp" type="String" mode="IN" optional="true"/>
+        <attribute name="InsuranceDate" type="String" mode="IN" optional="true"/>
+        <attribute name="paymentMode" type="String" mode="IN" optional="true"/>
+        <attribute name="customerType" type="String" mode="IN" optional="true"/>
+        <attribute name="jobCardId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="contactMechId" type="String" mode="OUT" optional="true"/>
+        <attribute name="partyId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="insuranceExpiryDate" type="String" mode="IN" optional="true"/>
+        <attribute name="lastServiceDate" type="String" mode="IN" optional="true"/>
+        <attribute name="oilCapacity" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleFuelType" type="String" mode="IN" optional="true"/>
+        <attribute name="deliveryDate" type="String" mode="IN" optional="true"/>
+    </service>
+        <service name="getNextPartyId" engine="simple"
+        location="component://gaadizo/minilang/nextsequence/SequenceServices.xml" invoke="getNextPartyId" auth="true">
+        <description>Generating shipment id based on given sequence</description>
+        <attribute name="partyId" type="String" mode="OUT" optional="false"/>
+        <attribute name="ownerId" mode="IN" type="String" optional="true"></attribute>
+    </service>
+    <service name="getNextJobCardId" engine="simple"
+        location="component://gaadizo/minilang/nextsequence/SequenceServices.xml" invoke="getNextJobCardId" auth="true">
+        <description>Generating shipment id based on given sequence</description>
+        <attribute name="jobCardId" type="String" mode="OUT" optional="false"/>
+        <attribute name="ownerId" mode="IN" type="String" optional="true"></attribute>
+    </service>
+    <service name="getNextOrderId" engine="simple"
+        location="component://gaadizo/minilang/nextsequence/SequenceServices.xml" invoke="getNextOrderId" auth="true">
+        <description>Generating shipment id based on given sequence</description>
+        <attribute name="orderId" type="String" mode="OUT" optional="false"/>
+        <attribute name="ownerId" mode="IN" type="String" optional="true"></attribute>
+    </service>
+    <service name="getNextInvoiceId" engine="simple"
+        location="component://gaadizo/minilang/nextsequence/SequenceServices.xml" invoke="getNextInvoiceId" auth="true">
+        <description>Generating shipment id based on given sequence</description>
+        <attribute name="invoiceId" type="String" mode="OUT" optional="false"/>
+        <attribute name="ownerId" mode="IN" type="String" optional="true"></attribute>
+    </service>
+    <service name="addItemToOrderFromJobCard" engine="java" auth="true"
+            location="com.gaadizo.services.ProcessCardServices" invoke="addItemToOrderFromJobCard">
+        <description>Append an item to an existing order</description>
+        <attribute name="orderId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="jobCardId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="shipGroupSeqId" type="String" mode="IN" optional="false"/>
+        <attribute name="productId" type="String" mode="IN" optional="false"/>
+        <attribute name="prodCatalogId" type="String" mode="IN" optional="true"/>
+        <attribute name="basePrice" type="BigDecimal" mode="IN" optional="true"/>
+        <attribute name="quantity" type="BigDecimal" mode="IN" optional="false"/>
+        <attribute name="amount" type="BigDecimal" mode="IN" optional="true"/>
+        <attribute name="overridePrice" type="String" mode="IN" optional="true"/>
+        <attribute name="reasonEnumId" type="String" mode="IN" optional="true"/>
+        <attribute name="orderItemTypeId" type="String" mode="IN" optional="true"/>
+        <attribute name="changeComments" type="String" mode="IN" optional="true"/>
+        <attribute name="itemDesiredDeliveryDate" type="Timestamp" mode="IN" optional="true"/>
+        <attribute name="itemAttributesMap" type="Map" mode="IN" optional="true"/>
+        <attribute name="calcTax" type="Boolean" mode="IN" optional="true" default-value="true"/>
+<!--         <attribute name="shoppingCart" type="org.apache.ofbiz.order.shoppingcart.ShoppingCart" mode="OUT" optional="false"/>
+ -->    </service>
+ 
+   <service name="cancelOrderItemCustom" engine="java" auth="true" transaction-timeout="3000"
+            location="com.gaadizo.services.ProcessCardServices" invoke="cancelOrderItemCustom">
+        <description>Cancel an Order Item Quantity</description>
+        <attribute name="orderId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="jobCardId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="orderItemSeqId" type="String" mode="IN" optional="true"/>
+        <attribute name="purposeFrom" type="String" mode="IN" optional="true"/>
+        <attribute name="shipGroupSeqId" type="String" mode="IN" optional="true"/>
+        <attribute name="cancelQuantity" type="BigDecimal" mode="IN" optional="true"/>
+        <attribute name="itemReasonMap" type="Map" mode="IN" string-map-prefix="irm_" optional="true"/>
+        <attribute name="itemCommentMap" type="Map" mode="IN" string-map-prefix="icm_" optional="true"/>
+        <attribute name="itemQtyMap" type="Map" mode="IN" string-map-prefix="iqm_" optional="true"/>
+    </service>
+ 
+   <service name="cancelOrderItem" engine="java" auth="true" transaction-timeout="3000"
+            location="org.apache.ofbiz.order.order.OrderServices" invoke="cancelOrderItem">
+        <description>Cancel an Order Item Quantity</description>
+        <attribute name="orderId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="jobCardId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="orderItemSeqId" type="String" mode="IN" optional="true"/>
+        <attribute name="shipGroupSeqId" type="String" mode="IN" optional="true"/>
+        <attribute name="cancelQuantity" type="BigDecimal" mode="IN" optional="true"/>
+        <attribute name="itemReasonMap" type="Map" mode="IN" string-map-prefix="irm_" optional="true"/>
+        <attribute name="itemCommentMap" type="Map" mode="IN" string-map-prefix="icm_" optional="true"/>
+        <attribute name="itemQtyMap" type="Map" mode="IN" string-map-prefix="iqm_" optional="true"/>
+    </service>
+    <service name="generatePerFormInvoiceForJobCard" engine="java"
+            location="com.gaadizo.services.ProcessCardServices" invoke="generatePerFormInvoiceForJobCard" auth="true" transaction-timeout="3000">
+        <description>Generate perform invoice for jobcard</description>
+        <attribute name="facilityId" type="String" mode="IN" optional="false"/>
+        <attribute name="shipmentMethodTypeId" type="String" mode="IN" optional="true"/>
+        <attribute name="maxNumberOfOrders" type="Long" mode="IN" optional="true"/>
+        <attribute name="isRushOrder" type="String" mode="IN" optional="true"/>
+        <attribute name="orderIdList" type="List" mode="IN" optional="true"/>
+        <attribute name="orderHeaderList" type="List" mode="INOUT" optional="true"/>
+        <attribute name="picklistId" type="String" mode="OUT" optional="false"/>
+        <attribute name="jobCardId" type="String" mode="INOUT" optional="false"/>
+    </service>
+    
+   <service name="addPromotionForPerFormInvoiceOfJobCard" engine="java" auth="true" transaction-timeout="3000"
+            location="com.gaadizo.services.ProcessCardServices" invoke="addPromotionForPerFormInvoiceOfJobCard">
+        <description>Cancel an Order Item Quantity</description>
+        <attribute name="orderId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="productPromoId" type="String" mode="IN" optional="true"/>
+        <attribute name="jobCardId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="discountAmount" type="BigDecimal" mode="IN" optional="true"/>
+    </service>
+    <service name="reserveProductInventory" engine="simple"
+            location="component://product/minilang/product/inventory/InventoryReserveServices.xml" invoke="reserveProductInventory" auth="true">
+        <description>Reserve Inventory for a Product.
+            If requireInventory is Y the quantity not reserved is returned, if N then a negative
+            availableToPromise will be used to track quantity ordered beyond what is in stock.
+        </description>
+        <attribute name="productId" type="String" mode="IN" optional="false"/>
+        <attribute name="facilityId" type="String" mode="IN" optional="false"/>
+        <attribute name="orderId" type="String" mode="IN" optional="false"/>
+        <attribute name="orderItemSeqId" type="String" mode="IN" optional="false"/>
+        <attribute name="shipGroupSeqId" type="String" mode="IN" optional="false"/>
+        <attribute name="quantity" type="BigDecimal" mode="IN" optional="false"/>
+        <attribute name="reservedDatetime" type="Timestamp" mode="IN" optional="true"/>
+        <attribute name="requireInventory" type="String" mode="IN" optional="false"/>
+        <attribute name="reserveOrderEnumId" type="String" mode="IN" optional="false"/>
+        <attribute name="sequenceId" type="Long" mode="IN" optional="true"/>
+        <attribute name="lotId" mode="IN" type="String" optional="true" />
+        <attribute name="priority" type="String" mode="IN" optional="true"/>
+        <attribute name="quantityNotReserved" type="BigDecimal" mode="OUT" optional="false"/>
+    </service>
+    
+     <!-- Product Price Services -->
+    <service name="calculateProductPrice" engine="java"
+                location="org.apache.ofbiz.product.price.PriceServices" invoke="calculateProductPrice" auth="false" use-transaction="false">
+        <description>Calculate a Product's Price from ProductPriceRules</description>
+        <attribute name="product" type="org.apache.ofbiz.entity.GenericValue" mode="IN" optional="false"/>
+        <attribute name="prodCatalogId" type="String" mode="IN" optional="true"/>
+        <attribute name="webSiteId" type="String" mode="IN" optional="true"/>
+        <attribute name="partyId" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleId" type="String" mode="IN" optional="true"/>
+        <attribute name="facilityId" type="String" mode="IN" optional="true"/>
+        <attribute name="productStoreId" type="String" mode="IN" optional="true"/>
+        <attribute name="productStoreGroupId" type="String" mode="IN" optional="true"/>
+        <attribute name="agreementId" type="String" mode="IN" optional="true"/>
+        <attribute name="quantity" type="BigDecimal" mode="IN" optional="true"/>
+        <attribute name="amount" type="BigDecimal" mode="IN" optional="true"/>
+        <attribute name="currencyUomId" type="String" mode="IN" optional="true"/>
+        <attribute name="currencyUomIdTo" type="String" mode="IN" optional="true"/>
+        <attribute name="productPricePurposeId" type="String" mode="IN" optional="true"><!-- defaults to PURCHASE --></attribute>
+        <attribute name="termUomId" type="String" mode="IN" optional="true"><!-- if specified ProductPrice records will be filtered by this, ensures for purposes like recurring prices that only the recurring term desired is taken into consideration --></attribute>
+        <attribute name="autoUserLogin" type="org.apache.ofbiz.entity.GenericValue" mode="IN" optional="true"/>
+        <attribute name="checkIncludeVat" type="String" mode="IN" optional="true"><!-- can be Y or N, defaults to N --></attribute>
+        <attribute name="findAllQuantityPrices" type="String" mode="IN" optional="true"><!-- can be Y or N, defaults to N; see the allQuantityPrices attribute for more details --></attribute>
+        <attribute name="surveyResponseId" type="String" mode="IN" optional="true"/>
+        <attribute name="customAttributes" type="Map" mode="IN" optional="true"/>
+        <attribute name="basePrice" type="BigDecimal" mode="OUT" optional="false"><!-- will only be different from price if there is a display price adjustment, for example: checkIncludeVat=Y and a VAT amount was found --></attribute>
+        <attribute name="price" type="BigDecimal" mode="OUT" optional="false"/>
+        <attribute name="listPrice" type="BigDecimal" mode="OUT" optional="true"/>
+        <attribute name="defaultPrice" type="BigDecimal" mode="OUT" optional="true"/>
+        <attribute name="competitivePrice" type="BigDecimal" mode="OUT" optional="true"/>
+        <attribute name="averageCost" type="BigDecimal" mode="OUT" optional="true"/>
+        <attribute name="promoPrice" type="BigDecimal" mode="OUT" optional="true"/>
+        <attribute name="specialPromoPrice" type="BigDecimal" mode="OUT" optional="true"><!-- used for the Product [Special Promo] Type ProductPromo Action --></attribute>
+        <attribute name="isSale" type="Boolean" mode="OUT" optional="false"/>
+        <attribute name="validPriceFound" type="Boolean" mode="OUT" optional="false"/>
+        <attribute name="currencyUsed" type="String" mode="OUT" optional="false"/>
+        <attribute name="orderItemPriceInfos" type="java.util.List" mode="OUT" optional="false"/>
+        <attribute name="allQuantityPrices" type="java.util.List" mode="OUT" optional="true">
+            <!-- Populated when findAllQuantityPrices is Y;
+                is a List of Map where each Map has all other return attributes normally created for a price calculation;
+                each Map in the List will also contain a field called "quantityProductPriceRule" with the GenericValue object representing the ProductPriceRule with the quantity condition that the List entry is based on
+            -->
+        </attribute>
+        <attribute name="optimizeForLargeRuleSet" type="String" mode="IN" optional="true"/>
+    </service>
+    <service name="updateCustomerFromJobCard" engine="java" auth="true" transaction-timeout="3000"
+            location="com.gaadizo.services.ProcessCardServices" invoke="updateCustomerFromJobCard">
+        <description>update Customer JobCard</description>
+        <attribute name="orderId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="contactNumber" type="String" mode="IN" optional="true"/>
+        <attribute name="emailAddress" type="String" mode="IN" optional="true"/>
+        <attribute name="customerName" type="String" mode="IN" optional="true"/>
+        <attribute name="address" type="String" mode="IN" optional="true"/>
+        <attribute name="city" type="String" mode="IN" optional="true"/>
+        <attribute name="postalCode" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleManufacturer" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleModel" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleId" type="String" mode="IN" optional="true"/>
+        <attribute name="fuelType" type="String" mode="IN" optional="true"/>
+        <attribute name="oilCapacity" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleVariant" type="String" mode="IN" optional="true"/>
+        <attribute name="VehicleRegNo" type="String" mode="IN" optional="true"/>
+        <attribute name="VehicleRegYear" type="String" mode="IN" optional="true"/>
+        <attribute name="ServiceDate" type="String" mode="IN" optional="true"/>
+        <attribute name="LastServiceDate" type="String" mode="IN" optional="true"/>
+        <attribute name="deliveryDate" type="String" mode="IN" optional="true"/>
+        <attribute name="vehicleInsuranceComp" type="String" mode="IN" optional="true"/>
+        <attribute name="InsuranceExpiryDate" type="String" mode="IN" optional="true"/>
+        <attribute name="paymentMode" type="String" mode="IN" optional="true"/>
+        <attribute name="customerType" type="String" mode="IN" optional="true"/>
+        <attribute name="jobCardId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="partyId" type="String" mode="INOUT" optional="true"/>
+    </service>
+    <!-- <service name="updatePartyPostalAddress" engine="simple"
+            location="component://party/minilang/contact/PartyContactMechServices.xml" invoke="updatePartyPostalAddress" auth="true">
+        <description>Update a Postal Address</description>
+        <permission-service service-name="partyContactMechPermissionCheck" main-action="UPDATE"/>
+        <auto-attributes entity-name="PartyContactMech" include="all" mode="IN" optional="true"/>
+        <auto-attributes entity-name="PostalAddress" include="nonpk" mode="IN" optional="true"/>
+        <attribute name="contactMechId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="directions" type="String" mode="IN" optional="true"/> ??
+        <override name="address1" optional="false"/>
+        <override name="city" optional="false"/>
+        <override name="postalCode" optional="false"/>
+    </service> -->
+    <service name="createCustomerAndJobCardFromRegistration" engine="java" auth="true" transaction-timeout="3000" export="true"
+            location="com.gaadizo.services.ProcessCardServices" invoke="createCustomerAndJobCardFromRegistration">
+        <description>update Customer JobCard</description>
+        <attribute name="registrationNumber" type="String" mode="IN" optional="false"/>
+                <attribute name="serviceCenterId" type="String" mode="IN" optional="false"/>
+        <attribute name="customerId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="jobCardId" type="String" mode="OUT" optional="true"/>
+    </service>
+    
+</services>

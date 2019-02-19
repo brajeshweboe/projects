@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <GoodIdentification goodIdentificationTypeId="INVOICE_EXPORT" productId="GZ-2644" idValue="GZ-2644-replaced" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <GoodIdentification goodIdentificationTypeId="OTHER_ID" productId="GZ-1001" idValue="12345" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <GoodIdentification goodIdentificationTypeId="SKU" productId="GZ-1000" idValue="12345" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <GoodIdentification goodIdentificationTypeId="SKU" productId="GZ-1001" idValue="67890" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+</entity-engine-xml>

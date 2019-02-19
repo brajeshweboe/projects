@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PaymentGatewayEway paymentGatewayConfigId="EWAY_CONFIG" customerId="87654321" testMode="Y" enableCvn="N" enableBeagle="N" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+</entity-engine-xml>

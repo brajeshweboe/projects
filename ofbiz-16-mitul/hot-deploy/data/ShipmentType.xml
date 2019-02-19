@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentType shipmentTypeId="DROP_SHIPMENT" hasTable="N" description="Drop Shipment" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentType shipmentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Incoming" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentType shipmentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Outgoing" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentType shipmentTypeId="PURCHASE_RETURN" parentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Purchase Return" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentType shipmentTypeId="PURCHASE_SHIPMENT" parentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Purchase Shipment" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentType shipmentTypeId="SALES_RETURN" parentTypeId="INCOMING_SHIPMENT" hasTable="N" description="Sales Return" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentType shipmentTypeId="SALES_SHIPMENT" parentTypeId="OUTGOING_SHIPMENT" hasTable="N" description="Sales Shipment" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentType shipmentTypeId="TRANSFER" hasTable="N" description="Transfer" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+</entity-engine-xml>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <CostComponentCalc costComponentCalcId="GEN_COST_CALC" description="Overhead cost (5 percent of total cost) for general costs" costGlAccountTypeId="OPERATING_EXPENSE" fixedCost="0.05" currencyUomId="USD" costCustomMethodId="PROD_PERC_FORMULA" lastUpdatedStamp="2019-01-10 01:11:42.0" lastUpdatedTxStamp="2019-01-10 01:11:42.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <CostComponentCalc costComponentCalcId="TASK_COST_CALC" description="Indirect cost (power supply)" costGlAccountTypeId="OPERATING_EXPENSE" fixedCost="1.00" variableCost="2.00" perMilliSecond="60000" currencyUomId="USD" lastUpdatedStamp="2019-01-10 01:11:42.0" lastUpdatedTxStamp="2019-01-10 01:11:42.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+</entity-engine-xml>

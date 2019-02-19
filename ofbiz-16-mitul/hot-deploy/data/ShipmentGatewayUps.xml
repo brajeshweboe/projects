@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentGatewayUps shipmentGatewayConfigId="UPS_CONFIG" connectUrl="https://wwwcie.ups.com/ups.app/xml" connectTimeout="60" shipperNumber="12345E" billShipperAccountNumber="12345E" accessLicenseNumber="TEST262223144CAT" accessUserId="REG111111" accessPassword="REG111111" saveCertInfo="true" saveCertPath="${sys:getProperty(&apos;ofbiz.home&apos;)}/runtime/output/upscert" shipperPickupType="06" customerClassification="03" maxEstimateWeight="90.000000" minEstimateWeight="0.100000" codAllowCod="true" codSurchargeAmount="9.000000" codSurchargeCurrencyUomId="USD" codSurchargeApplyToPackage="first" codFundsCode="0" defaultReturnLabelMemo="UPS Shipment Return Memo" defaultReturnLabelSubject="UPS Shipment Return Label" lastUpdatedStamp="2019-01-10 01:11:19.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:19.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+</entity-engine-xml>

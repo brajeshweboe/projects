@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentContactMechType shipmentContactMechTypeId="SHIP_FROM_ADDRESS" description="Ship-From Address" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentContactMechType shipmentContactMechTypeId="SHIP_FROM_EMAIL" description="Ship-From E-Mail" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentContactMechType shipmentContactMechTypeId="SHIP_FROM_TELECOM" description="Ship-From Telecom Number" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentContactMechType shipmentContactMechTypeId="SHIP_TO_ADDRESS" description="Ship-To Address" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentContactMechType shipmentContactMechTypeId="SHIP_TO_EMAIL" description="Ship-To E-Mail" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentContactMechType shipmentContactMechTypeId="SHIP_TO_TELECOM" description="Ship-To Telecom Number" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+</entity-engine-xml>

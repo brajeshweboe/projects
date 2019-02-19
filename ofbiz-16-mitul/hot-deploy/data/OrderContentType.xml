@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OrderContentType orderContentTypeId="IMAGE_URL" hasTable="N" description="Image" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
+</entity-engine-xml>

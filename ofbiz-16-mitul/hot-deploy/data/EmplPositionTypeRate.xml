@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <EmplPositionTypeRate emplPositionTypeId="PROGRAMMER" rateTypeId="AVERAGE_PAY_RATE" fromDate="2009-01-30 17:58:56.0" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:29.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:29.0"/>
+</entity-engine-xml>

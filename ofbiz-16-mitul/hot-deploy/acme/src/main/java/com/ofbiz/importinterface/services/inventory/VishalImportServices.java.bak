@@ -1,0 +1,1762 @@
+package com.osafe.services;
+
+import org.ofbiz.base.util.UtilValidate;
+import org.ofbiz.base.util.StringUtil;
+import org.ofbiz.product.catalog.CatalogWorker;
+import org.ofbiz.product.store.ProductStoreWorker;
+import org.ofbiz.common.CommonWorkers;
+import org.ofbiz.base.util.UtilMisc;
+import org.ofbiz.entity.util.EntityUtil;
+import org.ofbiz.party.contact.ContactHelper;
+import org.ofbiz.base.util.UtilDateTime;
+import org.ofbiz.base.util.UtilValidate;
+import org.ofbiz.base.util.StringUtil;
+import org.ofbiz.product.catalog.CatalogWorker;
+import org.ofbiz.product.store.ProductStoreWorker;
+import org.ofbiz.common.CommonWorkers;
+import org.ofbiz.base.util.UtilMisc;
+import org.ofbiz.entity.util.EntityUtil;
+import org.ofbiz.order.shoppingcart.ShoppingCart;
+import javolution.util.FastMap;
+import java.io.*;
+import java.util.*;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import  java.io.DataInputStream;
+import  java.io.DataOutputStream;
+import org.ofbiz.base.util.FileUtil;
+import java.io.FileReader;
+import com.osafe.util.OsafeAdminUtil;
+import org.ofbiz.base.util.UtilProperties;
+import java.util.ResourceBundle;
+
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.io.FilenameUtils;
+import org.ofbiz.base.util.string.FlexibleStringExpander;
+import com.osafe.services.VishalImportServices;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import javolution.util.FastList;
+import javolution.util.FastMap;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.WorkbookSettings;
+import jxl.read.biff.BiffException;
+
+import org.ofbiz.base.util.Debug;
+import org.ofbiz.base.util.UtilDateTime;
+import org.ofbiz.base.util.UtilMisc;
+import org.ofbiz.base.util.UtilProperties;
+import org.ofbiz.base.util.UtilValidate;
+import org.ofbiz.base.util.string.FlexibleStringExpander;
+import org.ofbiz.entity.Delegator;
+import org.ofbiz.entity.GenericEntityException;
+import org.ofbiz.entity.GenericValue;
+import org.ofbiz.entity.condition.EntityCondition;
+import org.ofbiz.entity.condition.EntityOperator;
+import org.ofbiz.entity.util.EntityUtil;
+import org.ofbiz.service.DispatchContext;
+import org.ofbiz.service.LocalDispatcher;
+import org.ofbiz.service.ServiceUtil;
+
+import com.osafe.feeds.osafefeeds.ObjectFactory;
+import com.osafe.feeds.osafefeeds.RegionPostalCodeMappingType;
+import com.osafe.feeds.osafefeeds.RegionPostalcodeType;
+import com.vishal.dto.Article;
+import com.vishal.dto.EanDTO;
+import com.vishal.dto.Tax;
+import com.vishal.helper.VishalHelper;
+import com.vishal.importInterfaces.ArticleInterface;
+import com.vishal.importInterfaces.EANInterface;
+import com.vishal.importInterfaces.TaxesInterface;
+import com.vishal.utility.ReadValidationXML;
+import com.vishal.utility.VishalServiceUtility;
+
+public class VishalImportServices extends ImportServices{
+
+    public static final String module = VishalImportServices.class.getName();
+    public static Delegator _delegator= null;
+    private static Map<String, ?> context = FastMap.newInstance();
+    
+    public static Map<String, Object> importTaxXls(DispatchContext ctx, Map<String, ?> context) 
+    {
+    	
+        String exceldir = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "excel-dir"),context);//UtilProperties.getPropertyValue("vishal-setup.properties", "excel-dir");
+    	Iterator fileItr; 
+    	List<File> files = VishalImportServices.listFilesForFolder(exceldir);
+    	int fileIndex  = 0;
+    	for (fileItr=files.iterator(); fileItr.hasNext(); ){
+    		
+    		File txtFile = (File)fileItr.next();
+    		String txtFileNamePath = exceldir+txtFile.getName();
+    		List list = null;
+    		try {
+    		    list=VishalImportServices.getBuffereReaderFromFile(new File(txtFileNamePath));//new ArrayList();
+    		}catch(Exception fnfe) {System.out.println(fnfe);}
+    		
+    		
+            if ((txtFile.getName()).contains("Tax")) {
+    			try{
+    				Iterator itr;
+    				HSSFWorkbook wb = new HSSFWorkbook();
+    				HSSFSheet sheet = wb.createSheet("Excel Sheet");
+    				HSSFRow rowhead = sheet.createRow((short)0);
+    				rowhead.createCell((short) 0).setCellValue("Site Code");
+    				rowhead.createCell((short) 1).setCellValue("Sale Tax Code");
+    				rowhead.createCell((short) 2).setCellValue("Tax Description");
+    				rowhead.createCell((short) 3).setCellValue("Date");
+    				rowhead.createCell((short) 4).setCellValue("Tax %");
+    				String sitecode="",saleTaxCode="",taxDescription="",date="",taxPercent="";
+    				int index=1;
+    				for (itr=list.iterator(); itr.hasNext(); ){
+    					String str=itr.next().toString();
+    					
+    					String [] splitSt =str.split("	");
+    					//for (int i = 0 ; i < splitSt.length ; i++) {
+    					if(splitSt.length > 0)
+    						sitecode=splitSt[0];
+    					if(splitSt.length > 1)
+    						saleTaxCode=splitSt[1].replaceFirst ("^0*", "");
+    					if(splitSt.length > 2)
+    						taxDescription=splitSt[2].replaceFirst ("^0*", "");
+    					if(splitSt.length > 3)
+    						date=splitSt[3];
+    					if(splitSt.length > 4)
+    						taxPercent=splitSt[4];
+
+    					HSSFRow row = sheet.createRow((short)index);
+    					row.createCell((short)0).setCellValue(sitecode);
+    					row.createCell((short)1).setCellValue(saleTaxCode);
+    					row.createCell((short)2).setCellValue(taxDescription);
+    					row.createCell((short)3).setCellValue(date);
+    					row.createCell((short)4).setCellValue(taxPercent);
+    					sitecode="";
+    					saleTaxCode="";
+    					taxDescription="";
+    					date="";
+    					taxPercent="";
+    					index++;
+    				}
+    				
+    				String fileNameWithOutExt = FilenameUtils.removeExtension(txtFile.getName());
+    	            String  filePathStr = exceldir+"TaxMaster-"+fileIndex+".xls";
+    				FileOutputStream fileOut = new FileOutputStream(filePathStr);
+    				wb.write(fileOut);
+    				fileOut.close();
+    				System.out.println("Data is saved in excel file.");
+    				}
+    				catch(Exception e){System.out.println(e);}
+    		}
+    		fileIndex++;
+    	}
+
+    	Debug.logInfo(" Method importTaxXls starts", module);
+        LocalDispatcher dispatcher = ctx.getDispatcher();
+        Delegator delegator = ctx.getDelegator();
+        HashMap rtnHm = new HashMap();
+        //AS:28/11/2014: 39130 Email on schedule jobs
+        Map<String, String> hm = new HashMap<String, String>();  
+        Map<String, Object> resp = ServiceUtil.returnFailure();
+        //AS:28/11/2014: 39130 Email on schedule jobs
+        Boolean errorDuringInsertion = false;
+        Boolean errorInFileRecords = false;
+        ArrayList<String[]> headerlist = null;
+        Tax taxdto = new Tax(true);
+        TaxesInterface taxInterface = new TaxesInterface();
+        VishalServiceUtility vsu = new VishalServiceUtility();
+        ReadValidationXML readxml = new ReadValidationXML();
+        boolean isXMLCreated=false;
+        String errorfilename = null;
+		List<String> zipFilesList = new ArrayList<String>();
+        try 
+        {
+	        	/*
+				 * Get the Column Dto map by providing the validation xml file. 
+				 * 
+				 */
+				String xmlFileToParse =VishalServiceUtility.generateFilePath(taxdto.getValidationXMLFilePath(),taxdto.getValidationXMLFileName());  
+				Map<String, String []> taxColDTOMap = readxml.readValidationXML(xmlFileToParse);
+				
+				List<String> filesToProcess = VishalServiceUtility.getFileToCrawl(taxdto.getExcelFilePath(),taxdto.getExcelFileName());
+				
+				
+				for(int file=0; file < filesToProcess.size(); file++){
+					taxdto.setExcelFileName(filesToProcess.get(file));
+					
+				try{	
+						VishalServiceUtility.copyFileToProcessedDirAndRename(taxdto);
+						/*
+						 * Initial Validation of tax file to check it has valid header or not to process.
+						 * It will return map with 3 keys ISVALIDFILE, HEADERLIST and PROCESSED_LIST.
+						 * ISVALIDFILE will tells the validity of file true(valid) or false (Invalid).
+						 * HEADERLIST will have header map with its validation rules.
+						 * PROCESSED_LIST will have error messages if file is invalid to generate new error xls.
+						 */
+						if(!taxColDTOMap.isEmpty())
+						{
+								rtnHm = vsu.validateFile(taxdto,taxColDTOMap);
+								headerlist = (ArrayList<String[]>) rtnHm.get("HEADERLIST");
+								
+								/*
+								 * If file's headers are valid file then validate and get the data from file.
+								 * It will return map with 3 keys ERROR_IN_FILE, VALID_ROW_LIST and PROCESSED_LIST.
+								 * ERROR_IN_FILE will tells if any invalid row in file then generate error file else generate completed file.
+								 * VALID_ROW_LIST will have only valid row to generate xml file to put data in database.
+								 * PROCESSED_LIST will have all the valid and invalid row  generate new error or completed xls.	
+								 */
+								
+								if (rtnHm.containsKey("ISVALIDFILE") && (Boolean) rtnHm.get("ISVALIDFILE")) {
+										rtnHm = taxInterface.validateAndGetTaxFileData(taxdto,headerlist);
+										
+										/*
+										 * Create an XML file from returned Valid Tax DTO List.
+										 */
+										List<Object> validRtnTaxDTOLst = (List<Object>)rtnHm.get("VALID_ROW_LIST");
+										errorInFileRecords = (Boolean) rtnHm.get("ERROR_IN_FILE");
+										
+										/* Pass the  VALID_ROW_LIST -> validRtnTaxDTOLst, column Dto map
+										 *  Template according to which file would be generated and file path
+										 *  where xml file will be generated.
+										 */
+										String XMLFilePath=VishalServiceUtility.generateFilePath(taxdto.getOutputXmlFilePath(),taxdto.getOutputXMLFileName());
+										
+										if(!validRtnTaxDTOLst.isEmpty())
+										{
+											isXMLCreated =VishalServiceUtility.generateXMLForDB(validRtnTaxDTOLst,taxColDTOMap,taxdto.getXmlTaxTemplate(),XMLFilePath,false);
+											
+											
+											/* Insert the data in database if any error occur during database insertion,
+											 * error file will be generated in Output folder */
+											if(isXMLCreated){
+
+												 errorDuringInsertion = vsu.insertIntoDB(dispatcher,taxdto.getOutputXmlFilePath(),context,delegator);
+												 if(errorDuringInsertion){
+													 Debug.log(VishalHelper.ErrorMessages.DATA_NOT_INSERTED);
+												 }
+											}
+											else{
+												Debug.log(VishalHelper.ErrorMessages.XML_NOT_CREATED);
+												errorDuringInsertion = true;
+											}
+										}
+										
+									}else{
+									/*
+									 * If the header of file is invalid then Generate an error Excel File.
+									 */
+									Debug.log(VishalHelper.ErrorMessages.INVALID_FILE);
+									errorDuringInsertion = true;
+									
+								}
+						}
+						else
+						{
+						
+							Debug.log(VishalHelper.ErrorMessages.INVALID_COL_VALIDATION_FILE);
+							errorDuringInsertion = true;
+						}
+						
+				}catch(Exception e){
+					errorDuringInsertion = true;
+					Debug.logError(e, module);
+				}
+		     	/* if the data inserted in database successfully mean errorDuringInsertion = false  
+					 * then generate an excel file which having the content of supplied list of
+					 * objects in the form of tax sheet with its validity status.
+					 * if any error occur during insertion mean errorDuringInsertion = true
+					 * then generate an error file with error msg.
+					 */
+					if(!errorDuringInsertion){
+							Debug.log("No error data in excel");	
+							List<Object> rtnTaxDTOLst = (List<Object>)rtnHm.get("PROCESSED_LIST");
+							rtnHm = taxInterface.getListOfListForXLSCreationForImport(rtnTaxDTOLst, headerlist);
+										
+							if (rtnHm != null) {
+									/* Write an Excel file*/ 
+									//AS:3/12/2014: Issue: 39375 Grocery: All Scheduled job attachment not received
+									errorfilename = null;
+									errorfilename = vsu.generateOutputFile(rtnHm,taxdto,errorInFileRecords);
+									if(UtilValidate.isNotEmpty(errorfilename)){
+										zipFilesList.add(errorfilename);
+									}
+									Debug.log("write excel successfully");
+									VishalServiceUtility.cleanUpAfterSuccess(taxdto);
+							}
+						
+					}else{
+						Debug.log("Error in data");
+						VishalServiceUtility.cleanUpAfterUnsuccess(taxdto);
+						errorDuringInsertion = false;
+					}
+					
+					
+				}
+				//AS:3/12/2014: Issue: 39375 Grocery: All Scheduled job attachment not received
+				if (UtilValidate.isNotEmpty(zipFilesList) && (zipFilesList.size() > 0)) 
+				{
+					String outputzipFilePath = null;
+					outputzipFilePath = vsu.zipFiles(zipFilesList);
+					int index = outputzipFilePath.lastIndexOf("//");
+					String fileName = outputzipFilePath.substring(index + 2);
+					String filePath = outputzipFilePath.substring(0, index +2);
+					String fileMimeType = "application/zip";
+					hm.put("fileName", fileName);
+					hm.put("fileMimeType", fileMimeType);
+					hm.put("filePath", filePath);
+					
+					//BP:
+                     String txtLoadedDataFilePath = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-article-loaded-directory"), context);
+		             String tmparticleloadeddirectoryloadedArticleXls = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-article-loaded-directoryloadedArticleXls"), context);
+
+						if (!new File(txtLoadedDataFilePath).exists())
+			            {
+			                new File(txtLoadedDataFilePath).mkdirs();
+			            }
+						if (!new File(tmparticleloadeddirectoryloadedArticleXls).exists())
+			            {
+			                new File(tmparticleloadeddirectoryloadedArticleXls).mkdirs();
+			            }
+			                if(new File(txtLoadedDataFilePath).exists()) {
+			                	moveFilesInGivenDirectory(exceldir,"txt",txtLoadedDataFilePath, "Tax");
+			                }
+			                if(new File(tmparticleloadeddirectoryloadedArticleXls).exists()) {
+			                	moveFilesInGivenDirectory(exceldir,"xls",tmparticleloadeddirectoryloadedArticleXls, "Tax");
+			                }
+					
+				}
+				if(UtilValidate.isNotEmpty(hm)){
+					resp = ServiceUtil.returnFailure();
+				}else{
+					resp = ServiceUtil.returnSuccess();
+				}
+        }catch (Exception exc){
+        	 Debug.logError(exc, module);
+        }
+        
+          
+        Debug.logInfo(" Method importTaxXls ends", module);
+        //AS:28/11/2014: 39130 Email on schedule jobs
+        resp.put("rtnHm", hm);
+		return resp;
+        
+    }   
+    
+    public static Map<String, Object> importArticleXls(DispatchContext ctx, Map<String, ?> context) 
+    {
+    	
+    	
+        String exceldir = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "excel-dir"),context);//UtilProperties.getPropertyValue("vishal-setup.properties", "excel-dir");
+    	Iterator fileItr;
+    	List<File> files = VishalImportServices.listFilesForFolder(exceldir);
+    	int fileIndex  = 0;
+    	for (fileItr=files.iterator(); fileItr.hasNext(); ){
+    		
+    		File txtFile = (File)fileItr.next();
+    		String txtFileNamePath = exceldir+txtFile.getName();
+    		
+    		List list = null;
+    		try {
+    		    list=VishalImportServices.getBuffereReaderFromFile(new File(txtFileNamePath));//new ArrayList();
+    		}catch(Exception fnfe) {System.out.println(fnfe);}
+    		
+    		
+    		if((txtFile.getName()).contains("Article")) {
+    			Iterator itr;
+               try{
+
+    			HSSFWorkbook wb = new HSSFWorkbook();
+    			HSSFSheet sheet = wb.createSheet("Excel Sheet");
+    			HSSFRow rowhead = sheet.createRow((short)0);
+    			rowhead.createCell((short) 0).setCellValue("Site Code");
+    			rowhead.createCell((short) 1).setCellValue("Article");
+    			rowhead.createCell((short) 2).setCellValue("Main EAN");
+    			rowhead.createCell((short) 3).setCellValue("Sale Unit");
+    			rowhead.createCell((short) 4).setCellValue("Tax Code");
+    			rowhead.createCell((short) 5).setCellValue("Vrp");
+    			rowhead.createCell((short) 6).setCellValue("Mrp");
+    			rowhead.createCell((short) 7).setCellValue("Article Status");
+    			rowhead.createCell((short) 8).setCellValue("Multi Mrp");
+    			String sitecode="",article="",mainean="",salesunit="",Taxcode="",vrpmrp="0",articlestatus="",multimrp="";
+    			int index=1;
+    			for (itr=list.iterator(); itr.hasNext(); ){
+    				String str=itr.next().toString();
+    				
+    				String [] splitSt =str.split("	");
+    				//for (int i = 0 ; i < splitSt.length ; i++) {
+    				if(splitSt.length > 0)
+    					sitecode=splitSt[0];
+    				if(splitSt.length > 1)
+    					article=splitSt[1].replaceFirst ("^0*", "");
+    				if(splitSt.length > 3)
+    					mainean=splitSt[3].replaceFirst ("^0*", "");
+    				if(splitSt.length > 4)
+    					salesunit=splitSt[4];
+    				if(splitSt.length > 8)
+    					Taxcode=splitSt[8];
+    				if(splitSt.length > 9)
+    					vrpmrp=splitSt[9];
+    				if(splitSt.length > 10)
+    					articlestatus=splitSt[10];
+    				
+    				if(splitSt.length > 11)
+    					multimrp=splitSt[11];
+    				//deptt=splitSt[3];
+    				//}
+    				HSSFRow row = sheet.createRow((short)index);
+    				row.createCell((short)0).setCellValue(sitecode);
+    				row.createCell((short)1).setCellValue(article);
+    				row.createCell((short)2).setCellValue(mainean);
+    				row.createCell((short)3).setCellValue(salesunit);
+    				row.createCell((short)4).setCellValue(Taxcode);
+    				row.createCell((short)5).setCellValue(vrpmrp);
+    				row.createCell((short)6).setCellValue(vrpmrp);
+    				row.createCell((short)7).setCellValue(articlestatus);
+    				row.createCell((short)8).setCellValue(multimrp);
+    				sitecode="";
+    				article="";
+    				mainean="";
+    				salesunit="";Taxcode="";vrpmrp="0";articlestatus="";multimrp="";
+    				index++;
+    			}
+    			
+    			String fileNameWithOutExt = FilenameUtils.removeExtension(txtFile.getName());
+                String  filePathStr = exceldir+"ArticleMaster-"+fileIndex+".xls";
+    			FileOutputStream fileOut = new FileOutputStream(filePathStr);
+    			wb.write(fileOut);
+    			fileOut.close();
+    			sitecode="";
+    			article="";
+    			mainean="";
+    			salesunit="";Taxcode="";vrpmrp="";articlestatus="";multimrp="0";
+    			System.out.println("Data is saved in excel file.");
+    			}
+    			catch(Exception e){System.out.println(e);}
+
+    		//} else if ((txtFile.getName()).contains("EAN")) {
+    		//} else if ((txtFile.getName()).contains("Tax")) {
+    		}
+    		fileIndex++;
+    	}
+
+    	
+    	
+    	Debug.logInfo(" Method importArticleXls starts", module);
+        LocalDispatcher dispatcher = ctx.getDispatcher();
+Delegator delegator = ctx.getDelegator();
+        HashMap rtnHm = new HashMap();
+        //AS:28/11/2014: 39130 Email on schedule jobs
+        Map<String, String> hm = new HashMap<String, String>();
+        Map<String, Object> resp = ServiceUtil.returnFailure();
+        Boolean errorDuringInsertion = false;
+        Boolean errorInFileRecords = false;
+        ArrayList<String[]> headerlist  = null;
+        Article articleDTO = new Article(true);
+		ArticleInterface articleInterface = new ArticleInterface();
+		VishalServiceUtility vsu = new VishalServiceUtility();
+		ReadValidationXML readxml = new ReadValidationXML();
+		boolean isXMLCreated=false;
+		String errorfilename = null;
+		List<String> zipFilesList = new ArrayList<String>();
+		GenericValue userLogin = (GenericValue) context.get("userLogin");
+		
+        try 
+        {
+	        	/*
+				 * Get the Column Dto map by providing the validation xml file. 
+				 * 
+				 */
+				
+				String XMLFilePath=VishalServiceUtility.generateFilePath(articleDTO.getValidationXMLFilePath(),articleDTO.getValidationXMLFileName());
+				Map<String, String []> articleColMap = readxml.readValidationXML(XMLFilePath);
+
+				List<String> filesToProcess = VishalServiceUtility.getFileToCrawl(articleDTO.getExcelFilePath(),articleDTO.getExcelFileName());
+				
+				for(int file=0; file < filesToProcess.size(); file++){
+					articleDTO.setExcelFileName(filesToProcess.get(file));
+				
+					try{	
+						VishalServiceUtility.copyFileToProcessedDirAndRename(articleDTO);
+						if(!articleColMap.isEmpty())
+						{
+							XMLFilePath=VishalServiceUtility.generateFilePath(articleDTO.getValidationXMLFilePath(),articleDTO.getArticleFacilityValidationXML());
+							Map<String, String []> productFacilityColMap = readxml.readValidationXML(XMLFilePath);
+							
+							XMLFilePath=VishalServiceUtility.generateFilePath(articleDTO.getValidationXMLFilePath(),articleDTO.getArticlePriceValidationXML());
+							Map<String, String []> productPriceColMap = readxml.readValidationXML(XMLFilePath);
+							
+							
+							/*
+							 * Initial Validation of Article file to check it has valid header or not to process.
+							 * It will return map with 3 keys ISVALIDFILE, HEADERLIST and PROCESSED_LIST.
+							 * ISVALIDFILE will tells the validity of file true(valid) or false (Invalid).
+							 * HEADERLIST will have header map with its validation rules.
+							 * PROCESSED_LIST will have error messages if file is invalid to generate new error xls.
+							 */
+							
+							rtnHm = vsu.validateFile(articleDTO,articleColMap);
+							headerlist = (ArrayList<String[]>) rtnHm.get("HEADERLIST");
+							Debug.log("=======headerlist==================="+headerlist+"====================");
+							
+							/*
+							 * If file's headers are valid file then validate and get the data from file.
+							 * It will return map with 3 keys ERROR_IN_FILE, VALID_ROW_LIST and PROCESSED_LIST.
+							 * ERROR_IN_FILE will tells if any invalid row in file then generate error file else generate completed file.
+							 * VALID_ROW_LIST will have only valid row to generate xml file to put data in database.
+							 * PROCESSED_LIST will have all the valid and invalid row  generate new error or completed xls.	
+							 */
+							
+							if (rtnHm.containsKey("ISVALIDFILE") && (Boolean) rtnHm.get("ISVALIDFILE")) {
+								rtnHm = articleInterface.validateAndGetArticleFileData(ctx,articleDTO,headerlist);
+									
+									/*
+									 * Create an XML file from returned Valid Tax DTO List.
+									 */
+									List<Object> validRtnArticleDTOLst = (List<Object>)rtnHm.get("VALID_ROW_LIST");
+									errorInFileRecords = (Boolean) rtnHm.get("ERROR_IN_FILE");
+									
+									
+									/*
+									 * Create an BigFish specific XML file from returned Article DTO List.
+									 * Pass the  VALID_ROW_LIST -> validvalidRtnArticleDTOLstRtnTaxDTOLst, column Dto map
+									 *  Template according to which file would be generated and file path
+									 *  where xml file will be generated.
+									 *
+									 */
+									if(!validRtnArticleDTOLst.isEmpty())
+									{
+										XMLFilePath=VishalServiceUtility.generateFilePath(articleDTO.getOutputXmlFilePath(),articleDTO.getArticleFacilityOutputXMLName());
+										isXMLCreated=VishalServiceUtility.generateXMLForDB(validRtnArticleDTOLst,productFacilityColMap,articleDTO.getXmlarticleFacilityTemplate(),XMLFilePath,false);
+										
+										XMLFilePath=VishalServiceUtility.generateFilePath(articleDTO.getOutputXmlFilePath(),articleDTO.getArticlePriceOutputXMLName());
+										isXMLCreated=VishalServiceUtility.generateXMLForDB(validRtnArticleDTOLst,productPriceColMap,articleDTO.getXmlarticlePriceTemplate(),XMLFilePath,false);
+		
+										/* Insert the data in database if any error occur during database insertion,
+										 * error file will be generated in Output folder */
+										if(isXMLCreated){
+											 errorDuringInsertion = vsu.insertIntoDB(dispatcher,articleDTO.getOutputXmlFilePath(),context, delegator);
+											 if(errorDuringInsertion){
+												 Debug.log(VishalHelper.ErrorMessages.DATA_NOT_INSERTED);
+											 }
+										}
+										else
+										{
+											Debug.log(VishalHelper.ErrorMessages.XML_NOT_CREATED);
+											errorDuringInsertion = true;
+										}
+										
+										// This is to take latest price from product price and update catalog price .. IMP - this should be after update of product price 
+										// done above.
+										XMLFilePath=VishalServiceUtility.generateFilePath(articleDTO.getOutputXmlFilePath(),articleDTO.getArticlePriceUpdateOutputXMLName());
+										isXMLCreated=vsu.generateXMLToUpdateMultiplePrice(ctx,validRtnArticleDTOLst,XMLFilePath);
+										
+										/* Insert the data in database if any error occur during database insertion,
+										 * error file will be generated in Output folder */
+										if(isXMLCreated){
+											 errorDuringInsertion = vsu.insertIntoDB(dispatcher,articleDTO.getOutputXmlFilePath(),context, delegator);
+											 if(errorDuringInsertion){
+												 Debug.log(VishalHelper.ErrorMessages.DATA_NOT_INSERTED);
+											 }
+										}
+										else{
+											Debug.log(VishalHelper.ErrorMessages.XML_NOT_CREATED);
+											errorDuringInsertion = true;
+										}
+										//BP:21/11/2014: 39266 Article master contain ean should  update Ean master also 
+										createEANFromMainEanOnArticle(ctx, validRtnArticleDTOLst);
+							       }
+						}
+						else{
+							/*
+							 * If the header of file is invalid then Generate an error Excel File.
+							 */
+							Debug.log(VishalHelper.ErrorMessages.INVALID_FILE);
+							errorDuringInsertion = true;
+						}
+					}else
+						{
+							Debug.log(VishalHelper.ErrorMessages.INVALID_COL_VALIDATION_FILE);
+							errorDuringInsertion = true;
+						}
+				}catch(Exception e){
+					errorDuringInsertion = true;
+					Debug.logError(e, module);
+				}
+				/* if the data inserted in database successfully mean errorDuringInsertion = false  
+				 * then generate an excel file which having the content of supplied list of
+				 * objects 
+				 * if any error occur during insertion mean errorDuringInsertion = true
+				 * then generate an error file with error msg.
+				 */
+				if(!errorDuringInsertion){
+						List<Object> rtnArticleDTOLst = (List<Object>)rtnHm.get("PROCESSED_LIST");
+						rtnHm = articleInterface.getListOfListForXLSCreationForImport(rtnArticleDTOLst, headerlist);
+						
+						if (rtnHm != null) {
+								/* Write an Excel file*/
+								//AS:3/12/2014: Issue: 39375 Grocery: All Scheduled job attachment not received
+								errorfilename = null;
+								errorfilename = vsu.generateOutputFile(rtnHm,articleDTO,errorInFileRecords);
+								if(UtilValidate.isNotEmpty(errorfilename)){
+									zipFilesList.add(errorfilename);
+								}
+								Debug.log("write excel successfully");
+								VishalServiceUtility.cleanUpAfterSuccess(articleDTO);
+						}
+				}else{
+					Debug.log("Error in data");
+					VishalServiceUtility.cleanUpAfterUnsuccess(articleDTO);
+					errorDuringInsertion = false;
+				}
+				
+			}
+			//AS:3/12/2014: Issue: 39375 Grocery: All Scheduled job attachment not received
+			if (UtilValidate.isNotEmpty(zipFilesList) && (zipFilesList.size() > 0)) 
+			{
+				
+				String outputzipFilePath = null;
+				outputzipFilePath = vsu.zipFiles(zipFilesList);
+				int index = outputzipFilePath.lastIndexOf("//");
+				String fileName = outputzipFilePath.substring(index + 2);
+				String filePath = outputzipFilePath.substring(0, index +2);
+				String fileMimeType = "application/zip";
+				hm.put("fileName", fileName);
+				hm.put("fileMimeType", fileMimeType);
+				hm.put("filePath", filePath);
+                 String txtLoadedDataFilePath = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-article-loaded-directory"), context);
+	             String tmparticleloadeddirectoryloadedArticleXls = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-article-loaded-directoryloadedArticleXls"), context);
+				    if (new File(txtLoadedDataFilePath).exists())
+		            {
+					     new File(txtLoadedDataFilePath).mkdirs();
+					}
+                    if (!new File(tmparticleloadeddirectoryloadedArticleXls).exists())
+		            {
+		                new File(tmparticleloadeddirectoryloadedArticleXls).mkdirs();
+		            }
+	                if(new File(txtLoadedDataFilePath).exists()) {
+	                	moveFilesInGivenDirectory(exceldir,"txt",txtLoadedDataFilePath, "Article");
+	                }
+	                if(new File(tmparticleloadeddirectoryloadedArticleXls).exists()) {
+	                	moveFilesInGivenDirectory(exceldir,"xls",tmparticleloadeddirectoryloadedArticleXls, "Article");
+	                }
+
+			}
+			if(UtilValidate.isNotEmpty(hm)){
+				resp = ServiceUtil.returnFailure();
+			}else{
+				resp = ServiceUtil.returnSuccess();
+			}
+				
+        }catch (Exception exc){
+        	 Debug.logError(exc, module);
+        }
+        
+        Debug.logInfo(" Method importArticleXls ends", module);
+        //AS:28/11/2014: 39130 Email on schedule jobs 
+        resp.put("rtnHm", hm);
+        return resp;
+    }
+
+	private static void createEANFromMainEanOnArticle(DispatchContext ctx,
+			List<Object> validRtnArticleDTOLst) throws GenericEntityException {
+		for(int i=0;i<validRtnArticleDTOLst.size();i++)  
+		{
+				Article articleDTOEAN = (Article)validRtnArticleDTOLst.get(i);
+			List<GenericValue> productEANInfoList = ctx.getDelegator().findByAnd("EANInfo", UtilMisc.toMap("siteCode", articleDTOEAN.getSiteCode(), "productId",articleDTOEAN.getProductId(), "ean", articleDTOEAN.getMainEAN()), null);
+			if(productEANInfoList == null || productEANInfoList.size() == 0) {
+				GenericValue eanInfoValue = ctx.getDelegator().makeValue("EANInfo");
+				eanInfoValue.put("eanID", ctx.getDelegator().getNextSeqId("EANInfo"));
+				eanInfoValue.put("siteCode", articleDTOEAN.getSiteCode());
+				eanInfoValue.put("productId", articleDTOEAN.getProductId());
+				eanInfoValue.put("ean", articleDTOEAN.getMainEAN());
+				eanInfoValue.create();
+			}
+		}
+	} 
+    
+    public static Map<String, Object> importEanXls(DispatchContext ctx, Map<String, ?> context) 
+    {
+    	
+    	
+    	
+        String exceldir = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "excel-dir"),context);//UtilProperties.getPropertyValue("vishal-setup.properties", "excel-dir");
+    	Iterator fileItr;
+    	List<File> files = VishalImportServices.listFilesForFolder(exceldir);
+    	int fileIndex  = 0;
+    	for (fileItr=files.iterator(); fileItr.hasNext(); ){
+    		
+    		File txtFile = (File)fileItr.next();
+    		String txtFileNamePath = exceldir+txtFile.getName();
+    		List list = null;
+    		try {
+    		    list=VishalImportServices.getBuffereReaderFromFile(new File(txtFileNamePath));//new ArrayList();
+    		}catch(Exception fnfe) {System.out.println(fnfe);}
+    		
+           if ((txtFile.getName()).contains("EAN")) {
+        	   Iterator itr;
+    			 try{
+    		        	int eanIndex = 10;
+    		        	int totalLengthOfEAN = 0;
+    		   			HSSFWorkbook wb = new HSSFWorkbook();
+    		   			HSSFSheet sheet = wb.createSheet("Excel Sheet");
+    		   			HSSFRow rowhead = sheet.createRow((short)0);
+    		   			rowhead.createCell((short) 0).setCellValue("Site Code");
+    		   			rowhead.createCell((short) 1).setCellValue("Change flg");
+    		   			rowhead.createCell((short) 2).setCellValue("Date");
+    		   			rowhead.createCell((short) 3).setCellValue("Article Status");
+    		   			rowhead.createCell((short) 4).setCellValue("Main EAN");
+    		   			rowhead.createCell((short) 5).setCellValue("Article No");
+    		   			rowhead.createCell((short) 6).setCellValue("Sale Unit");
+    		   			
+    		   			
+    		   			String sitecode="",changeFlg="",Date="", articleStatus="",mainEAN="",articleNo="0",saleUnit="",multimrp="";
+    		   			int index=1;
+    		   			for (itr=list.iterator(); itr.hasNext(); ){
+    		   				String str=itr.next().toString();
+    		   				
+    		   				String [] splitSt =str.split("	");
+    		   				if(eanIndex < splitSt.length) {
+    		   					eanIndex = splitSt.length;
+    		   				}
+    		   				if(splitSt.length > 0)
+    		   					sitecode=splitSt[0];
+    		   				if(splitSt.length > 1)
+    		   					changeFlg=splitSt[1];
+    		   				if(splitSt.length > 2)
+    		   					Date=splitSt[2];
+    		   				if(splitSt.length > 3)
+    		   					articleStatus=splitSt[3].substring(0, 1);
+    		   				if(splitSt.length > 4)
+    		   					mainEAN=splitSt[4].replaceFirst ("^0*", "");
+    		   				if(splitSt.length > 5)
+    		   					articleNo=splitSt[5].replaceFirst ("^0*", "");
+    		   				if(splitSt.length > 6)
+    		   					saleUnit=splitSt[6];
+    		   				
+    		   				eanIndex = eanIndex - 7;
+    		   				for(int i=1;i<=eanIndex;i++) {
+    		   		   			rowhead.createCell((short) i+6).setCellValue("Aditional EAN "+i);
+    		   				}
+    		   				HSSFRow row = sheet.createRow((short)index);
+    		   				row.createCell((short)0).setCellValue(sitecode);
+    		   				row.createCell((short)1).setCellValue(changeFlg);
+    		   				row.createCell((short)2).setCellValue(Date);
+    		   				row.createCell((short)3).setCellValue(articleStatus);
+    		   				row.createCell((short)4).setCellValue(mainEAN);
+    		   				row.createCell((short)5).setCellValue(articleNo);
+    		   				row.createCell((short)6).setCellValue(saleUnit);
+    		   				for(int i=1;i<=eanIndex;i++) {
+    		   					if(splitSt.length > (i+6))
+    		   						row.createCell((short)i+6).setCellValue(splitSt[i+6]);
+    		   		   			
+    		   				}
+    		   				sitecode="";changeFlg="";Date=""; articleStatus="";mainEAN="";articleNo="0";saleUnit="";multimrp="";
+    		   				index++;
+    		   			}
+    		   			
+    		   			String fileNameWithOutExt = FilenameUtils.removeExtension(txtFile.getName());
+    		               String  filePathStr = exceldir+"EANMaster-"+fileIndex+".xls";
+    		   			FileOutputStream fileOut = new FileOutputStream(filePathStr);
+    		   			wb.write(fileOut);
+    		   			fileOut.close();
+    		   			sitecode="";changeFlg="";Date=""; articleStatus="";mainEAN="";articleNo="0";saleUnit="";multimrp="";
+    		   			System.out.println("Data is saved in excel file.");
+    		   			}
+    		   			catch(Exception e){System.out.println(e);}
+    			
+    		}
+    		fileIndex++;
+    	}
+
+    	Debug.logInfo(" Method importEanXls starts", module);
+        LocalDispatcher dispatcher = ctx.getDispatcher();
+Delegator delegator = ctx.getDelegator();
+        GenericValue userLogin = (GenericValue)context.get("userLogin");
+        HashMap rtnHm = new HashMap() ;	
+        //AS:28/11/2014: 39130 Email on schedule jobs
+        Map<String, String> hm = new HashMap<String, String>();
+        Map<String, Object> resp = ServiceUtil.returnFailure();
+        Boolean errorDuringInsertion = false;
+        Boolean errorInFileRecords = false;
+        ArrayList<String[]> headerlist = null;
+        EanDTO eanDTO = new EanDTO(true);
+        String XMLFilePath;
+        boolean isXMLCreated=false;	
+		EANInterface eanInterface = new EANInterface();
+		ReadValidationXML readxml = new ReadValidationXML();
+		VishalServiceUtility vsu = new VishalServiceUtility();
+		String errorfilename = null;
+		List<String> zipFilesList = new ArrayList<String>();
+        try 
+        {
+	        	/*
+				 * Get the Column Dto map by providing the validation xml file. 
+				 * 
+				 */
+        		
+				XMLFilePath=VishalServiceUtility.generateFilePath(eanDTO.getValidationXMLFilePath(),eanDTO.getValidationXMLFileName());
+				Map<String, String []> eanColMap = readxml.readValidationXML(XMLFilePath);
+				
+
+
+				List<String> filesToProcess = VishalServiceUtility.getFileToCrawl(eanDTO.getExcelFilePath(),eanDTO.getExcelFileName());
+				
+				for(int file=0; file < filesToProcess.size(); file++){
+					eanDTO.setExcelFileName(filesToProcess.get(file));
+				
+					try{	
+						if(UtilValidate.isNotEmpty(userLogin)) {
+                    	    userLogin = delegator.findOne("UserLogin", UtilMisc.toMap("userLoginId", "admin"), true);
+                    	}
+						VishalServiceUtility.copyFileToProcessedDirAndRename(eanDTO);
+					/*
+					 * Initial Validation of Article file to check it has valid header or not to process.
+					 * It will return map with 3 keys ISVALIDFILE, HEADERLIST and PROCESSED_LIST.
+					 * ISVALIDFILE will tells the validity of file true(valid) or false (Invalid).
+					 * HEADERLIST will have header map with its validation rules.
+					 * PROCESSED_LIST will have error messages if file is invalid to generate new error xls.
+					 */
+					if(!eanColMap.isEmpty())
+		        		{
+							rtnHm = vsu.validateFile(eanDTO,eanColMap);
+							 headerlist = (ArrayList<String[]>) rtnHm.get("HEADERLIST");
+							
+							/*
+							 * If file's headers are valid file then validate and get the data from file.
+							 * It will return map with 3 keys ERROR_IN_FILE, VALID_ROW_LIST and PROCESSED_LIST.
+							 * ERROR_IN_FILE will tells if any invalid row in file then generate error file else generate completed file.
+							 * VALID_ROW_LIST will have only valid row to generate xml file to put data in database.
+							 * PROCESSED_LIST will have all the valid and invalid row  generate new error or completed xls.	
+							 */
+							
+							if (rtnHm.containsKey("ISVALIDFILE") && (Boolean) rtnHm.get("ISVALIDFILE")) {
+								rtnHm = eanInterface.validateAndGetEANFileData(ctx,eanDTO,headerlist);
+									
+									/*
+									 * Create an XML file from returned Valid EAN DTO List.
+									 */
+									List<Object> validRtnEanDTOLst = (List<Object>)rtnHm.get("VALID_ROW_LIST");
+									errorInFileRecords = (Boolean) rtnHm.get("ERROR_IN_FILE");
+									
+									
+									/*
+									 * Create an BigFish specific XML file from returned EAN DTO List.
+									 * Pass the  VALID_ROW_LIST -> validvalidRtnArticleDTOLstRtnTaxDTOLst, column Dto map
+									 *  Template according to which file would be generated and file path
+									 *  where xml file will be generated.
+									 */
+															
+									if(!validRtnEanDTOLst.isEmpty())
+									{
+										XMLFilePath=VishalServiceUtility.generateFilePath(eanDTO.getValidationXMLFilePath(),eanDTO.getEanFacilityValidationXML());
+										Map<String, String []> eanBigfishFacilityColMap = readxml.readValidationXML(XMLFilePath);
+										
+										XMLFilePath=VishalServiceUtility.generateFilePath(eanDTO.getValidationXMLFilePath(),eanDTO.getEanInfoValidationXML());
+										Map<String, String []> eanBigfishColMap = readxml.readValidationXML(XMLFilePath);
+										
+										 
+										XMLFilePath=VishalServiceUtility.generateFilePath(eanDTO.getOutputXmlFilePath(),eanDTO.getEanFacilityOutputXMLName());
+										isXMLCreated=VishalServiceUtility.generateXMLForDB(validRtnEanDTOLst,eanBigfishFacilityColMap,eanDTO.getXmlEANFacilityTemplate(),XMLFilePath,false);
+										
+										XMLFilePath=VishalServiceUtility.generateFilePath(eanDTO.getOutputXmlFilePath(),eanDTO.getEanInfoOutputXMLName());
+										isXMLCreated=VishalServiceUtility.generateXMLForDB(validRtnEanDTOLst,eanBigfishColMap,eanDTO.getXmlEANInfoTemplate(),XMLFilePath,true);
+															
+										/* Insert the data in database if any error occur during database insertion,
+										 * error file will be generated in Output folder */
+										if(isXMLCreated){
+
+
+											 errorDuringInsertion = vsu.insertIntoDB(dispatcher,eanDTO.getOutputXmlFilePath(),context, delegator);
+											 if(errorDuringInsertion){
+												 Debug.log(VishalHelper.ErrorMessages.DATA_NOT_INSERTED);
+		
+											 }
+										}
+										else{
+											Debug.log(VishalHelper.ErrorMessages.XML_NOT_CREATED);
+											errorDuringInsertion = true;
+										}	
+									}
+								}
+								else{
+									/*
+									 * If the header of file is invalid then Generate an error Excel File.
+									 */
+									Debug.log(VishalHelper.ErrorMessages.INVALID_FILE);
+									errorDuringInsertion = true;
+								}
+		        		}else{
+							Debug.log(VishalHelper.ErrorMessages.INVALID_COL_VALIDATION_FILE);
+							errorDuringInsertion = true;
+						}
+					}catch(Exception e){
+					errorDuringInsertion = true;
+					Debug.logError(e, module);
+				}
+				/* if the data inserted in database successfully mean errorDuringInsertion = false  
+				 * then generate an excel file which having the content of supplied list of
+				 * objects in the form of  sheet with its validity status.
+				 * if any error occur during insertion mean errorDuringInsertion = true
+				 * then generate an error file with error msg.
+				 */
+				if(!errorDuringInsertion){
+						if (rtnHm != null) {
+								/* Write an Excel file*/
+								//AS:3/12/2014: Issue: 39375 Grocery: All Scheduled job attachment not received
+								errorfilename = null;
+								errorfilename = vsu.generateOutputFile(rtnHm,eanDTO,errorInFileRecords);
+								if(UtilValidate.isNotEmpty(errorfilename)){
+								zipFilesList.add(errorfilename);
+								}
+								Debug.log("write excel successfully");
+								VishalServiceUtility.cleanUpAfterSuccess(eanDTO);
+						}
+				}else{
+					Debug.log("Error in data");
+					VishalServiceUtility.cleanUpAfterUnsuccess(eanDTO);
+					errorDuringInsertion = false;
+				}
+			}
+				//AS:3/12/2014: Issue: 39375 Grocery: All Scheduled job attachment not received
+				if (UtilValidate.isNotEmpty(zipFilesList) && (zipFilesList.size() > 0)) 
+				{
+					String outputzipFilePath = null;
+					outputzipFilePath = vsu.zipFiles(zipFilesList);
+					int index = outputzipFilePath.lastIndexOf("//");
+					String fileName = outputzipFilePath.substring(index + 2);
+					String filePath = outputzipFilePath.substring(0, index +2);
+					String fileMimeType = "application/zip";
+					hm.put("fileName", fileName);
+					hm.put("fileMimeType", fileMimeType);
+					hm.put("filePath", filePath);
+					
+					String txtLoadedDataFilePath = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-article-loaded-directory"), context);
+		             String tmparticleloadeddirectoryloadedArticleXls = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-article-loaded-directoryloadedArticleXls"), context);
+
+						if (!new File(txtLoadedDataFilePath).exists())
+			            {
+			                new File(txtLoadedDataFilePath).mkdirs();
+			            }
+						if (!new File(tmparticleloadeddirectoryloadedArticleXls).exists())
+			            {
+			                new File(tmparticleloadeddirectoryloadedArticleXls).mkdirs();
+			            }
+		                if(new File(txtLoadedDataFilePath).exists()) {
+		                	moveFilesInGivenDirectory(exceldir,"txt",txtLoadedDataFilePath, "EAN");
+		                }
+		                if(new File(tmparticleloadeddirectoryloadedArticleXls).exists()) {
+		                	moveFilesInGivenDirectory(exceldir,"xls",tmparticleloadeddirectoryloadedArticleXls, "EAN");
+		                }
+				}
+				if(UtilValidate.isNotEmpty(hm)){
+					resp = ServiceUtil.returnFailure();
+				}else{
+					resp = ServiceUtil.returnSuccess();
+				}
+        }catch (Exception exc){
+       		 Debug.logError(exc, module);
+        }
+        
+        Debug.logInfo(" Method importEanXls ends", module);
+        //AS:28/11/2014: 39130 Email on schedule jobs
+        resp.put("rtnHm", hm);
+		return resp;
+        
+    }   
+    
+    
+    public static Map<String, Object> importRegionsPostalCodeFeed(DispatchContext ctx, Map<String, ?> context)
+         {
+    	   Map resp = ServiceUtil.returnSuccess();
+             LocalDispatcher dispatcher = ctx.getDispatcher();
+             Delegator delegator = ctx.getDelegator();
+             List<String> messages = FastList.newInstance();
+
+             String xlsDataFilePath = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionPostalCodeFeed-dir"), context);
+             GenericValue userLogin = (GenericValue)context.get("userLogin");
+             
+             //String xmlDataDirPath =
+             FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("import","import.dir"), context);
+             Boolean removeAll = (Boolean) context.get("removeAll");
+             Boolean autoLoad = (Boolean) context.get("autoLoad");
+             String productStoreId = (String) context.get("productStoreId");
+
+             if (removeAll == null) removeAll = Boolean.FALSE;
+             if (autoLoad == null) autoLoad = Boolean.FALSE;
+
+             File inputWorkbook = null;
+             File baseDataDir = null;
+             BufferedWriter fOutProduct=null;
+
+             inputWorkbook = new File(xlsDataFilePath);
+             //Location to save the Bigfish XML
+             String bigfishXmlFile = UtilDateTime.nowAsString()+".xml";
+             String dumpDirPath= FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionPostalCodeFeedDump-dir"),context);
+             if (!new File(dumpDirPath).exists())
+             {
+                 new File(dumpDirPath).mkdirs();
+             }
+
+             // ####################################################################
+             //read the temp xls file and generate Ofbiz xml and DUMP to DB
+             // ####################################################################
+             if (inputWorkbook != null)
+             {
+                 try
+                 {
+                	 if(UtilValidate.isNotEmpty(userLogin)) {
+                 	    userLogin = delegator.findOne("UserLogin", UtilMisc.toMap("userLoginId", "admin"), true);
+                 	}
+                	 
+                     WorkbookSettings ws = new WorkbookSettings();
+                     ws.setLocale(new Locale("en", "EN"));
+                     Workbook wb = Workbook.getWorkbook(inputWorkbook,ws);
+
+                     ObjectFactory factory = new ObjectFactory();
+
+                     RegionPostalcodeType regionPostalcodeType = null;
+
+
+                     // Gets the sheets from workbook
+                     try
+                     {
+	                     Sheet s = wb.getSheet(0);
+	                     String sTabName=s.getName();
+	                     List dataRows =buildDataRows(buildRegionPostalCodeHeader(),s);
+	                     buildRegionPostalCodeXmlFromXls(factory,dataRows,delegator);
+	                     Map entityImportDirParams = UtilMisc.toMap("path", dumpDirPath, "userLogin", context.get("userLogin"));
+         		        Map result = dispatcher.runSync("entityImportDirectory",  entityImportDirParams);
+         			    List<String> serviceMsg = (List)result.get("messages");
+         			    for (String msg: serviceMsg)
+         			    {
+         			        messages.add(msg);
+         			    }
+         			    if(messages.size() > 0 && messages.contains("SUCCESS"))
+         			    {
+         			    	//new File(dumpDirPath).delete();
+         			    	VishalServiceUtility.deleteFilesFromDir(dumpDirPath);
+         			    	String time = new java.text.SimpleDateFormat("yyyyMMddhhmm").format(new Date());
+         			    	String renamefilename = xlsDataFilePath.substring(0,xlsDataFilePath.indexOf("."))+ time + ".loaded.xls";
+         			    	File renameFile = new File(renamefilename);
+         			    	inputWorkbook.renameTo(renameFile);
+         			    }
+             			//File to store data in form of CSV
+                     } catch (Exception exc) {
+                         Debug.logError(exc, module);
+                     }
+                     finally
+                     {
+                         try
+                         {
+                             if (fOutProduct != null)
+                             {
+                             	fOutProduct.close();
+                             }
+                         }
+                         catch (IOException ioe)
+                         {
+                             Debug.logError(ioe, module);
+                         }
+                     }
+
+                 }
+                 catch (BiffException be)
+                 {
+                     Debug.logError(be, module);
+                 }
+                 catch (Exception exc)
+                 {
+                     Debug.logError(exc, module);
+                 }
+                 finally
+                 {
+                     //inputWorkbook.delete();
+                 }
+             }
+             return resp;
+
+         }
+         public static List buildRegionPostalCodeHeader() {
+             List headerCols = FastList.newInstance();
+        	    headerCols.add("RegionId");
+        	    headerCols.add("postal code");
+        	    headerCols.add("address1");
+        	    headerCols.add("address2");
+        	    headerCols.add("city");
+        	    headerCols.add("state");
+        	    headerCols.add("country");
+        	    headerCols.add("landmark");
+        	    return headerCols;
+
+            }
+         public static List buildRegionProductHeader() {
+             List headerCols = FastList.newInstance();
+        	    headerCols.add("MasterProductId");
+        	    headerCols.add("Regions");
+        	    headerCols.add("LastQuantityUpdate");
+        	    return headerCols;
+
+            }
+         public static void buildRegionPostalCodeXmlFromXls(ObjectFactory factory, List dataRows, Delegator delegator){
+         	RegionPostalCodeMappingType regionPostalCodeMappingType = null;
+         	List reList = null;
+         	StringBuilder  rowString = new StringBuilder();
+         	BufferedWriter bwOutFile=null;
+         	File fOutFile = null;
+         	String xmlDataDirPath =FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionPostalCodeFeedDump-dir"),context);
+         	String storePrefix =FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("client-deployment.properties", "store.storePrefix"),context);
+         	fOutFile = new File(xmlDataDirPath, "REGION-POSTALCODE.xml");
+             try {
+    			if (fOutFile.createNewFile()) {
+    			    bwOutFile = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fOutFile), "UTF-8"));
+    			    writeXmlHeader(bwOutFile);
+    			}
+    		} catch (UnsupportedEncodingException e1) {
+    			// TODO Auto-generated catch block
+    			e1.printStackTrace();
+    		} catch (FileNotFoundException e1) {
+    			// TODO Auto-generated catch block
+    			e1.printStackTrace();
+    		} catch (IOException e1) {
+    			// TODO Auto-generated catch block
+    			e1.printStackTrace();
+    		}
+         	String facilityId = null;
+         	String contactMechId = null;
+         	String postalCode = null;
+         	String city = null;
+         	String address1 = null;
+         	String address2 = null;
+         	String stateProvinceGeoId = null;
+         	String countryGeoId = null;
+         	String landmark = null;
+         	try {
+         		for (int i=0 ; i < dataRows.size() ; i++) {
+         			Map mRow = (Map)dataRows.get(i);
+         			facilityId =  (String)mRow.get("RegionId");
+         	    	contactMechId = contactMechId = (String)delegator.getNextSeqId("ContactMech");//(String) mRow.get("RegionId");
+         	    	postalCode =  (String)mRow.get("postal code");
+         	    	city = (String)mRow.get("city");
+         	    	address1 = (String) mRow.get("address1");
+         	    	address2 = (String)mRow.get("address2");
+         	    	stateProvinceGeoId = (String) mRow.get("state");
+         	    	countryGeoId = (String)mRow.get("country");
+         	    	landmark = (String)mRow.get("landmark");
+         			rowString.setLength(0);
+         		    rowString.append("<" + "Facility" + " ");
+                     rowString.append("facilityId" + "=\"" + facilityId + "\" ");
+                     rowString.append("facilityTypeId" + "=\"WAREHOUSE" + "\" ");
+                     rowString.append("ownerPartyId" + "=\"" + storePrefix+"_COMPANY" + "\" ");
+                     rowString.append("defaultInventoryItemTypeId" + "=\"" +"NON_SERIAL_INV_ITEM" + "\" ");
+                     rowString.append("facilityName" + "=\"" + facilityId + "-"+ address1 +"-"+ stateProvinceGeoId +"\" ");
+                     rowString.append("/>");
+                     bwOutFile.write(rowString.toString());
+                     bwOutFile.newLine();
+                     rowString.setLength(0);
+         		    rowString.append("<" + "ContactMech" + " ");
+                     rowString.append("contactMechId" + "=\"" + contactMechId + "\" ");
+                     rowString.append("/>");
+                     bwOutFile.write(rowString.toString());
+                     bwOutFile.newLine();
+                     rowString.setLength(0);
+         		    rowString.append("<" + "PostalAddress" + " ");
+                     rowString.append("contactMechId" + "=\"" + contactMechId + "\" ");
+                     rowString.append("postalCode" + "=\"" + postalCode + "\" ");
+                     rowString.append("city" + "=\"" + city + "\" ");
+                     rowString.append("address1" + "=\"" + address1 + "\" ");
+                     rowString.append("address2" + "=\"" + address2 + "\" ");
+                     rowString.append("countryGeoId" + "=\"" + countryGeoId + "\" ");
+                     rowString.append("address3" + "=\"" + stateProvinceGeoId + "\" ");
+                     rowString.append("landMark" + "=\"" + landmark + "\" ");
+                     rowString.append("/>");
+                     bwOutFile.write(rowString.toString());
+                     bwOutFile.newLine();
+                     rowString.setLength(0);
+         		     rowString.append("<" + "FacilityContactMech" + " ");
+                     rowString.append("facilityId" + "=\"" + facilityId + "\" ");
+                     rowString.append("contactMechId" + "=\"" + contactMechId + "\" ");
+                     rowString.append("fromDate" + "=\"" +  UtilDateTime.nowTimestamp() + "\" ");
+                     rowString.append("/>");
+                     bwOutFile.write(rowString.toString());
+                     bwOutFile.newLine();
+         		}
+         		bwOutFile.flush();
+         	    writeXmlFooter(bwOutFile);
+
+         	} catch (Exception e) {
+         		Debug.logError(e, module);
+         	}
+
+         }
+         public static void buildRegionProductXmlFromXls(ObjectFactory factory, List dataRows, List inValidProductIds, List inValidFacilityIds, Delegator delegator){
+         	RegionPostalCodeMappingType regionPostalCodeMappingType = null;
+         	String inventoryItemId = null;
+         	List reList = null;
+         	StringBuilder  rowString = new StringBuilder();
+         	BufferedWriter bwOutFile=null;
+         	File fOutFile = null;
+         	String xmlDataDirPath =FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionProductDump-dir"), context);
+         	String storePrefix =FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("client-deployment.properties", "store.storePrefix"),context);
+
+         	fOutFile = new File(xmlDataDirPath, "REGION-PRODUCT.xml");
+             try {
+    			if (fOutFile.createNewFile()) {
+    			    bwOutFile = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fOutFile), "UTF-8"));
+    			    writeXmlHeader(bwOutFile);
+    			}
+    		} catch (UnsupportedEncodingException e1) {
+    			// TODO Auto-generated catch block
+    			e1.printStackTrace();
+    		} catch (FileNotFoundException e1) {
+    			// TODO Auto-generated catch block
+    			e1.printStackTrace();
+    		} catch (IOException e1) {
+    			// TODO Auto-generated catch block
+    			e1.printStackTrace();
+    		}
+         	String facilityId = null;
+         	String productId = null;
+         	String newQuantityOnHandTotal = null;
+         	StringBuffer facLocString = new StringBuffer();
+         	facLocString.append("locationSeqId" + "=\"" + "TLTLTLLL01" + "\" ");
+         	facLocString.append("locationTypeEnumId" + "=\"" + "FLT_PICKLOC" + "\" ");
+         	facLocString.append("areaId" + "=\"" + "TL" + "\" ");
+         	facLocString.append("aisleId" + "=\"" + "TL" + "\" ");
+         	facLocString.append("sectionId" + "=\"" + "TL" + "\" ");
+         	facLocString.append("levelId" + "=\"" + "LL" + "\" ");
+         	facLocString.append("positionId" + "=\"" + "01" + "\" ");
+         	StringBuffer locString = new StringBuffer();
+         	locString.append("locationSeqId" + "=\"" + "TLTLTLUL01" + "\" ");
+         	locString.append("locationTypeEnumId" + "=\"" + "FLT_BULK" + "\" ");
+         	locString.append("areaId" + "=\"" + "TL" + "\" ");
+         	locString.append("aisleId" + "=\"" + "TL" + "\" ");
+         	locString.append("sectionId" + "=\"" + "TL" + "\" ");
+         	locString.append("levelId" + "=\"" + "LL" + "\" ");
+         	locString.append("positionId" + "=\"" + "01" + "\" ");
+
+            
+         	try {
+         		for (int i=0 ; i < dataRows.size() ; i++) {
+         			try{
+		         			Map mRow = (Map)dataRows.get(i);
+		         			
+		         			facilityId =  (String)mRow.get("Regions");
+		         			productId = (String) mRow.get("MasterProductId");
+		         			newQuantityOnHandTotal =  (String)mRow.get("LastQuantityUpdate");
+		         			if(!inValidProductIds.contains(productId)) {
+		                     rowString.setLength(0);
+		         		     rowString.append("<" + "ProductFacility" + " ");
+		                     rowString.append("productId" + "=\"" + productId + "\" ");
+		                     rowString.append("facilityId" + "=\"" + facilityId + "\" ");
+		                     rowString.append("minimumStock" + "=\"" + 1 + "\" ");
+		                     rowString.append("reorderQuantity" + "=\"" + 1 + "\" ");
+		                     rowString.append("daysToShip" + "=\"" + 3 + "\" ");
+		                    // rowString.append("lastInventoryCount" + "=\"" + lastInventoryCount + "\" ");
+		                     rowString.append("/>");
+		                     
+		                     //Add Bigfish inventory 
+		                     rowString.append("<" + "ProductAttribute" + " ");
+		                     rowString.append("productId" + "=\"" + productId + "\" ");
+		                     rowString.append("attrName" + "=\"" + "BF_INVENTORY_TOT" + "\" ");
+		                     rowString.append("attrValue" + "=\"" + newQuantityOnHandTotal + "\" ");
+		                     rowString.append("/>");
+		                     
+		                     rowString.append("<" + "ProductAttribute" + " ");
+		                     rowString.append("productId" + "=\"" + productId + "\" ");
+		                     rowString.append("attrName" + "=\"" + "BF_INVENTORY_WHS" + "\" ");
+		                     rowString.append("attrValue" + "=\"" + newQuantityOnHandTotal + "\" ");
+		                     rowString.append("/>");
+		                     
+		                     rowString.append("<" + "FacilityLocation" + " ");
+		                     rowString.append("facilityId" + "=\"" + facilityId + "\" ");
+		                     rowString.append(facLocString.toString());
+		                     rowString.append("/>");
+		                     
+		                     rowString.append("<" + "FacilityLocation" + " ");
+		                     rowString.append("facilityId" + "=\"" + facilityId + "\" ");
+		                     rowString.append(locString.toString());
+		                     rowString.append("/>");
+		
+		         		     rowString.append("<" + "ProductFacilityLocation" + " ");
+		                     rowString.append("productId" + "=\"" + productId + "\" ");
+		                     rowString.append("facilityId" + "=\"" + facilityId + "\" ");
+		                     rowString.append("minimumStock" + "=\"" + 1 + "\" ");
+		                     rowString.append("locationSeqId" + "=\"" + "TLTLTLLL01" + "\" ");
+		                     rowString.append("moveQuantity" + "=\"" + 1 + "\" ");
+		                     rowString.append("/>");
+		                  
+		                  //  GenericValue existedInventoryItemId = EntityUtil.getFirst(delegator.findList("InventoryItem", EntityCondition.makeCondition(EntityCondition.makeCondition("productId", EntityOperator.EQUALS, productId), EntityOperator.AND, EntityCondition.makeCondition("facilityId" , EntityOperator.EQUALS, facilityId)), null, UtilMisc.toList("lastUpdatedStamp"), null, false));
+		                     List  inventoryItemList = _delegator.findList("InventoryItem", EntityCondition.makeCondition(EntityCondition.makeCondition("productId", EntityOperator.EQUALS, productId), EntityOperator.AND, EntityCondition.makeCondition("facilityId" , EntityOperator.EQUALS, facilityId)), null, UtilMisc.toList("lastUpdatedStamp"), null, false);
+		                     GenericValue existedInventoryItemId = EntityUtil.getFirst(inventoryItemList);
+		                     
+		                     BigDecimal currentQuantityOnHandTotal = new BigDecimal(0);
+		                     if (UtilValidate.isNotEmpty(existedInventoryItemId)){
+		                    	 inventoryItemId = existedInventoryItemId.getString("inventoryItemId");
+		                    	 currentQuantityOnHandTotal = existedInventoryItemId.getBigDecimal("quantityOnHandTotal");
+		                     }else{
+		                    	 inventoryItemId = delegator.getNextSeqId("InventoryItem");
+								 
+								 rowString.append("<" + "InventoryItem" + " ");
+		                         rowString.append("productId" + "=\"" + productId + "\" ");
+		                         rowString.append("facilityId" + "=\"" + facilityId + "\" ");
+		                         rowString.append("inventoryItemTypeId" + "=\"" + "NON_SERIAL_INV_ITEM" + "\" ");
+		                         rowString.append("datetimeReceived" + "=\"" + UtilDateTime.nowTimestamp() + "\" ");
+		                         rowString.append("currencyUomId" + "=\"" +  "INR" + "\" ");
+		                         rowString.append("locationSeqId" + "=\"" + "TLTLTLLL01" + "\" ");
+		                         rowString.append("ownerPartyId" + "=\"" + storePrefix+"_COMPANY" + "\" ");
+		                         rowString.append("quantityOnHandTotal" +  "=\"" + "0" + "\" ");
+		                         rowString.append("availableToPromiseTotal" +  "=\"" + "0" + "\" ");
+		                         rowString.append("accountingQuantityTotal" +  "=\"" + "0" + "\" ");
+		                         rowString.append("inventoryItemId" + "=\"" + inventoryItemId + "\" ");
+		                         rowString.append("/>");
+		                     }
+		                     
+		                     BigDecimal newQuantityOnHandTotalBD = new BigDecimal(newQuantityOnHandTotal);
+		                     if(UtilValidate.isNotEmpty(newQuantityOnHandTotalBD)) {
+		                     BigDecimal deltaQuantityHandOnTotal = newQuantityOnHandTotalBD.subtract(currentQuantityOnHandTotal);
+		                     //BP:added an condition where prevent zero row in db for IID
+			                    if(UtilValidate.isNotEmpty(deltaQuantityHandOnTotal) && deltaQuantityHandOnTotal.compareTo(BigDecimal.ZERO) != 0) {
+				                     String inventoryItemDetailSeqId = delegator.getNextSeqId("InventoryItemDetail");
+				                	 rowString.append("<" + "InventoryItemDetail" + " ");
+				                     rowString.append("inventoryItemId" + "=\"" + inventoryItemId + "\" ");
+				                     rowString.append("inventoryItemDetailSeqId" + "=\"" + inventoryItemDetailSeqId + "\" ");
+				                     rowString.append("effectiveDate" + "=\"" + UtilDateTime.nowTimestamp() + "\" ");
+				                     rowString.append("availableToPromiseDiff" + "=\"" + deltaQuantityHandOnTotal + "\" ");
+				                     rowString.append("quantityOnHandDiff" + "=\"" + deltaQuantityHandOnTotal + "\" ");
+				                     rowString.append("accountingQuantityDiff" + "=\"" + 0 + "\" ");
+				                     rowString.append("/>");
+			                    }
+		                     }
+		                     bwOutFile.write(rowString.toString());
+		                     bwOutFile.newLine();
+		         		  }
+         			}
+         			catch(Throwable e)
+         			{
+         				Debug.logError(e, module);
+         			}
+         		}
+         		bwOutFile.flush();
+         	    writeXmlFooter(bwOutFile);
+
+         	} catch (Exception e) {
+         		Debug.logError(e, module);
+         	}
+
+         }
+         public static Map<String, Object> importRegionProductFeed(DispatchContext ctx, Map<String, ?> context)
+         {
+             Map resp = ServiceUtil.returnSuccess();
+             LocalDispatcher dispatcher = ctx.getDispatcher();
+             Delegator delegator = ctx.getDelegator();
+             //AS:28/11/2014: 39130 Email on schedule jobs
+             Map<String, String> hm = new HashMap<String, String>();
+             List<String> messages = FastList.newInstance();
+             String PROD_REG_FILE_PREFIX = "Product-region-feed";
+_delegator = ctx.getDelegator();
+
+            //===========================================================================
+             String exceldir = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionProduct-directory"),context);//UtilProperties.getPropertyValue("vishal-setup.properties", "excel-dir");
+         	Iterator fileItr; 
+         	List<File> files = VishalImportServices.listFilesForFolder(exceldir);
+         	int fileIndex  = 0;
+         	List<File> xlsFileList = FastList.newInstance();
+         	for (fileItr=files.iterator(); fileItr.hasNext(); ){
+         		
+         		File txtFile = (File)fileItr.next();
+         		String txtFileNamePath = exceldir+txtFile.getName();
+         		List list = null;
+         		try {
+         		    list=VishalImportServices.getBuffereReaderFromFile(new File(txtFileNamePath));//new ArrayList();
+         		}catch(Exception fnfe) {System.out.println(fnfe);}
+         		
+         		
+                 if ((txtFile.getName()).contains(PROD_REG_FILE_PREFIX)) {
+         			try{
+         				Iterator itr;
+         				HSSFWorkbook wb = new HSSFWorkbook();
+         				HSSFSheet sheet = wb.createSheet("Excel Sheet");
+         				HSSFRow rowhead = sheet.createRow((short)0);
+         				rowhead.createCell((short) 0).setCellValue("MasterProductId");
+         				rowhead.createCell((short) 1).setCellValue("Regions");
+         				rowhead.createCell((short) 2).setCellValue("LastQuantityUpdate");
+         				String masterProductId="",regions="",lastQuantityUpdate="";
+         				int index=1;
+     					String siteCode = null;
+         				for (itr=list.iterator(); itr.hasNext(); ){
+         					String str=itr.next().toString();
+         					
+         					String [] splitSt =str.split("	");
+         					//for (int i = 0 ; i < splitSt.length ; i++) {
+         					if(splitSt.length > 0) {
+         						masterProductId=splitSt[0].replaceFirst ("^0*", "");
+     						}
+         					if(splitSt.length > 1) {
+         						regions=splitSt[1].replaceFirst ("^0*", "");
+     						}
+     						if(index == 1) {
+     							siteCode = regions;
+     						}
+         					if(splitSt.length > 2) {
+         						lastQuantityUpdate=splitSt[2];
+     						}
+
+         					HSSFRow row = sheet.createRow((short)index);
+         					row.createCell((short)0).setCellValue(masterProductId);
+         					row.createCell((short)1).setCellValue(regions);
+         					row.createCell((short)2).setCellValue(lastQuantityUpdate);
+
+         					masterProductId="";
+         					regions="";
+         					lastQuantityUpdate="";
+         					
+         					index++;
+         				}
+         				
+         				String fileNameWithOutExt = FilenameUtils.removeExtension(txtFile.getName());
+         				String loadingTime = new java.text.SimpleDateFormat("yyyyMMddhhmm").format(new Date());
+         	            String  filePathStr = exceldir+PROD_REG_FILE_PREFIX + "-"+fileIndex+"-"+siteCode+"-"+loadingTime+".xls";
+         	            final File xlsFilePathStr = new File(filePathStr);
+         	            xlsFileList.add(xlsFilePathStr);
+         	            
+         				FileOutputStream fileOut = new FileOutputStream(filePathStr);
+     					Debug.logInfo(" Data is saved in excel file. for "+txtFile.getName(), module);
+         				wb.write(fileOut);
+         				fileOut.close();
+     					
+     					
+     						
+         				} catch(Exception e) {
+     					    System.out.println(e);
+     					}
+         		}
+     			
+         		fileIndex++;
+         	}
+             //=========================================================================
+             String xlsDataFilePath =
+            	 FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionProduct-directory"), context);
+             List<File> xlsFiles = xlsFileList;//VishalImportServices.listFilesForFolder(xlsDataFilePath, ".xls");
+             String dumpDirPath=
+            	 FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionProductDump-dir"), context);
+             
+             
+             //=================================================================================================
+             Iterator xlsFileItr; 
+             for (xlsFileItr=xlsFiles.iterator(); xlsFileItr.hasNext(); ){
+          		
+          		File xlsFile = (File)xlsFileItr.next();
+          		String xlsFileNamePath = exceldir+xlsFile.getName();
+          		List list = null;
+          		GenericValue userLogin = (GenericValue)context.get("userLogin");
+                Boolean removeAll = (Boolean) context.get("removeAll");
+                Boolean autoLoad = (Boolean) context.get("autoLoad");
+
+                if (removeAll == null) removeAll = Boolean.FALSE;
+                if (autoLoad == null) autoLoad = Boolean.FALSE;
+                List<String> inValidFacilityIds = FastList.newInstance();
+                List<String> inValidProductIds = FastList.newInstance();
+                File inputWorkbook = null;
+                File baseDataDir = null;
+                BufferedWriter fOutProduct=null;
+
+                inputWorkbook = new File(xlsFileNamePath);
+                //Location to save the Bigfish XML
+                String bigfishXmlFile = UtilDateTime.nowAsString()+".xml";
+                if (!new File(dumpDirPath).exists())
+                {
+                    new File(dumpDirPath).mkdirs();
+                }
+
+                //   ####################################################################
+                //read the temp xls file and generate Ofbiz xml and DUMP to DB
+                //   ####################################################################
+                if (inputWorkbook != null)
+                {
+                    try
+                    {
+                    	if(UtilValidate.isNotEmpty(userLogin)) {
+                    	    userLogin = ctx.getDelegator().findByPrimaryKey("UserLogin", UtilMisc.toMap("userLoginId", "admin"));
+;
+                    	}
+
+                        WorkbookSettings ws = new WorkbookSettings();
+                        ws.setLocale(new Locale("en", "EN"));
+                        Workbook wb = Workbook.getWorkbook(inputWorkbook,ws);
+
+                        ObjectFactory factory = new ObjectFactory();
+
+                        RegionPostalcodeType regionPostalcodeType = null;
+
+
+                        // Gets the sheets from workbook
+                        try
+                        {
+                            Sheet s = wb.getSheet(0);
+                            String sTabName=s.getName();
+                            String regionId =null;
+                            String productId =null;
+                            List<Map> dataRows = buildDataRows(buildRegionProductHeader(),s);
+                            if(UtilValidate.isNotEmpty(dataRows))
+                            {
+                            	List<GenericValue> genFacilityIdList = delegator.findList("Facility", null, UtilMisc.toSet("facilityId"), null, null, false);
+                            	List<GenericValue> genProductIdList = delegator.findList("Product", null, UtilMisc.toSet("productId"), null, null, false);
+                            	List<String> facilityIdList = EntityUtil.getFieldListFromEntityList(genFacilityIdList, "facilityId", true);
+                            	List<String> productIdList = EntityUtil.getFieldListFromEntityList(genProductIdList, "productId", true);
+                                for(Map dataMap : dataRows)
+                                {
+                                	regionId = (String) dataMap.get("Regions");
+                                	productId = (String) dataMap.get("MasterProductId");
+                                	if(UtilValidate.isNotEmpty(regionId) && UtilValidate.isNotEmpty(productId))
+                                	{
+                                		if(!facilityIdList.contains(regionId))
+                                    	{
+                                			inValidFacilityIds.add(regionId);
+                                    	}
+                                		if(!productIdList.contains(productId))
+                                    	{
+                                			inValidProductIds.add(productId);
+                                    	}
+                                	}
+                                }
+                            }
+                             
+                           // if(UtilValidate.isEmpty(inValidFacilityIds)&&UtilValidate.isEmpty(inValidProductIds))
+                          //  {
+                            	buildRegionProductXmlFromXls(factory, dataRows, inValidProductIds, inValidFacilityIds, delegator);
+                                Map entityImportDirParams = UtilMisc.toMap("path", dumpDirPath, "userLogin", userLogin);
+                    			try
+                    			{
+                    		        Map result =  dispatcher.runSync("entityImportDirectory", entityImportDirParams);
+                    			    List<String> serviceMsg = (List)result.get("messages");
+                    			    
+                    			    for (String msg: serviceMsg)
+                    			    {
+                    			        messages.add(msg);
+                    			    }
+                    			    Debug.log("====messages=============="+messages+"==============================");
+                    			    if(messages.size() > 0 && messages.contains("SUCCESS"))
+                    			    {
+                    			    	//new File(dumpDirPath).delete();
+                    			    	VishalServiceUtility.deleteFilesFromDir(dumpDirPath);
+                    			    	String time = new java.text.SimpleDateFormat("yyyyMMddhhmm").format(new Date());
+                    			    	String renamefilename = xlsDataFilePath.substring(0,xlsDataFilePath.indexOf("."))+ time + ".loaded.xls";
+                    			    	File renameFile = new File(renamefilename);
+                    			    	inputWorkbook.renameTo(renameFile);
+                    			    	
+                    			    }
+                    			}
+                    			catch (Exception e) {
+            						// TODO: handle exception
+            					}
+                          //  }
+                           // else
+                          //  {
+                            	resp.put("inValidFacilityIds", inValidFacilityIds);
+                                resp.put("inValidProductIds", inValidProductIds);
+                         //   }
+                            //File to store data in form of CSV
+                        } catch (Exception exc) {
+                            Debug.logError(exc, module);
+                        }
+                        finally
+                        {
+                            try
+                            {
+                                if (fOutProduct != null)
+                                {
+                                	fOutProduct.close();
+                                }
+                            }
+                            catch (IOException ioe)
+                            {
+                                Debug.logError(ioe, module);
+                            }
+                        }
+
+                    }
+                    catch (BiffException be)
+                    {
+                        Debug.logError(be, module);
+                    }
+                    catch (Exception exc)
+                    {
+                        Debug.logError(exc, module);
+                    }
+                    finally
+                    {
+                        //inputWorkbook.delete();
+                    }
+                }
+
+          		Debug.log("==1270=====xlsFileNamePath==================="+xlsFileNamePath+"======================");
+          		 //AS:28/11/2014: 39130 Email on schedule jobs
+          		 int index = xlsFileNamePath.lastIndexOf("/");
+				 String fileName = xlsFileNamePath.substring(index + 1);
+				 String fileMimeType = "application/vnd.ms-excel";
+				 String filePath = xlsFileNamePath.substring(0, index +1);
+				 hm.put("fileName", fileName);
+				 hm.put("fileMimeType", fileMimeType);
+				 hm.put("filePath", filePath);
+          		/*try {
+          		    list=VishalImportServices.getBuffereReaderFromFile(new File(txtFileNamePath));//new ArrayList();
+          		}catch(Exception fnfe) {System.out.println(fnfe);}*/
+             
+             }
+             
+
+             resp.put("rtnHm", hm);
+			 
+			              String txtLoadedDataFilePath = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionProduct-loaded-directory"), context);
+			 String tmpregionProductloadeddirectory = FlexibleStringExpander.expandString(UtilProperties.getPropertyValue("vishal-setup.properties", "tmp-regionProduct-loaded-directory"), context);
+
+				if (new File(txtLoadedDataFilePath).exists())
+	            {
+	                new File(txtLoadedDataFilePath).mkdirs();
+				}
+					
+	                if(new File(txtLoadedDataFilePath).exists()) {
+	                	moveFilesInGivenDirectory(exceldir,"txt",txtLoadedDataFilePath, PROD_REG_FILE_PREFIX);
+	                	
+	                }
+	            	if (new File(tmpregionProductloadeddirectory).exists())
+	            {
+	                new File(tmpregionProductloadeddirectory).mkdirs();
+				}
+				if(new File(tmpregionProductloadeddirectory).exists()) {
+                	moveFilesInGivenDirectory(exceldir,"xls",tmpregionProductloadeddirectory,PROD_REG_FILE_PREFIX);
+                }
+             return resp;
+
+         }
+         private static void writeXmlHeader(BufferedWriter bfOutFile) {
+         	try {
+         		if(bfOutFile != null) {
+         		bfOutFile.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+         		bfOutFile.newLine();
+         		bfOutFile.write("<entity-engine-xml>");
+         		bfOutFile.newLine();
+                 bfOutFile.flush();
+         		}
+
+
+         	}
+         	 catch (Exception e)
+         	 {
+         	 }
+         }
+         private static void writeXmlFooter(BufferedWriter bfOutFile) {
+         	try {
+         		if(bfOutFile != null) {
+         		bfOutFile.write("</entity-engine-xml>");
+                 bfOutFile.flush();
+                 bfOutFile.close();
+         		}
+         	}
+         	 catch (Exception e)
+         	 {
+         	 }
+         }
+
+    /**
+     * Convert txt file into xls and put at the appropriate place from where it will load in data
+     * there three type of file to convert it EANMaster, ArticleMaster and TaxMaster
+     * Read file from given path and return list of line string
+    */
+    public static List getBuffereReaderFromFile(File file) throws FileNotFoundException, IOException {
+        if (!file.exists()) {
+            throw new FileNotFoundException();
+        }
+        List list=new ArrayList();
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(file));
+            String strLine;
+            
+            while ((strLine = br.readLine()) != null){
+                list.add(strLine);
+            }
+        
+        } catch (IOException e) {
+            Debug.logError(e, module);
+            throw e;
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    Debug.logError(e, module);
+                }
+            }
+        }
+        return list;
+    }
+
+    public static List<File> listFilesForFolder(String folderPathStr) {
+    	final File folder = new File(folderPathStr);
+    	List<File> fileList = FastList.newInstance();
+        for (final File fileEntry : folder.listFiles()) {
+        	if(fileEntry.getName().endsWith(".txt"))
+        	fileList.add(fileEntry);
+            /*if (fileEntry.isDirectory()) {
+                listFilesForFolder(fileEntry);
+            } else {
+                System.out.println(fileEntry.getName());
+            }*/
+        }
+        return fileList;
+    }
+    
+    public static List<File> listFilesForFolder(String folderPathStr, String xls) {
+    	final File folder = new File(folderPathStr);
+    	List<File> fileList = FastList.newInstance();
+        for (final File fileEntry : folder.listFiles()) {
+        	if(fileEntry.getName().endsWith(xls))
+        	fileList.add(fileEntry);
+            /*if (fileEntry.isDirectory()) {
+                listFilesForFolder(fileEntry);
+            } else {
+                System.out.println(fileEntry.getName());
+            }*/
+        }
+        return fileList;
+    }
+
+    public static boolean moveFilesInGivenDirectory(String fromDirPathStr, String extension, String destDir, String subStringCheck) {
+    	final File folder = new File(fromDirPathStr);
+    	boolean success = false;
+    	List<File> fileListForZip = FastList.newInstance();
+    	Debug.log("==1812===destDir======================"+destDir+"==fromDirPathStr======="+fromDirPathStr+"================");
+        for (final File fileEntry : folder.listFiles()) {
+        	Debug.log("==1814===destDir======================"+destDir+"========="+fileEntry.getName()+"================");
+        	Debug.log("=====destDir======================"+destDir+"========="+extension+"================");
+        	if(fileEntry.getName().endsWith(extension)) {
+        		 if (new File(destDir).exists() && (fileEntry.getName()).contains(subStringCheck))
+                 {
+                     Debug.log("=====destDir======================"+destDir+"========="+fileEntry.getName()+"================");
+                         success = fileEntry.renameTo(new File(destDir, "loaded"+fileEntry.getName()));
+                         
+                 }
+        	}
+        }
+        return success;
+    }
+}
+

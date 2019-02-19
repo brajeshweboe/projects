@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <GlAccountCategory glAccountCategoryId="9301" glAccountCategoryTypeId="COST_CENTER" description="Cost Center 1" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <GlAccountCategory glAccountCategoryId="9302" glAccountCategoryTypeId="COST_CENTER" description="Cost Center 2" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <GlAccountCategory glAccountCategoryId="9303" glAccountCategoryTypeId="COST_CENTER" description="Cost Center 3" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+</entity-engine-xml>

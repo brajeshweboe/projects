@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.0">
+  <display-name>Apache OFBiz - Erp Visual Theme</display-name>
+  <description>Erp Visual Theme</description>
+
+  <session-config>
+    <session-timeout>1</session-timeout>
+    <cookie-config>
+      <http-only>true</http-only>
+      <secure>true</secure>
+    </cookie-config>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>main.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>

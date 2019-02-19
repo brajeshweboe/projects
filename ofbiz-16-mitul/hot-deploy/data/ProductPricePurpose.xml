@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductPricePurpose productPricePurposeId="COMPONENT_PRICE" description="Component Price" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ProductPricePurpose productPricePurposeId="EBAY" description="eBay Auction" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+    <ProductPricePurpose productPricePurposeId="PURCHASE" description="Purchase/Initial" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ProductPricePurpose productPricePurposeId="RECURRING_CHARGE" description="Recurring Charge" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ProductPricePurpose productPricePurposeId="USAGE_CHARGE" description="Usage Charge" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+</entity-engine-xml>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PaymentApplication paymentApplicationId="8010" paymentId="8000" invoiceId="8000" amountApplied="60.00" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <PaymentApplication paymentApplicationId="9000" paymentId="8001" invoiceId="8002" amountApplied="36.43" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <PaymentApplication paymentApplicationId="9001" paymentId="8001" invoiceId="8003" amountApplied="46.43" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <PaymentApplication paymentApplicationId="9002" paymentId="8002" invoiceId="8004" amountApplied="33.99" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <PaymentApplication paymentApplicationId="9003" paymentId="8004" invoiceId="8009" amountApplied="127.09" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <PaymentApplication paymentApplicationId="demo11000" paymentId="demo10001" invoiceId="demo11001" amountApplied="543.23" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+</entity-engine-xml>

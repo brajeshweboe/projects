@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <AgreementProductAppl agreementId="8000" agreementItemSeqId="0001" productId="WG-9943" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <AgreementProductAppl agreementId="9000" agreementItemSeqId="0001" productId="WG-9943" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <AgreementProductAppl agreementId="AGR_SALES" agreementItemSeqId="00001" productId="GZ-1000" price="10.000" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+</entity-engine-xml>

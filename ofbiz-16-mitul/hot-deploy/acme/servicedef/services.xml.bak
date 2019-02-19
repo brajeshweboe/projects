@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+    <description>Gaadizo Services</description>
+    <vendor></vendor>
+    <version>1.0</version>
+
+    <service name="noSyntaxError" engine="interface">
+        <description>
+            Dummy service to prevent empty files and syntax error - Remove when the 1st real service will be added here 
+        </description>
+    </service> 
+    <service name="prepareAndImportOrderXML" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServices" invoke="prepareAndImportOrderXML">
+        <description>create order xml from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="OUT" optional="true"/>
+		<attribute name="success" type="String" mode="OUT" optional="true"/>
+    </service>
+ 
+	  <service name="uploadFile" engine="java" location="com.ofbiz.importinterface.services.customer.ImportCompanyServices" invoke="uploadFile" auth="true" transaction-timeout="720000">
+        <description>Upload the file to runtime upload temp directory</description>
+        <implements service="uploadFileInterface"/>
+        <attribute name="uploadFileName" mode="INOUT" type="String" optional="true"/>
+        <attribute name="uploadedFile" type="java.nio.ByteBuffer" mode="IN" optional="true"/>
+        <attribute name="userLogin" type="org.ofbiz.entity.GenericValue" mode="IN" optional="true"/>
+        <attribute name="uploadFilePath" mode="OUT" type="String" optional="false"/>
+    </service>
+	<service name="importOrderInERPService" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServices" invoke="importOrderInERPService">
+        <description>create order xml from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+    </service>
+    
+    <service name="exportOrderStatusToFMO" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ExportOrderStatusToFMO" invoke="exportOrderStatusToFMO">
+        <description>export order status </description>
+		<attribute name="ordersWithStatus" type="String" mode="IN" optional="false"/>
+    </service>
+     <service name="exportOrderItemStatusToFMO" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ExportOrderStatusToFMO" invoke="exportOrderItemStatusToFMO">
+        <description>export order Item status  </description>
+		<attribute name="orderItemStatus" type="Map" mode="IN" optional="false"/>
+    </service>
+	<service name="sendMailsOnJobSheetCreation" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.services.OmsServices" invoke="sendMailsOnJobSheetCreation">
+        <description>send Mails On JobSheet Creation</description>
+		<attribute name="picklistId" type="String" mode="IN" optional="false"/>
+		<attribute name="userLogin" mode="IN" type="org.ofbiz.entity.GenericValue" optional="true"/>
+    </service>
+	<service name="entityImportDirectory" engine="java"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServices" invoke="entityImportDirectory" auth="false" use-transaction="false">
+        <description>Imports all entity xml files contained in a directory</description>
+        <!-- permission-service service-name="entityMaintPermCheckForVishal" main-action="CREATE"/ -->
+        <attribute name="path" type="String" mode="IN" optional="true"/>
+        <attribute name="mostlyInserts" type="String" mode="IN" optional="true"/>
+        <attribute name="maintainTimeStamps" type="String" mode="IN" optional="true"/>
+        <attribute name="createDummyFks" type="String" mode="IN" optional="true"/>
+        <attribute name="checkDataOnly" type="String" mode="IN" optional="true"/>
+        <attribute name="deleteFiles" type="String" mode="IN" optional="true"/>
+        <attribute name="txTimeout" type="Integer" mode="IN" optional="true"/>
+        <attribute name="filePause" type="Long" mode="IN" optional="true"/>
+        <attribute name="messages" type="List" mode="OUT" optional="false"/>
+    </service>
+       
+	<!-- <service name="entityImportDirectory" engine="java"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServices" invoke="entityImportDirectory" auth="false" use-transaction="false">
+        <description>Imports all entity xml files contained in a directory</description>
+        permission-service service-name="entityMaintPermCheckForVishal" main-action="CREATE"/
+        <attribute name="path" type="String" mode="IN" optional="true"/>
+        <attribute name="mostlyInserts" type="String" mode="IN" optional="true"/>
+        <attribute name="maintainTimeStamps" type="String" mode="IN" optional="true"/>
+        <attribute name="createDummyFks" type="String" mode="IN" optional="true"/>
+        <attribute name="checkDataOnly" type="String" mode="IN" optional="true"/>
+        <attribute name="deleteFiles" type="String" mode="IN" optional="true"/>
+        <attribute name="txTimeout" type="Integer" mode="IN" optional="true"/>
+        <attribute name="filePause" type="Long" mode="IN" optional="true"/>
+        <attribute name="messages" type="List" mode="OUT" optional="false"/>
+    </service> -->
+    
+    <!-- Import Services Common for all Starts-->
+    <!-- Entity Import Services
+         Transacitons are turned off for these services because they set transactions and timeouts inside the services with txTimeout parameter -->
+    <service name="entityImportDirectoryForERP" engine="java"
+            location="com.ofbiz.importinterface.services.common.ImportServices" invoke="entityImportDirectoryForERP" auth="false" use-transaction="false">
+        <description>Imports all entity xml files contained in a directory</description>
+        <!-- permission-service service-name="entityMaintPermCheckForVishal" main-action="CREATE"/ -->
+        <attribute name="path" type="String" mode="IN" optional="true"/>
+        <attribute name="mostlyInserts" type="String" mode="IN" optional="true"/>
+        <attribute name="maintainTimeStamps" type="String" mode="IN" optional="true"/>
+        <attribute name="createDummyFks" type="String" mode="IN" optional="true"/>
+        <attribute name="checkDataOnly" type="String" mode="IN" optional="true"/>
+        <attribute name="deleteFiles" type="String" mode="IN" optional="true"/>
+        <attribute name="txTimeout" type="Integer" mode="IN" optional="true"/>
+        <attribute name="filePause" type="Long" mode="IN" optional="true"/>
+        <attribute name="messages" type="List" mode="OUT" optional="false"/>
+        <attribute name="bookingId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="orderId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="jobCardId" type="String" mode="INOUT" optional="true"/>
+    </service>
+    <service name="parseEntityXmlFileForERP" engine="java"
+            location="com.ofbiz.importinterface.services.common.ImportServices" invoke="parseEntityXmlFileForERP" auth="true" use-transaction="false">
+        <description>Parses an entity xml file or an entity xml text</description>
+        <permission-service service-name="entityMaintPermCheck" main-action="VIEW"/>
+        <attribute name="url" type="java.net.URL" mode="IN" optional="true"/>
+        <attribute name="xmltext" type="String" mode="IN" optional="true" allow-html="any"/>
+        <attribute name="onlyInserts" type="String" mode="IN" optional="true"/>
+        <attribute name="maintainTimeStamps" type="String" mode="IN" optional="true"/>
+        <attribute name="txTimeout" type="Integer" mode="IN" optional="true"/>
+        <attribute name="createDummyFks" type="String" mode="IN" optional="true"/>
+        <attribute name="checkDataOnly" type="String" mode="IN" optional="true"/>
+        <attribute name="placeholderValues" type="java.util.Map" mode="IN" optional="true"/>
+        <attribute name="rowProcessed" type="Long" mode="OUT" optional="false"/>
+    </service>
+    <!-- Import Services Common for all Ends-->
+    <!-- Category Import Starts-->
+    <service name="prepareAndImportCategoryXML" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.category.ImportCategoryServices" invoke="prepareAndImportCategoryXML">
+        <description>create category xml from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="OUT" optional="true"/>
+		<attribute name="success" type="String" mode="OUT" optional="true"/>
+    </service>
+ 
+	 
+	<service name="importCategoryInERPFromCsv" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.category.ImportCategoryServices" invoke="importCategoryInERPFromCsv">
+        <description>import category data from csv</description>
+        <implements service="uploadFile"/>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+    </service>
+    <!-- Category Import Ends-->
+    
+    <!-- Vehicle Import Starts-->
+    <service name="prepareAndImportVehicleXML" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.vehicle.ImportVehicleServices" invoke="prepareAndImportVehicleXML">
+        <description>create vehicle xml from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="OUT" optional="true"/>
+		<attribute name="success" type="String" mode="OUT" optional="true"/>
+    </service>
+ 
+	 
+	<service name="importVehicleInERPFromCsv" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.vehicle.ImportVehicleServices" invoke="importVehicleInERPFromCsv">
+        <description>import vehicle data from csv</description>
+        <implements service="uploadFile"/>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+    </service>
+	<!-- Vehicle Import Ends-->
+    
+    <!-- Product Import Starts-->
+    <service name="prepareAndImportProductXML" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.product.ImportProductServices" invoke="prepareAndImportProductXML">
+        <description>create Product xml from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="OUT" optional="true"/>
+		<attribute name="success" type="String" mode="OUT" optional="true"/>
+    </service>
+ 
+	 
+	<service name="importProductInERPFromCsv" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.product.ImportProductServices" invoke="importProductInERPFromCsv">
+        <description>import Product data from csv</description>
+        <implements service="uploadFile"/>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+    </service>
+    <!-- Product Import Ends-->
+    
+    <!-- PVPrice Import Starts-->
+    <service name="prepareAndImportPVPriceXML" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.pvprice.ImportPVPriceServices" invoke="prepareAndImportPVPriceXML">
+        <description>create PVPrice xml from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="OUT" optional="true"/>
+		<attribute name="success" type="String" mode="OUT" optional="true"/>
+		
+    </service>
+ 
+	 
+	<service name="importPVPriceInERPFromCsv" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.pvprice.ImportPVPriceServices" invoke="importPVPriceInERPFromCsv">
+        <description>import PVPrice data from csv</description>
+        <implements service="uploadFile"/>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+		<override name="uploadFilePath" optional="true"></override>
+    </service>
+    <!-- PVPrice Import Ends-->
+
+    <!-- Inventory Import Starts-->
+    <service name="prepareAndImportProductInventoryXML" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.inventory.ImportProductInventoryServices" invoke="prepareAndImportProductInventoryXMLs">
+        <description>create PVPrice xml from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="OUT" optional="true"/>
+		<attribute name="success" type="String" mode="OUT" optional="true"/>
+		
+    </service>
+ 
+	<service name="importProductInventoryFromCsv" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.inventory.ImportProductInventoryServices" invoke="importProductInventoryFromCsv">
+        <description>import inventory data from csv</description>
+        <implements service="uploadFile"/>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+		<override name="uploadFilePath" optional="true"></override>
+    </service>
+    <!-- Inventory Import Ends-->
+
+    
+    <!-- Configurable Product and Item Association Import Starts-->
+    <service name="prepareAndImportProductItemAssocXML" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.piassoc.ImportProductItemAssocServices" invoke="prepareAndImportProductItemAssocXML">
+        <description>create PVPrice xml from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="OUT" optional="true"/>
+		<attribute name="success" type="String" mode="OUT" optional="true"/>
+    </service>
+	 
+	 <service name="importProductItemAssocFromCsv" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.piassoc.ImportProductItemAssocServices" invoke="importProductItemAssocFromCsv">
+        <description>import vehicle data from csv</description>
+        <implements service="uploadFile"/>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+    </service>
+    
+    <!-- Configurable Product and Item Association Import Ends-->
+    
+	<service name="importOrderInERPServiceFromCRM" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServices" invoke="importOrderInERPServiceFromCRM">
+        <description>import importOrderInERPServiceFromCRM</description>
+		<attribute name="orderInERPServiceFromCRM" type="String" mode="IN" optional="false" allow-html="any"/>
+    </service>
+    
+	<!-- <service name="importCompanyInERPFromCsv" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.category.ImportCompanyServices" invoke="importCompanyInERPFromCsv">
+        <description>import category data from csv</description>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+    </service> -->
+    <!-- service name="importCompanyInERPFromCsv" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.category.ImportCompanyServices" invoke="importCompanyInERPFromCsv">
+        <description>import category data from csv</description>
+        <implements service="uploadFile"/>
+		<attribute name="dumpDirPath" type="String" mode="IN" optional="true"/>
+    </service -->
+     <service name="importCompanyInERPFromCsv" engine="java" auth="true"
+            location="com.ofbiz.importinterface.services.customer.ImportCompanyServices" invoke="importCompanyInERPFromCsv">
+        <description>Import a CSV (name,value) of AddressMatchMap records</description>
+         <implements service="uploadFile"/>
+         <override name="uploadFilePath" optional="true"></override>
+    </service>
+     <service name="importCompanyInERPFromCsv" engine="java" auth="true"
+            location="com.ofbiz.importinterface.services.customer.ImportCompanyServices" invoke="importCompanyInERPFromCsv">
+        <description>Import a CSV (name,value) of AddressMatchMap records</description>
+         <implements service="uploadFile"/>
+         <override name="uploadFilePath" optional="true"></override>
+    </service>
+    
+     <service name="exportServiceFromOutSide" engine="simple" auth="true" transaction-timeout="3000" export="true"
+            location="component://gaadizo/minilang/nextsequence/SequenceServices.xml" invoke="exportServiceFromOutSide">
+        <description>update Customer JobCard</description>
+        <attribute name="registrationNumber" type="String" mode="IN" optional="true"/>
+                
+    </service>
+    <service name="importChartOfAccountInERPFromCsv" engine="java" auth="true"
+            location="com.ofbiz.importinterface.services.customer.ImportCompanyAccountServices" invoke="importChartOfAccountInERPFromCsv">
+        <description>Import a CSV (name,value) of Company Accounts In ERP records</description>
+         <implements service="uploadFile"/>
+         <override name="uploadFilePath" optional="true"></override>
+    </service>
+    
+    <service name="importOrderInERPFromRestApi" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServicesJson" invoke="importOrderInERPFromRestApi">
+        <description>JSON storing in DB and other logging stuff.</description>
+		<attribute name="orderBookingJsonFromCRM" type="String" mode="IN" optional="false" allow-html="any"/>
+    </service>
+    <service name="importBookingListInERPFromRestApi" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServicesJson" invoke="importBookingListInERPFromRestApi">
+        <description>import importOrderInERPFromRestApi</description>
+		<!-- <attribute name="orderBookingJsonFromCRM" type="String" mode="IN" optional="false" allow-html="any"/> -->
+		<attribute name="output1" type="String" mode="OUT" optional="true"/>
+    </service>
+    <service name="importOrderInERPFromJson" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServiceInERP" invoke="importOrderInERPFromJson">
+        <description>OfBiz code call starts and Logging in file system in form error CSV gets done.</description>
+		<attribute name="bookingOrderPojoData" type="com.ofbiz.importinterface.services.order.BookingOrderPojo" mode="IN" optional="false" allow-html="any"/>
+		<attribute name="orderId" type="String" mode="OUT" optional="true"/>
+		<attribute name="bookingId" type="String" mode="OUT" optional="true"/>
+		<attribute name="status" type="String" mode="OUT" optional="true"/>
+    </service>
+    
+    <service name="prepareAndImportOrderXMLFromJson" engine="java" transaction-timeout="7200" auth="true"
+            location="com.ofbiz.importinterface.services.order.ImportOrderServiceInERP" invoke="prepareAndImportOrderXMLFromJson">
+        <description>All Services call and JSON conversion in OFBiz XML.</description>
+		<attribute name="booking" type="Object" mode="IN" optional="false" allow-html="any"/>
+		<attribute name="dumpDirPath" type="String" mode="OUT" optional="true"/>
+		<attribute name="success" type="String" mode="OUT" optional="true"/>
+		<attribute name="orderId" type="String" mode="OUT" optional="true"/>
+		<attribute name="bookingId" type="String" mode="OUT" optional="true"/>
+		<attribute name="status" type="String" mode="OUT" optional="true"/>
+    </service>
+     <service name="createPartyPostalAddress" engine="simple"
+            location="component://party/minilang/contact/PartyContactMechServices.xml" invoke="createPartyPostalAddress" auth="true">
+        <description>Create a Postal Address</description>
+        <permission-service service-name="partyContactMechPermissionCheck" main-action="CREATE"/>
+        <auto-attributes entity-name="PartyContactMech" include="all" mode="IN" optional="true"/>
+        <auto-attributes entity-name="PostalAddress" include="nonpk" mode="IN" optional="true"/>
+        <attribute name="paymentMethodId" type="String" mode="IN" optional="true"/>
+        <attribute name="contactMechPurposeTypeId" type="String" mode="IN" optional="true"/>
+        <attribute name="contactMechId" type="String" mode="OUT" optional="false"/>
+        <override name="address1" optional="false"/>
+        <override name="city" optional="false"/>
+    </service>
+</services>

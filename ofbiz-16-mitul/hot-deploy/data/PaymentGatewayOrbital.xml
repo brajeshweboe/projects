@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PaymentGatewayOrbital paymentGatewayConfigId="ORBITAL_CONFIG" username="ofbizuser" connectionPassword="ofbizpwd" merchantId="785240009879" engineClass="com.paymentech.orbital.sdk.engine.https.HttpsEngine" hostName="orbitalvar1.paymentech.net" port="443" hostNameFailover="orbitalvar2.paymentech.net" portFailover="443" connectionTimeoutSeconds="90" readTimeoutSeconds="90" authorizationURI="/authorize" sdkVersion="PaymentechSDK_6.3.0" sslSocketFactory="default" responseType="gateway" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+</entity-engine-xml>

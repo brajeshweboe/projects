@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <CreditCard paymentMethodId="9015" cardType="CCT_VISA" cardNumber="4111111111111111" expireDate="02/2021" firstNameOnCard="DEMO" lastNameOnCard="CUSTOMER" contactMechId="9015" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <CreditCard paymentMethodId="AMEX_01" cardType="CCT_AMERICANEXPRESS" cardNumber="378282246310005" expireDate="02/2020" companyNameOnCard="Your Company Name" firstNameOnCard="Smart" lastNameOnCard="Guy" contactMechId="9000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <CreditCard paymentMethodId="EUROCUSTOMER" cardType="CCT_VISA" cardNumber="4111111111111111" expireDate="02/2021" firstNameOnCard="EURO" lastNameOnCard="CUSTOMER" contactMechId="EUROCUSTOMER" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <CreditCard paymentMethodId="FRENCHCUSTOMER" cardType="CCT_VISA" cardNumber="4111111111111111" expireDate="02/2020" firstNameOnCard="FRENCH" lastNameOnCard="CUSTOMER" contactMechId="FRENCHCUSTOMER" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+</entity-engine-xml>

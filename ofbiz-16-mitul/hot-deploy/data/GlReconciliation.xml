@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <GlReconciliation glReconciliationId="9000" glReconciliationName="demoGlReconciliation" glAccountId="111100" statusId="GLREC_RECONCILED" organizationPartyId="Company" reconciledBalance="75000.00" reconciledDate="2009-08-08 20:03:14.0" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <GlReconciliation glReconciliationId="9001" glReconciliationName="testGlReconciliation" glAccountId="111100" statusId="GLREC_CREATED" organizationPartyId="Company" reconciledDate="2009-08-12 20:03:14.0" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+</entity-engine-xml>

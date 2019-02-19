@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <WebAnalyticsConfig webSiteId="WebStore" webAnalyticsTypeId="BING_ANALYTICS" webAnalyticsCode="//--  enter here your analytic script code --" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <WebAnalyticsConfig webSiteId="WebStore" webAnalyticsTypeId="GOOGLE_ANALYTICS" webAnalyticsCode="//--  enter here your analytic script code --" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+</entity-engine-xml>

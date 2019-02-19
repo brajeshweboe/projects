@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ExampleType exampleTypeId="CONTRIVED" parentTypeId="MADE_UP" description="Contrived" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ExampleType exampleTypeId="INSPIRED" parentTypeId="MADE_UP" description="Inspired" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ExampleType exampleTypeId="MADE_UP" description="Made Up" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ExampleType exampleTypeId="REAL_WORLD" description="Real World" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+</entity-engine-xml>

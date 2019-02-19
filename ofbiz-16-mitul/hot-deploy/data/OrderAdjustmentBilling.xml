@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OrderAdjustmentBilling orderAdjustmentId="8000" invoiceId="8009" invoiceItemSeqId="00007" amount="-12.00" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderAdjustmentBilling orderAdjustmentId="8001" invoiceId="8009" invoiceItemSeqId="00006" amount="-59.99" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderAdjustmentBilling orderAdjustmentId="8002" invoiceId="8009" invoiceItemSeqId="00008" amount="12.10" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderAdjustmentBilling orderAdjustmentId="8003" invoiceId="8009" invoiceItemSeqId="00009" amount="-0.01" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderAdjustmentBilling orderAdjustmentId="8004" invoiceId="8009" invoiceItemSeqId="00002" amount="0.12" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderAdjustmentBilling orderAdjustmentId="8005" invoiceId="8009" invoiceItemSeqId="00003" amount="5.69" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderAdjustmentBilling orderAdjustmentId="8006" invoiceId="8009" invoiceItemSeqId="00004" amount="1.20" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+</entity-engine-xml>

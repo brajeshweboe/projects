@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ExampleStatus exampleId="EX01" statusDate="2010-01-02 00:00:00.0" statusEndDate="2011-01-02 00:00:00.0" statusId="EXST_IN_DESIGN" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ExampleStatus exampleId="EX01" statusDate="2011-01-02 00:00:01.0" statusEndDate="2012-01-02 00:00:00.0" statusId="EXST_DEFINED" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ExampleStatus exampleId="EX01" statusDate="2012-01-02 00:00:00.0" statusEndDate="2013-01-02 00:00:00.0" statusId="EXST_APPROVED" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ExampleStatus exampleId="EX02" statusDate="2010-01-02 00:00:00.0" statusEndDate="2011-01-02 00:00:00.0" statusId="EXST_IN_DESIGN" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ExampleStatus exampleId="EX02" statusDate="2011-01-02 00:00:01.0" statusEndDate="2012-01-02 00:00:00.0" statusId="EXST_DEFINED" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ExampleStatus exampleId="EX02" statusDate="2012-01-02 00:00:00.0" statusEndDate="2013-01-02 00:00:00.0" statusId="EXST_APPROVED" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+</entity-engine-xml>

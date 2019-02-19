@@ -1,0 +1,115 @@
+<VisualTheme visualThemeId="ERPTHEME" visualThemeSetId="BACKOFFICE" description="ERP: the evolution of the BlueLight theme"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_NAME" resourceValue="ERP" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_SHORTCUT_ICON" resourceValue="/images/ofbiz.ico" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_IMAGE_URL" resourceValue="/images/ofbiz_logo.gif" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_SCREENSHOT" resourceValue="/erpTheme/screenshot.jpg" sequenceId="01"/>
+    
+<VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/erpTheme/css/bower_components/datatables/media/css/jquery.dataTables.min.css" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_STYLESHEET" resourceValue="erp/css/bower_components/chartist/dist/chartist.min.css" sequenceId="02"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/erpTheme/css/dist/css/style.css" sequenceId="03"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HELPSTYLESHEET" resourceValue="/erpTheme/css/help.css" sequenceId="04"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_DOCBOOKSTYLESHEET" resourceValue="/erpTheme/webapp/erpTheme/css/docbook.css" sequenceId="04"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.css" sequenceId="02"/>
+    
+
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-1.11.0.min.js" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-migrate-1.2.1.js" sequenceId="02"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/ui/js/jquery-ui-1.10.3.min.js" sequenceId="03"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.js" sequenceId="05"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/datetimepicker/jquery-ui-timepicker-addon.min-1.4.3.js" sequenceId="07"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/fjTimer/jquerytimer-min.js" sequenceId="09"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/jquery.maskedinput-1.3.1.min.js" sequenceId="10"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/jeditable/jquery.jeditable.js" sequenceId="11"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/validate/jquery.validate.min.js" sequenceId="12"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/OpenLayers-2.13.1.js" sequenceId="13"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/OfbizUtil.js" sequenceId="15"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/fieldlookup.js" sequenceId="16"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/date.format-1.2.3-min.js" sequenceId="17"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/date.timezone-min.js" sequenceId="18"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/miscAjaxFunctions.js" sequenceId="19"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/selectMultipleRelatedValues.js" sequenceId="20"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/util.js" sequenceId="21"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/FromThruDateCheck.js" sequenceId="22"/>
+
+
+<VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_LFT_TMPLT_LOC" resourceValue="component://erpTheme/template/Nav.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_TMPLT_LOC" resourceValue="component://erpTheme/template/Header.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_TMPLT_LOC" resourceValue="component://erpTheme/template/Footer.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_NAV_OPEN_TMPLT" resourceValue="component://erpTheme/template/AppBarOpen.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_NAV_CLOSE_TMPLT" resourceValue="component://erpTheme/template/AppBarClose.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_MSG_TMPLT_LOC" resourceValue="component://common/template/includes/Messages.ftl" sequenceId="01"/>
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-engine-xml>
+    <VisualTheme visualThemeId="ERPTHEME" visualThemeSetId="BACKOFFICE" description="ERP: the evolution of the BlueLight theme"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_NAME" resourceValue="ERP" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_SHORTCUT_ICON" resourceValue="/images/ofbiz.ico" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_IMAGE_URL" resourceValue="/images/ofbiz_logo.gif" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_SCREENSHOT" resourceValue="/erpTheme/screenshot.jpg" sequenceId="01"/>
+    
+    <!-- css references -->
+	<VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/erpTheme/bower_components/datatables/media/css/jquery.dataTables.min.css" sequenceId="01"/>
+	<VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_STYLESHEET" resourceValue="erp/bower_components/chartist/dist/chartist.min.css" sequenceId="02"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_STYLESHEET" resourceValue="/erpTheme/css/dist/css/style.css" sequenceId="03"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HELPSTYLESHEET" resourceValue="/erpTheme/css/help.css" sequenceId="04"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_DOCBOOKSTYLESHEET" resourceValue="/erpTheme/webapp/erpTheme/css/docbook.css" sequenceId="04"/>
+    
+    <!-- VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/bootstrap/dist/js/bootstrap.min.js" sequenceId="02"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/waypoints/lib/jquery.waypoints.min.js" sequenceId="03"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT"    resourceValue="/erpTheme/bower_components/jquery.counterup/jquery.counterup.min.js" sequenceId="04"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/datatables/media/js/jquery.dataTables.min.js" sequenceId="05"/>
+   <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/css/dist/js/productorders-data.js" sequenceId="06"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/owl.carousel/dist/owl.carousel.min.js" sequenceId="07"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/switchery/dist/switchery.min.js" sequenceId="08"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/css/dist/js/jquery.slimscroll.js" sequenceId="09"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/css/dist/js/dropdown-bootstrap-extended.js" sequenceId="10"/ -->
+       
+    
+    <!-- VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/js/jquery.sparkline/dist/jquery.sparkline.min.js" sequenceId="11"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/raphael/raphael.min.js" sequenceId="12"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/morris.js/morris.min.js" sequenceId="13"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/chartist/dist/chartist.min.js" sequenceId="14"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/css/dist/js/chartist-data.js" sequenceId="15"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/js/chart.js/Chart.min.js" sequenceId="16"/>    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" sequenceId="17"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/css/dist/js/init.js" sequenceId="18"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_JAVASCRIPT" resourceValue="/erpTheme/css/dist/js/dashboard3-data.js" sequenceId="19"/ -->
+    
+    <!-- javascript references -->
+    <!--  <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-1.11.0.min.js" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/jquery-migrate-1.2.1.js" sequenceId="02"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/ui/js/jquery-ui-1.10.3.min.js" sequenceId="03"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/asmselect/jquery.asmselect-1.0.4a-beta.js" sequenceId="05"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/datetimepicker/jquery-ui-timepicker-addon.min-1.4.3.js" sequenceId="07"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/fjTimer/jquerytimer-min.js" sequenceId="09"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/jquery.maskedinput-1.3.1.min.js" sequenceId="10"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/jeditable/jquery.jeditable.js" sequenceId="11"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/jquery/plugins/validate/jquery.validate.min.js" sequenceId="12"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/OpenLayers-2.13.1.js" sequenceId="13"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/OfbizUtil.js" sequenceId="15"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/fieldlookup.js" sequenceId="16"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/date.format-1.2.3-min.js" sequenceId="17"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/date.timezone-min.js" sequenceId="18"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/miscAjaxFunctions.js" sequenceId="19"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/selectMultipleRelatedValues.js" sequenceId="20"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/util.js" sequenceId="21"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/images/date/FromThruDateCheck.js" sequenceId="22"/>
+    
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_JAVASCRIPT" resourceValue="/erpTheme/js/dropdown.js" sequenceId="30"/>
+    -->
+    <!-- ftl references -->
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_HDR_TMPLT_LOC" resourceValue="component://erpTheme/template/Header.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_FTR_TMPLT_LOC" resourceValue="component://erpTheme/template/Footer.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_NAV_OPEN_TMPLT" resourceValue="component://erpTheme/template/AppBarOpen.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_NAV_CLOSE_TMPLT" resourceValue="component://erpTheme/template/AppBarClose.ftl" sequenceId="01"/>
+    <VisualThemeResource visualThemeId="ERPTHEME" resourceTypeEnumId="VT_MSG_TMPLT_LOC" resourceValue="component://common/template/includes/Messages.ftl" sequenceId="01"/>
+</entity-engine-xml>

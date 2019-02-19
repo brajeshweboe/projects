@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShoppingList shoppingListId="10000" shoppingListTypeId="SLT_SPEC_PURP" partyId="admin" listName="auto-save" isPublic="N" isActive="Y" lastUpdatedStamp="2019-01-10 07:55:01.0" lastUpdatedTxStamp="2019-01-10 07:55:01.0" createdStamp="2019-01-10 07:55:01.0" createdTxStamp="2019-01-10 07:55:01.0"/>
+    <ShoppingList shoppingListId="10010" shoppingListTypeId="SLT_SPEC_PURP" productStoreId="9000" partyId="admin" listName="auto-save" isPublic="N" isActive="Y" lastUpdatedStamp="2019-01-10 21:31:37.0" lastUpdatedTxStamp="2019-01-10 21:31:36.0" createdStamp="2019-01-10 21:31:37.0" createdTxStamp="2019-01-10 21:31:36.0"/>
+</entity-engine-xml>

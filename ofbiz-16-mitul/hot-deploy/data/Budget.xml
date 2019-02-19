@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <Budget budgetId="DemoBudget001" budgetTypeId="CAPITAL_BUDGET" customTimePeriodId="6016" comments="Demo for budget 001" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:29.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:29.0"/>
+    <Budget budgetId="DemoBudget002" budgetTypeId="OPERATING_BUDGET" customTimePeriodId="6010" comments="Demo for budget 002" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:29.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:29.0"/>
+</entity-engine-xml>

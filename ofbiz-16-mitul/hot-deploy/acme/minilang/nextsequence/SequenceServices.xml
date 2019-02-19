@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<simple-methods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://ofbiz.apache.org/Simple-Method" xsi:schemaLocation="http://ofbiz.apache.org/Simple-Method http://ofbiz.apache.org/dtds/simple-methods.xsd">
+
+    <simple-method method-name="getNextOrderId" short-description="Get Next orderId">
+        <set field="ownerPartyId" from-field="parameters.ownerId"/>
+	        <if-not-empty field="userLogin.ownerId">
+	            <set field="ownerPartyId" from-field="userLogin.ownerId"/>
+	        </if-not-empty>
+       <check-errors/>
+<log level="info" message="==212121212===ownerPartyId=======${ownerPartyId}==================="/>
+<log level="info" message="==212121212===ownerPartyId=======${ownerPartyId}==================="/>
+        <!-- Get prefix and sequence from SequenceValueItem -->
+        <entity-and list="sequenceValueItemList" entity-name="SequenceValueItem">
+            <field-map field-name="ownerId" from-field="ownerPartyId"/>
+            <field-map field-name="prefixType" value="ORDER"/>
+        </entity-and>
+        <first-from-list entry="sequenceValueItem" list="sequenceValueItemList"/>
+        <log level="info" message="==212121212===sequenceValueItem=======${sequenceValueItem}==================="/>
+        
+        <set field="orderId" value="${groovy:sequenceValueItem.prefix + sequenceValueItem.seqId}" type="String"/>
+        <log level="info" message="==212121212===orderId=======${orderId}==================="/>
+        <field-to-result field="orderId" result-name="orderId"/>
+        <set field="sequenceValueItem.seqId" value="${groovy:sequenceValueItem.seqId + 1}"/>
+        <store-value value-field="sequenceValueItem"/>
+    </simple-method>
+    <simple-method method-name="getNextJobCardId" short-description="Get Next orderId">
+    
+        <set field="ownerPartyId" from-field="parameters.ownerId"/>
+       <if-not-empty field="userLogin.ownerId">
+                <set field="ownerPartyId" from-field="userLogin.ownerId"/>
+            </if-not-empty>
+       <!-- <if-empty field="userLogin.ownerId">
+             <add-error>
+                <fail-property resource="scadminUiLabels" property="DoesNotHavePermissionToCreateShipment"/>
+             </add-error>
+       </if-empty> -->
+       <check-errors/>
+       <log level="info" message="==44===ownerPartyId========${ownerPartyId}==================="/>
+
+        <!-- Get prefix and sequence from SequenceValueItem -->
+        <entity-and list="sequenceValueItemList" entity-name="SequenceValueItem">
+            <field-map field-name="ownerId" from-field="ownerPartyId"/>
+            <field-map field-name="prefixType" value="JOBCARD"/>
+        </entity-and>
+        <first-from-list entry="sequenceValueItem" list="sequenceValueItemList"/>
+        <log level="info" message="==44===prefix========${sequenceValueItem.prefix}==================="/>
+        <log level="info" message="==44==sequenceValueItem.seqId======${sequenceValueItem.seqId}==================="/>
+        <if-not-empty field="sequenceValueItem">
+        	<set field="jobCardId" value="${groovy:sequenceValueItem.prefix + sequenceValueItem.seqId}" type="String"/>
+        </if-not-empty>
+        <field-to-result field="jobCardId" result-name="jobCardId"/>
+        <set field="sequenceValueItem.seqId" value="${groovy:sequenceValueItem.seqId + 1}"/>
+        <store-value value-field="sequenceValueItem"/>
+    </simple-method>
+
+    <simple-method method-name="getNextInvoiceId" short-description="Get Next orderId">
+    <log message="=====5959======${parameters.ownerId}================" level="info"/>
+        <set field="ownerPartyId" from-field="parameters.ownerId"/>
+        <log level="info" message="==44===ownerPartyId========${ownerPartyId}==================="/>
+        <if-not-empty field="parameters.partyIdFrom">
+        <set field="ownerPartyId" from-field="parameters.partyIdFrom"/>
+        </if-not-empty>
+        <log level="info" message="==44===ownerPartyId========${ownerPartyId}==================="/>
+        <if-empty field="ownerPartyId">
+            <if-not-empty field="userLogin.ownerId">
+                <set field="ownerPartyId" from-field="userLogin.ownerId"/>
+            </if-not-empty>
+        </if-empty>
+       <!-- <if-empty field="userLogin.ownerId">
+             <add-error>
+                <fail-property resource="scadminUiLabels" property="DoesNotHavePermissionToCreateShipment"/>
+             </add-error>
+       </if-empty> -->
+       <check-errors/>
+        <!-- Get prefix and sequence from SequenceValueItem -->
+        <log level="info" message="==44===ownerPartyId========${ownerPartyId}==================="/>
+        <entity-and list="sequenceValueItemList" entity-name="SequenceValueItem">
+            <field-map field-name="ownerId" from-field="ownerPartyId"/>
+            <field-map field-name="prefixType" value="INVOICE"/>
+        </entity-and>
+        <log level="info" message="==44=sequenceValueItemList==ownerPartyId========${sequenceValueItemList}============="/>
+        <first-from-list entry="sequenceValueItem" list="sequenceValueItemList"/>
+        <log level="info" message="==85=sequenceValueItemList==ownerPartyId========${sequenceValueItem}============="/>
+        <set field="invoiceId" value="${groovy:sequenceValueItem.prefix + sequenceValueItem.seqId}" type="String"/>
+        <field-to-result field="invoiceId" result-name="invoiceId"/>
+        <set field="sequenceValueItem.seqId" value="${groovy:sequenceValueItem.seqId + 1}"/>
+        <store-value value-field="sequenceValueItem"/>
+    </simple-method>
+
+    <simple-method method-name="getNextPartyId" short-description="Get Next orderId">
+        <log message="=======222222==========getNextPartyIdCtx===============${parameters}=======" level="info"/>
+        <set field="ownerPartyId" from-field="parameters.ownerId"/>
+        <log message="======86868686==========ownerPartyId==============${ownerPartyId}=======" level="info"/>
+        <if-empty field="ownerPartyId">
+            <if-not-empty field="userLogin.ownerId">
+                <set field="ownerPartyId" from-field="userLogin.ownerId"/>
+            </if-not-empty>
+        </if-empty>
+       <!-- <if-empty field="userLogin.ownerId">
+             <add-error>
+                <fail-property resource="scadminUiLabels" property="DoesNotHavePermissionToCreateShipment"/>
+             </add-error>
+       </if-empty> -->
+       <check-errors/>
+
+        <!-- Get prefix and sequence from SequenceValueItem -->
+        <entity-and list="sequenceValueItemList" entity-name="SequenceValueItem">
+            <field-map field-name="ownerId" from-field="ownerPartyId"/>
+            <field-map field-name="prefixType" value="PARTY"/>
+        </entity-and>
+        <log message="=======222222=========sequenceValueItemList=============${sequenceValueItemList}=======" level="info"/>
+        <first-from-list entry="sequenceValueItem" list="sequenceValueItemList"/>
+        <log message="==111=====222222=========sequenceValueItem============${sequenceValueItem}=======" level="info"/>
+        <if-not-empty field="sequenceValueItem.prefix">
+        <log message="==111=====222222=113=======sequenceValueItem.prefix============${sequenceValueItem.prefix}=======" level="info"/>
+        	<set field="partyId" value="${groovy:sequenceValueItem.prefix + sequenceValueItem.seqId}" type="String"/>
+        <else>
+            <set field="partyId" value="${groovy:sequenceValueItem.seqId}" type="String"/>
+        </else>
+        </if-not-empty>
+                <log message="==111=====222222=========sequenceValueItem============${sequenceValueItem}=======" level="info"/>
+        
+        <field-to-result field="partyId" result-name="partyId"/>
+        <set field="sequenceValueItem.seqId" value="${groovy:sequenceValueItem.seqId + 1}"/>
+        <store-value value-field="sequenceValueItem"/>
+    </simple-method>
+
+    <simple-method method-name="exportServiceFromOutSide" short-description="Get Next orderId">
+       <log message="======86868686==========parameters==============${parameters}=======" level="info"/>
+    </simple-method>
+</simple-methods>

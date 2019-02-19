@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShoppingListType shoppingListTypeId="SLT_AUTO_REODR" description="Automatic Re-Orders" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
+    <ShoppingListType shoppingListTypeId="SLT_FREQ_PURCHASES" description="Frequent Purchases" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
+    <ShoppingListType shoppingListTypeId="SLT_GIFT_REG" description="Gift Registry" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
+    <ShoppingListType shoppingListTypeId="SLT_SPEC_PURP" description="Special Purpose" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
+    <ShoppingListType shoppingListTypeId="SLT_WISH_LIST" description="Wish List" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
+</entity-engine-xml>

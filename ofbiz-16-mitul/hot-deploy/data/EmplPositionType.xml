@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <EmplPositionType emplPositionTypeId="BIZ_ANALYST" hasTable="N" description="Business Analyst" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="CCO" hasTable="N" description="Chief Compliance Officer" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="CEO" hasTable="N" description="Chief Executive Officer" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="CFO" hasTable="N" description="Chief Financial Officer" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="CIO" hasTable="N" description="Chief Information Officer" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="CMO" hasTable="N" description="Chief Marketing Officer" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="CSO" hasTable="N" description="Chief Security Officer" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="PROGRAMMER" hasTable="N" description="Programmer" lastUpdatedStamp="2019-01-10 01:11:23.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:23.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="SYS_ADMIN" hasTable="N" description="System Administrator" lastUpdatedStamp="2019-01-10 01:11:23.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:23.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+    <EmplPositionType emplPositionTypeId="_NA_" lastUpdatedStamp="2019-01-10 01:11:22.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:22.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+</entity-engine-xml>

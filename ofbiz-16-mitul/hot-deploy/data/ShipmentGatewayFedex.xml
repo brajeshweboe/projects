@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentGatewayFedex shipmentGatewayConfigId="FEDEX_CONFIG" connectUrl="https://gatewaybeta.fedex.com/GatewayDC" connectSoapUrl="https://gatewaybeta.fedex.com:443/web-services" connectTimeout="60" labelImageType="PNG" defaultDropoffType="REGULARPICKUP" defaultPackagingType="YOURPACKNG" templateShipment="component://product/template/shipment/FedexShipRequestTemplate.xml.ftl" templateSubscription="component://product/template/shipment/FedexSubscriptionRequestTemplate.xml.ftl" rateEstimateTemplate="component://product/template/shipment/FedexRateEstimateRequestTemplate.xml.ftl" lastUpdatedStamp="2019-01-10 01:11:19.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:19.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+</entity-engine-xml>

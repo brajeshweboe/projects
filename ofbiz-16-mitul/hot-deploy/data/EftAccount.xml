@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <EftAccount paymentMethodId="ABN_CHECKING" bankName="ABN AMRO Bank" routingNumber="222371863" accountType="Checking" accountNumber="427253011064227" nameOnAccount="Company" contactMechId="9000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <EftAccount paymentMethodId="SC_CHECKING" bankName="Standard Chartered Bank" routingNumber="307075259" accountType="Checking" accountNumber="316253011064226" nameOnAccount="Company" contactMechId="9000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+</entity-engine-xml>

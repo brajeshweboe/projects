@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <FixedAssetType fixedAssetTypeId="COMPUTER_HARDWARE" hasTable="N" description="Computer Hardware" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+    <FixedAssetType fixedAssetTypeId="COMPUTER_SOFTWARE" hasTable="N" description="Computer Software" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+    <FixedAssetType fixedAssetTypeId="EQUIPMENT" hasTable="N" description="Equipment" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+    <FixedAssetType fixedAssetTypeId="GROUP_EQUIPMENT" hasTable="N" description="Group of machines, used for task and routing definition" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+    <FixedAssetType fixedAssetTypeId="OTHER_FIXED_ASSET" hasTable="N" description="Other Fixed Asset" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+    <FixedAssetType fixedAssetTypeId="PRODUCTION_EQUIPMENT" hasTable="N" description="The fixed asset used in the operation-routing definition" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+    <FixedAssetType fixedAssetTypeId="PROPERTY" hasTable="N" description="Property" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+    <FixedAssetType fixedAssetTypeId="REAL_ESTATE" hasTable="N" description="Real Estate" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+    <FixedAssetType fixedAssetTypeId="VEHICLE" hasTable="N" description="Vehicle" lastUpdatedStamp="2019-01-10 01:11:21.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:21.0" createdTxStamp="2019-01-10 01:11:21.0"/>
+</entity-engine-xml>

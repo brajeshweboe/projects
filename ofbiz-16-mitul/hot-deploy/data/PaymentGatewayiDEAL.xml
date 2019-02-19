@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PaymentGatewayiDEAL paymentGatewayConfigId="IDEAL_CONFIG" merchantId="[iDEAL MerchantID]" merchantSubId="[iDEAL MerchantSubID]" merchantReturnURL="[iDEAL MerchantReturnURL]" acquirerURL="[iDEAL AcquirerURL]" acquirerTimeout="10" privateCert="[iDEAL PrivateCert]" acquirerKeyStoreFilename="[iDEAL AcquirerKeyStoreFilename]" acquirerKeyStorePassword="[iDEAL AcquirerKeyStorePassword]" merchantKeyStoreFilename="[iDEAL MerchantKeyStoreFilename]" merchantKeyStorePassword="[iDEAL MerchantKeyStorePassword]" expirationPeriod="[iDEAL ExpirationPeriod]" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+</entity-engine-xml>

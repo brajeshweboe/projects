@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://ofbiz.apache.org/Site-Conf" xsi:schemaLocation="http://ofbiz.apache.org/Site-Conf http://ofbiz.apache.org/dtds/site-conf.xsd">
+    <!-- The controller elements that are common to all OFBiz components
+         can be found in the following xml file. A component can override the
+         elements found in the common-controller.xml file. -->
+    <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
+    <include location="component://product/webapp/facility/WEB-INF/controller.xml"/>
+    <include location="component://order/webapp/ordermgr/WEB-INF/controller.xml"/>
+    <include location="component://accounting/webapp/accounting/WEB-INF/controller.xml"/>
+	<include location="component://accounting/webapp/ap/WEB-INF/controller.xml"/>
+	<include location="component://accounting/webapp/ar/WEB-INF/controller.xml"/>
+    <description>Gaadizo Component Site Configuration File</description>
+
+    <!-- Events to run on every request before security (chains exempt) -->
+    <!--    
+    <preprocessor>
+    </preprocessor>
+    -->
+    <!-- Events to run on every request after all other processing (chains exempt) -->
+    <!--
+    <postprocessor>
+        <event name="test" type="java" path="org.apache.ofbiz.webapp.event.TestEvent" invoke="test"/>
+    </postprocessor>
+    -->
+
+    <!-- Request Mappings -->
+	 <request-map uri="EditCategory">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="EditCategory"/>
+    </request-map>
+	
+	
+	
+	
+   
+	
+    <!-- View Mappings -->
+	<view-map name="EditCategory" type="screen" page="component://acme/widget/CatalogScreens.xml#EditCategory"/>
+    <view-map name="jobcardlist" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#JobCardList"/>
+    <view-map name="jobcarddetails" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#JobCardDetails"/>
+    <view-map name="createJobCardFromExistingCustomerSC" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#createJobCardFromExistingCustomerSC"/>
+    <view-map name="selectItemForCard" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#selectItemForCard"/>
+    <view-map name="editJobCard" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#editJobCard"/>
+    
+    <view-map name="bookinglist" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#BookingList"/>
+    <view-map name="SparePartIssue" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#SparePartIssue"/>
+    <view-map name="sparePartIssueDetail" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#SparePartIssueDetail"/>
+    
+    <view-map name="jobCardListForPerformInvoice" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#jobCardListForPerformInvoice"/>
+    <view-map name="createPerformInvoice" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#createPerformInvoice"/>
+    <view-map name="createInvoiceForJobCard" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#createInvoiceForJobCard"/>
+    <view-map name="createJobCardFromSC" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#createJobCardFromSC"/>
+    <view-map name="createCustomerFromJC" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#createJobCardFromSC"/>
+    
+    <view-map name="PackOrder" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#PackOrder"/>
+    <view-map name="createPerformInvoicePDF" type="screenfop" page="component://gaadizo/widget/GaadizoPrintScreens.xml#PerformInvoicePDF" content-type="application/pdf" encoding="none"/>
+    <view-map name="JobCardPDF" type="screenfop" page="component://gaadizo/widget/GaadizoPrintScreens.xml#JobCardPDF" content-type="application/pdf" encoding="none"/>
+</site-conf>

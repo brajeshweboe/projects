@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <UomType uomTypeId="AREA_MEASURE" hasTable="N" description="Area" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="CURRENCY_MEASURE" hasTable="N" description="Currency" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="DATASPD_MEASURE" hasTable="N" description="Data Speed" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="DATA_MEASURE" hasTable="N" description="Data Size" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="ENERGY_MEASURE" hasTable="N" description="Energy" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="LENGTH_MEASURE" hasTable="N" description="Length" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="OTHER_MEASURE" hasTable="N" description="Other" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="TEMP_MEASURE" hasTable="N" description="Temperature" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="TIME_FREQ_MEASURE" hasTable="N" description="Time/Frequency" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="VOLUME_DRY_MEASURE" hasTable="N" description="Dry Volume" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="VOLUME_LIQ_MEASURE" hasTable="N" description="Liquid Volume" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+    <UomType uomTypeId="WEIGHT_MEASURE" hasTable="N" description="Weight" lastUpdatedStamp="2019-01-10 00:54:16.0" lastUpdatedTxStamp="2019-01-10 00:54:16.0" createdStamp="2019-01-10 00:54:16.0" createdTxStamp="2019-01-10 00:54:16.0"/>
+</entity-engine-xml>

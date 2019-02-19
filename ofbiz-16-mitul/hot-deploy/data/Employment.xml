@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <Employment roleTypeIdFrom="INTERNAL_ORGANIZATIO" roleTypeIdTo="EMPLOYEE" partyIdFrom="Company" partyIdTo="DemoEmployee" fromDate="2000-01-30 17:50:15.0" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:29.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:29.0"/>
+</entity-engine-xml>

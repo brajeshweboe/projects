@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <RecurrenceInfo recurrenceInfoId="205" startDateTime="2008-01-01 00:00:00.0" recurrenceRuleId="205" recurrenceCount="0" lastUpdatedStamp="2019-01-10 01:11:36.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:36.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <RecurrenceInfo recurrenceInfoId="400" startDateTime="2008-05-14 22:00:00.0" recurrenceRuleId="400" recurrenceCount="2" lastUpdatedStamp="2019-01-14 22:00:04.0" lastUpdatedTxStamp="2019-01-14 22:00:04.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+    <RecurrenceInfo recurrenceInfoId="9000" startDateTime="2000-01-01 00:00:00.0" recurrenceRuleId="9000" recurrenceCount="2" lastUpdatedStamp="2019-01-11 00:00:13.0" lastUpdatedTxStamp="2019-01-11 00:00:13.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+</entity-engine-xml>

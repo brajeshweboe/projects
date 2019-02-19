@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductPriceCond productPriceRuleId="9000" productPriceCondSeqId="01" inputParamEnumId="PRIP_PROD_CAT_ID" operatorEnumId="PRC_EQ" condValue="PROMOTIONS" lastUpdatedStamp="2019-01-10 01:11:36.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:36.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <ProductPriceCond productPriceRuleId="9001" productPriceCondSeqId="01" inputParamEnumId="PRIP_PRODUCT_ID" operatorEnumId="PRC_EQ" condValue="WG-1111" lastUpdatedStamp="2019-01-10 01:11:36.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:36.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <ProductPriceCond productPriceRuleId="9001" productPriceCondSeqId="02" inputParamEnumId="PRIP_PARTY_GRP_MEM" operatorEnumId="PRC_EQ" condValue="DemoCustCompany" lastUpdatedStamp="2019-01-10 01:11:36.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:36.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+</entity-engine-xml>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://ofbiz.apache.org/Widget-Screen" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    
+    <screen name="InvoiceList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="Invoice List"/>
+                <set field="labelTitleProperty" value="Invoice List"/>
+                <set field="tabButtonItem" value="Invoice"/>
+	            <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="INR"/>
+            	<script location="component://gaadizo/groovyScripts/invoice/InvoiceList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/invoice/InvoiceList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="InvoiceDetail">
+        <section>
+            <actions>
+                <set field="titleProperty" value="Invoice Detail"/>
+                <set field="labelTitleProperty" value="PageTitleInvoiceDetail"/>
+            <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="INR"/>
+            <script location="component://gaadizo/groovyScripts/order/JobCardDetails.groovy"/>
+            <script location="component://order/groovyScripts/order/OrderView.groovy"/>
+                <script location="component://order/groovyScripts/invoice/InvoiceDetail.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+<!--                                 <link target="ListGlAccountsReport" target-window="_blank" text="${uiLabelMap.CommonPrint}" style="buttontext"/> -->
+<!--                                 <link target="ListGlAccountsExport" target-window="_blank" text="${uiLabelMap.CommonExport}" style="buttontext"/> -->
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component://gaadizo/template/ordermanagement/JobCardDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="JobCardList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <!-- no longer works requies a fieldMap entity-and entity-name="GlAccount" list="entityList" use-cache="true" >
+                    <limit-range start="0" size="20"/>
+                </entity-and -->
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <entity-condition entity-name="GlAccount" list="glAccounts" use-cache="true">
+                    <order-by field-name="accountCode"/>
+                </entity-condition>
+            <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="INR"/>
+            <script location="component://gaadizo/groovyScripts/order/JobCardList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+							<platform-specific>
+                            	<html><html-template location="component://gaadizo/template/ordermanagement/JobCardList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    
+
+    <screen name="JobCardItemEdit">
+        <section>
+            <actions>
+                <set field="titleProperty" value="OrderEditItems"/>
+                <set field="headerItem" value="orderlist"/>
+                <script location="component://order/groovyScripts/order/OrderView.groovy"/>
+                <script location="component://order/groovyScripts/order/OrderViewWebSecure.groovy"/>
+            </actions>
+            <widgets>
+                        <container style="clear"/>
+                        <platform-specific>
+                            <html><html-template location="component://order/template/order/AppendOrderItem.ftl"/></html>
+                        </platform-specific>
+                   
+            </widgets>
+        </section>
+    </screen>
+	
+    <screen name="PerformInvoicePDF">
+        <section>
+            <actions>
+                <!-- base/top/specific map first, then more common map added for shared labels -->
+                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="OSafeUiLabels" map-name="uiLabelMap" global="true"/>
+                <set field="facilityId" from-field="parameters.facilityId"/>
+                <set field="picklistId" from-field="parameters.picklistId"/>
+                <set field="titleProperty" value="AccountingInvoice"/>
+                <script location="component://gaadizo/groovyScripts/invoice/EditInvoice.groovy"/>
+                <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetMyCompany.groovy"/>
+            </actions>
+            <widgets>
+                <section>
+                    <condition>
+                        <or>
+                            <if-service-permission service-name="acctgBasePermissionCheck" main-action="VIEW"/>
+                            <!-- can always see own invoice -->
+                            <if-compare field="invoice.partyIdFrom" operator="equals" value="${userLogin.partyId}"/>
+                            <if-compare field="invoice.partyId" operator="equals" value="${userLogin.partyId}"/>
+                            <!-- or is a contact of a company who owns the invoice-->
+                            <if-compare field="invoice.partyIdFrom" operator="equals" value="${myCompanyId}"/>
+                            <if-compare field="invoice.partyId" operator="equals" value="${myCompanyId}"/>
+                        </or>
+                    </condition>
+            
+                     <widgets>
+                        <platform-specific>
+                            <xsl-fo><html-template location="component://facility/webapp/facility/invoice/invoiceReport.fo.ftl"/></xsl-fo>
+                        </platform-specific>
+                        </widgets>
+                </section>
+            </widgets>
+           
+        </section>
+    </screen>
+</screens>

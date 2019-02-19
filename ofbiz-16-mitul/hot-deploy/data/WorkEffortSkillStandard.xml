@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <WorkEffortSkillStandard workEffortId="9002" skillTypeId="9000" estimatedDuration="16.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <WorkEffortSkillStandard workEffortId="9003" skillTypeId="9000" estimatedDuration="24.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <WorkEffortSkillStandard workEffortId="9005" skillTypeId="9000" estimatedDuration="32.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <WorkEffortSkillStandard workEffortId="9006" skillTypeId="9000" estimatedDuration="40.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <WorkEffortSkillStandard workEffortId="9102" skillTypeId="9000" estimatedDuration="16.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <WorkEffortSkillStandard workEffortId="9103" skillTypeId="9000" estimatedDuration="24.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <WorkEffortSkillStandard workEffortId="9105" skillTypeId="9000" estimatedDuration="32.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <WorkEffortSkillStandard workEffortId="9106" skillTypeId="9000" estimatedDuration="40.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <WorkEffortSkillStandard workEffortId="9202" skillTypeId="9000" estimatedDuration="16.0" lastUpdatedStamp="2019-01-10 01:11:45.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:45.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+</entity-engine-xml>

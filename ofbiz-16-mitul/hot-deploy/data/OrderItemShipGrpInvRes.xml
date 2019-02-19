@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OrderItemShipGrpInvRes orderId="DEMO10090" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.000000" quantityNotAvailable="0.000000" reservedDatetime="2008-04-23 16:49:31.0" createdDatetime="2008-04-23 16:49:31.0" promisedDatetime="2008-05-08 16:49:27.0" priority="2" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+</entity-engine-xml>

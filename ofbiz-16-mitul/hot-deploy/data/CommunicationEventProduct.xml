@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <CommunicationEventProduct productId="DEMO-PRODUCT-1" communicationEventId="DEMO-COM-PRODUCT-1" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+    <CommunicationEventProduct productId="DEMO-PRODUCT-1" communicationEventId="DEMO-COM-PRODUCT-2" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:45.0"/>
+</entity-engine-xml>

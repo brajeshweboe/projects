@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <DataTemplateType dataTemplateTypeId="FTL" description="FreeMarker" extension="ftl" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <DataTemplateType dataTemplateTypeId="NONE" description="No Template" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <DataTemplateType dataTemplateTypeId="SCREEN_COMBINED" description="Screen widget" extension="xml" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <DataTemplateType dataTemplateTypeId="WM" description="WebMacro" extension="wm" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <DataTemplateType dataTemplateTypeId="XSLT" description="XSLT" extension="xsl" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+</entity-engine-xml>

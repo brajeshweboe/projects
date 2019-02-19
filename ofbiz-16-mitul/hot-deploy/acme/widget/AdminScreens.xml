@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://ofbiz.apache.org/Widget-Screen" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    
+    <screen name="importCatalog">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+<!--             <entity-condition entity-name="GlAccount" list="glAccounts" use-cache="true">  -->
+<!--                     <order-by field-name="accountCode"/> -->
+<!--                 </entity-condition> -->
+<!--             <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/> -->
+            <script location="component://gaadizo/groovyScripts/admin/ImportCatalog.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+<!--                                 <link target="ListGlAccountsReport" target-window="_blank" text="${uiLabelMap.CommonPrint}" style="buttontext"/> -->
+<!--                                 <link target="ListGlAccountsExport" target-window="_blank" text="${uiLabelMap.CommonExport}" style="buttontext"/> -->
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/importCatalog.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="categoryList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <script location="component://gaadizo/groovyScripts/admin/CategoryList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <!-- <container style="button-bar">
+                            </container> -->
+                            
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/categorySearch.ftl"/></html>
+                        	</platform-specific>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/categoryList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="vehicleList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <script location="component://gaadizo/groovyScripts/admin/VehicleList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/vehicleSearch.ftl"/></html>
+                        	</platform-specific>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/vehicleList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="productList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <script location="component://gaadizo/groovyScripts/admin/ProductList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/productSearch.ftl"/></html>
+                        	</platform-specific>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/productList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="pvPriceList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <script location="component://gaadizo/groovyScripts/admin/PvPriceList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/pvPriceSearch.ftl"/></html>
+                        	</platform-specific>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/pvPriceList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="customerList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <script location="component://gaadizo/groovyScripts/admin/CustomerList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/customerSearch.ftl"/></html>
+                        	</platform-specific>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/customerList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="supplierList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <script location="component://gaadizo/groovyScripts/admin/SupplierList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/supplierSearch.ftl"/></html>
+                        	</platform-specific>
+                        	<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/supplierList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="vendorList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <script location="component://gaadizo/groovyScripts/admin/VendorList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/vendorSearch.ftl"/></html>
+                        	</platform-specific>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/vendorList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="customerDetails">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="PartyAndPerson"/>
+            <set field="noConditionFind" value="Y"/>
+            <entity-condition entity-name="PartyAndUserLoginAndPerson" list="partyAndPersons" use-cache="true">
+                    <order-by field-name="partyId"/>
+            </entity-condition>
+<!--             <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/> -->
+            <script location="component://gaadizo/groovyScripts/admin/CustomerDetails.groovy"/>
+            <!-- <script location="component://order/groovyScripts/order/OrderView.groovy"/>
+            <script location="component://order/groovyScripts/order/OrderViewWebSecure.groovy"/> -->
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/customerDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="supplierDetails">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+            	<set field="noConditionFind" value="Y"/>
+	            <script location="component://gaadizo/groovyScripts/admin/SupplierDetails.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/supplierDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="vendorDetails">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+            	<set field="noConditionFind" value="Y"/>
+	            <script location="component://gaadizo/groovyScripts/admin/VendorDetails.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/vendorDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="productDetails">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+            	<set field="noConditionFind" value="Y"/>
+	            <script location="component://gaadizo/groovyScripts/admin/ProductDetails.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/productDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="pvPriceDetails">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+            	<set field="noConditionFind" value="Y"/>
+	            <script location="component://gaadizo/groovyScripts/admin/PVPriceDetails.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/pvPriceDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="vehicleDetails">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+            	<set field="noConditionFind" value="Y"/>
+	            <script location="component://gaadizo/groovyScripts/admin/VehicleDetails.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/vehicleDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="categoryDetails">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="Chartofaccounts"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+            	<set field="noConditionFind" value="Y"/>
+	            <script location="component://gaadizo/groovyScripts/admin/CategoryDetails.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/categoryDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="companyList">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="companyList"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            <set field="noConditionFind" value="Y"/>
+            <script location="component://gaadizo/groovyScripts/admin/CompanyList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/customerSearch.ftl"/></html>
+                        	</platform-specific>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/customerList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="companyAndDetails">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleListAccounts"/>
+                <set field="labelTitleProperty" value="PageTitleListAccounts"/>
+                <set field="tabButtonItem" value="companyAndDetails"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="PartyAndPerson"/>
+            <set field="noConditionFind" value="Y"/>
+            <entity-condition entity-name="PartyAndUserLoginAndPerson" list="partyAndPersons" use-cache="true">
+                    <order-by field-name="partyId"/>
+            </entity-condition>
+<!--             <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/> -->
+            <script location="component://gaadizo/groovyScripts/admin/CustomerDetails.groovy"/>
+            <!-- <script location="component://order/groovyScripts/order/OrderView.groovy"/>
+            <script location="component://order/groovyScripts/order/OrderViewWebSecure.groovy"/> -->
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/customerDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="companyList">
+        <section>
+            <actions>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="GlAccount"/>
+            	<set field="noConditionFind" value="Y"/>
+            	<script location="component://gaadizo/groovyScripts/admin/CompanyList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/companySearch.ftl"/></html>
+                        	</platform-specific>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/companyList.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+     <screen name="companyDetail">
+        <section>
+            <actions>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
+                <property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="${viewSizeDefaultValue}"/>
+				<set field="entityName" value="PartyAndPerson"/>
+            <set field="noConditionFind" value="Y"/>
+            <entity-condition entity-name="PartyAndUserLoginAndPerson" list="partyAndPersons" use-cache="true">
+                    <order-by field-name="partyId"/>
+            </entity-condition>
+<!--             <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/> -->
+            <script location="component://gaadizo/groovyScripts/admin/CompanyDetails.groovy"/>
+            <!-- <script location="component://order/groovyScripts/order/OrderView.groovy"/>
+            <script location="component://order/groovyScripts/order/OrderViewWebSecure.groovy"/> -->
+            </actions>
+            <widgets>
+                <decorator-screen name="GaadizoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap[labelTitleProperty]}">
+                            <container style="button-bar">
+                            </container>
+							<platform-specific>
+                            	<html><html-template location="component:///gaadizo/template/admin/companyDetails.ftl"/></html>
+                        	</platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+</screens>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <FixedAssetDepMethod depreciationCustomMethodId="DBL_DECL_DEP_FORMULA" fixedAssetId="DEMO_PROD_EQUIPMT_2" lastUpdatedStamp="2019-01-10 01:11:27.0" lastUpdatedTxStamp="2019-01-10 01:11:27.0" createdStamp="2019-01-10 01:11:27.0" createdTxStamp="2019-01-10 01:11:27.0"/>
+    <FixedAssetDepMethod depreciationCustomMethodId="STR_LINE_DEP_FORMULA" fixedAssetId="DEMO_PROD_EQUIPMT_1" lastUpdatedStamp="2019-01-10 01:11:27.0" lastUpdatedTxStamp="2019-01-10 01:11:27.0" createdStamp="2019-01-10 01:11:27.0" createdTxStamp="2019-01-10 01:11:27.0"/>
+    <FixedAssetDepMethod depreciationCustomMethodId="STR_LINE_DEP_FORMULA" fixedAssetId="DEMO_VEHICLE_01" fromDate="2009-01-01 00:00:00.0" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:29.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:29.0"/>
+</entity-engine-xml>

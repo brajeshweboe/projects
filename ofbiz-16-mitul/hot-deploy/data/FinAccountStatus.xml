@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <FinAccountStatus finAccountId="ABN_CHECKING" statusId="FNACT_ACTIVE" statusDate="2009-04-01 00:00:01.0" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <FinAccountStatus finAccountId="AMEX_01" statusId="FNACT_ACTIVE" statusDate="2009-04-01 00:00:01.0" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <FinAccountStatus finAccountId="SC_CHECKING" statusId="FNACT_ACTIVE" statusDate="2009-04-01 00:00:01.0" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+</entity-engine-xml>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://ofbiz.apache.org/Widget-Screen"
+	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
+	<screen name="GlobalDecorator">
+		<section>
+			<actions>
+				<property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="AcmeUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				
+				<!-- The default (global) java scripts -->
+				<set field="layoutSettings.commonHeaderImageLinkUrl" from-field="layoutSettings.commonHeaderImageLinkUrl"
+					default-value="main" global="true" />
+				
+				<!-- entity-one entity-name="PartyAcctgPrefAndGroup" value-field="orgParty">
+                    <field-map field-name="partyId" from-field="userLogin.ownerId"/>
+                    <field-map field-name="roleTypeId" value="INTERNAL_ORGANIZATIO"/>
+                </entity-one -->
+				<set field="visualThemeId" value="ERPTHEME" global="true" />
+				<service service-name="getVisualThemeResources">
+					<field-map field-name="visualThemeId" />
+					<field-map field-name="themeResources" from-field="layoutSettings" />
+				</service>
+				<set field="layoutSettings" from-field="themeResources" default-value="${layoutSettings}" global="true" />
+				<set field="headerTemplateLocation" from-field="layoutSettings.VT_HDR_TMPLT_LOC[0]" />
+				<set field="footerTemplateLocation" from-field="layoutSettings.VT_FTR_TMPLT_LOC[0]" />
+				<set field="appbarTemplateLocation" from-field="layoutSettings.VT_NAV_TMPLT_LOC[0]" />
+				<set field="appbarOpenTemplateLocation" from-field="layoutSettings.VT_NAV_OPEN_TMPLT[0]" />
+				<set field="appbarCloseTemplateLocation" from-field="layoutSettings.VT_NAV_CLOSE_TMPLT[0]" />
+				<set field="leftTemplateLocation" from-field="layoutSettings.VT_LFT_TMPLT_LOC[0]" />
+				<set field="messagesTemplateLocation" value="component://common/template/includes/Messages.ftl" />
+				<set field="layoutSettings.suppressTab" value="ofbizsetup" /><!-- 
+					diseable ofbiz setup by default -->
+
+				<set field="leftbarScreenLocation" value="component://acme/widget/CommonScreens.xml" />
+
+
+			</actions>
+			<widgets>
+				<!-- render header -->
+
+				<platform-specific>
+					<html>
+						<html-template location="${headerTemplateLocation}" />
+					</html>
+				</platform-specific>
+
+
+				<!-- Removed render appbar or its opening part -->
+
+				<!-- render appheader: both menu widget style and ftl template style 
+					menus are supported -->
+				<!-- <section> <condition> <not><if-empty field="userLogin"/></not> </condition> 
+					<widgets> <section> <condition><not><if-empty field="parameters.facilityId"/></not></condition> 
+					<widgets> </widgets> <fail-widgets> <section> <condition><not><if-empty field="parameters.applicationTitle"/></not></condition> 
+					<widgets><label style="apptitle">${parameters.applicationTitle}</label></widgets> 
+					</section> </fail-widgets> </section> </widgets> <fail-widgets> better to 
+					just not include this, the CommonAppBarMenu doesn't show anything by default 
+					if the user isn't logged in, causing a funny empty menu: <include-menu name="CommonAppBarMenu" 
+					location="component://common/widget/CommonMenus.xml"/ </fail-widgets> </section> -->
+
+
+				<!-- render messages -->
+				<platform-specific>
+					<html>
+						<html-template location="${messagesTemplateLocation}" />
+					</html>
+				</platform-specific>
+				<container style="container-fluid">
+				 
+				<section>
+					<condition>
+						<not>
+							<if-empty field="parameters.userLogin" />
+						</not>
+					</condition>
+					<widgets>
+					<container style="col-md-3 col-sm-4 overflowHide">
+						<container id="divleft" style="left-menu">
+							<platform-specific>
+								<html>
+									<html-template location="${leftTemplateLocation}" />
+								</html>
+							</platform-specific>
+						</container>
+						</container>
+					</widgets>
+					<fail-widgets>
+
+					</fail-widgets>
+				</section>
+				<!-- render content area -->
+				<container id="div2" style="col-md-9 col-sm-8">
+				<container style="rightform">
+					<decorator-section-include name="pre-body" />
+					<decorator-section-include name="body" />
+				</container></container>
+</container>
+				<section>
+					<condition>
+						<if-empty field="applicationFooterTemplate" />
+					</condition>
+					<widgets>
+						<platform-specific>
+							<html>
+								<html-template location="${footerTemplateLocation}" />
+							</html>
+						</platform-specific>
+					</widgets>
+					<fail-widgets>
+						<platform-specific>
+							<html>
+								<html-template location="${applicationFooterTemplate}" />
+							</html>
+						</platform-specific>
+					</fail-widgets>
+				</section>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="main-decorator">
+		<section>
+			<actions>
+				<property-map resource="AcmeUiLabels" map-name="uiLabelMap"
+					global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap"
+					global="true" />
+
+				<set field="layoutSettings.companyName" from-field="uiLabelMap.AcmeCompanyName"
+					global="true" />
+				<set field="layoutSettings.companySubtitle" from-field="uiLabelMap.AcmeCompanySubtitle"
+					global="true" />
+
+				<set field="activeApp" value="acme" global="true" />
+				<set field="applicationMenuName" value="MainAppBar" global="true" />
+				<set field="applicationMenuLocation" value="component://acme/widget/AcmeMenus.xml"
+					global="true" />
+				<set field="applicationTitle" value="${uiLabelMap.AcmeApplication}"
+					global="true" />
+			</actions>
+			<widgets>
+				<include-screen name="GlobalDecorator" />
+			</widgets>
+		</section>
+	</screen>
+
+	<screen name="AcmeCommonDecorator">
+		<section>
+			<actions>
+			</actions>
+			<widgets>
+				<decorator-screen name="main-decorator"
+					location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<section>
+							<!-- <condition>
+								<if-has-permission permission="ACMESECURITY"
+									action="_VIEW" />
+							</condition> -->
+							<widgets>
+								<decorator-section-include name="body" />
+							</widgets>
+							<!-- <fail-widgets>
+								<label style="h3">${uiLabelMap.AcmeViewPermissionError}
+								</label>
+							</fail-widgets> -->
+						</section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="leftbarScreenLocation">
+		<section>
+			<actions>
+				<set field="headerItem" value="main" /><!-- this highlights the selected 
+					menu-item with name "main" -->
+			</actions>
+			<widgets>
+				<platform-specific>
+					<html>
+						<html-template location="component://acme/template/Nav.ftl" />
+					</html>
+				</platform-specific>
+			</widgets>
+		</section>
+	</screen>
+	<!-- screen name="Login"> <section> <widgets> <platform-specific> <html><html-template 
+		location="component://acme/template/login/login.ftl"/></html> </platform-specific> 
+		</widgets> </section> </screen> -->
+	<screen name="Login">
+		<section>
+			<actions>
+				<property-map resource="AcmeUiLabels" map-name="uiLabelMap"
+					global="true" />
+				<!-- The default (global) java scripts -->
+				<set field="layoutSettings.commonHeaderImageLinkUrl" from-field="layoutSettings.commonHeaderImageLinkUrl"
+					default-value="main" global="true" />
+				<set field="visualThemeId" value="ERPTHEME" global="true" />
+				<entity-one entity-name="UserLogin" value-field="systemUserLogin">
+					<field-map field-name="userLoginId" value="system" />
+				</entity-one>
+				<service service-name="getVisualThemeResources">
+					<field-map field-name="visualThemeId" />
+					<field-map field-name="themeResources" from-field="layoutSettings" />
+					<field-map field-name="userLogin" from-field="systemUserLogin" />
+				</service>
+				<set field="layoutSettings" from-field="themeResources"
+					default-value="${layoutSettings}" global="true" />
+				<set field="headerTemplateLocation" from-field="layoutSettings.VT_HDR_TMPLT_LOC[0]" />
+				<set field="footerTemplateLocation" from-field="layoutSettings.VT_FTR_TMPLT_LOC[0]" />
+				<set field="appbarTemplateLocation" from-field="layoutSettings.VT_NAV_TMPLT_LOC[0]" />
+				<set field="appbarOpenTemplateLocation" from-field="layoutSettings.VT_NAV_OPEN_TMPLT[0]" />
+				<set field="appbarCloseTemplateLocation" from-field="layoutSettings.VT_NAV_CLOSE_TMPLT[0]" />
+				<set field="leftTemplateLocation" from-field="layoutSettings.VT_LFT_TMPLT_LOC[0]" />
+
+				<set field="messagesTemplateLocation" value="component://common/template/includes/Messages.ftl" />
+				<!--  set field="layoutSettings.suppressTab" value="ofbizsetup" / --><!-- 
+					diseable ofbiz setup by default -->
+
+
+
+
+			</actions>
+			<widgets>
+				<platform-specific>
+					<html>
+						<html-template location="${headerTemplateLocation}" />
+					</html>
+				</platform-specific>
+				<platform-specific>
+					<html>
+						<html-template location="${messagesTemplateLocation}" />
+					</html>
+				</platform-specific>
+				<!-- render content area -->
+				
+					<platform-specific>
+						<html>
+							<html-template location="component://acme/template/login/login.ftl" />
+						</html>
+					</platform-specific>
+				
+
+				<section>
+					<condition>
+						<if-empty field="applicationFooterTemplate" />
+					</condition>
+					<widgets>
+						<platform-specific>
+							<html>
+								<html-template location="${footerTemplateLocation}" />
+							</html>
+						</platform-specific>
+					</widgets>
+					<fail-widgets>
+						<platform-specific>
+							<html>
+								<html-template location="${applicationFooterTemplate}" />
+							</html>
+						</platform-specific>
+					</fail-widgets>
+				</section>
+			</widgets>
+		</section>
+	</screen>
+</screens>

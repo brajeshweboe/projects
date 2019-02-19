@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductStoreCatalog productStoreId="9000" prodCatalogId="DemoCatalog" fromDate="2001-05-13 12:00:00.0" sequenceNum="1" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <ProductStoreCatalog productStoreId="9000" prodCatalogId="eBayCatalog" fromDate="2009-11-05 12:00:00.0" sequenceNum="4" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ProductStoreCatalog productStoreId="9000" prodCatalogId="GoogleCatalog" fromDate="2001-05-13 12:00:00.0" sequenceNum="3" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <ProductStoreCatalog productStoreId="9000" prodCatalogId="TestCatalog" fromDate="2001-05-13 12:00:00.0" sequenceNum="2" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <ProductStoreCatalog productStoreId="9100" prodCatalogId="DemoCatalog" fromDate="2001-05-13 12:00:00.0" sequenceNum="1" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
+    <ProductStoreCatalog productStoreId="RentalStore" prodCatalogId="RentalCatalog" fromDate="2001-05-13 12:00:00.0" sequenceNum="1" lastUpdatedStamp="2019-01-10 01:11:40.0" lastUpdatedTxStamp="2019-01-10 01:11:40.0" createdStamp="2019-01-10 01:11:40.0" createdTxStamp="2019-01-10 01:11:40.0"/>
+</entity-engine-xml>

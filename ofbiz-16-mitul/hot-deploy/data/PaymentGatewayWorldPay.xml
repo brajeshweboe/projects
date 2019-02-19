@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PaymentGatewayWorldPay paymentGatewayConfigId="WORLDPAY_CONFIG" redirectUrl="https://select-test.worldpay.com/wcc/purchase" authMode="A" fixContact="N" hideContact="N" hideCurrency="N" noLanguageMenu="N" withDelivery="N" testMode="100" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+</entity-engine-xml>

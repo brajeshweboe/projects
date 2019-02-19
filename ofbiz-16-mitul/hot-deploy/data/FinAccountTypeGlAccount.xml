@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <FinAccountTypeGlAccount finAccountTypeId="BANK_ACCOUNT" organizationPartyId="Company" glAccountId="213500" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <FinAccountTypeGlAccount finAccountTypeId="DEPOSIT_ACCOUNT" organizationPartyId="Company" glAccountId="213500" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <FinAccountTypeGlAccount finAccountTypeId="GIFTCERT_ACCOUNT" organizationPartyId="Company" glAccountId="213200" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <FinAccountTypeGlAccount finAccountTypeId="INVESTMENT_ACCOUNT" organizationPartyId="Company" glAccountId="213500" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+</entity-engine-xml>

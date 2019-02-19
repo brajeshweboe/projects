@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <Quote quoteId="CQ0001" quoteTypeId="PRODUCT_QUOTE" partyId="DemoCustomer" issueDate="2001-01-01 00:00:00.0" statusId="QUO_CREATED" currencyUomId="USD" productStoreId="9000" salesChannelEnumId="PHONE_SALES_CHANNEL" validFromDate="2001-01-01 00:00:00.0" validThruDate="2100-02-01 00:00:00.0" quoteName="Demo Quote" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:29.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:29.0"/>
+</entity-engine-xml>

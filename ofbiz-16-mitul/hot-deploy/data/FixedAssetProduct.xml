@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <FixedAssetProduct fixedAssetId="RentalShip" productId="RentalShip" fixedAssetProductTypeId="FAPT_USE" fromDate="2011-09-01 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:38.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:38.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+    <FixedAssetProduct fixedAssetId="RoomLux" productId="RoomLux" fixedAssetProductTypeId="FAPT_USE" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:40.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:40.0"/>
+    <FixedAssetProduct fixedAssetId="RoomStd" productId="RoomStd" fixedAssetProductTypeId="FAPT_USE" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:40.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:40.0"/>
+</entity-engine-xml>

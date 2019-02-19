@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://ofbiz.apache.org/Site-Conf" xsi:schemaLocation="http://ofbiz.apache.org/Site-Conf http://ofbiz.apache.org/dtds/site-conf.xsd">
+    <!-- The controller elements that are common to all OFBiz components
+         can be found in the following xml file. A component can override the
+         elements found in the common-controller.xml file. -->
+    <description>Gaadizo Component Site Configuration File</description>
+
+    <!-- Events to run on every request before security (chains exempt) -->
+    <!--    
+    <preprocessor>
+    </preprocessor>
+    -->
+    <!-- Events to run on every request after all other processing (chains exempt) -->
+    <!--
+    <postprocessor>
+        <event name="test" type="java" path="org.apache.ofbiz.webapp.event.TestEvent" invoke="test"/>
+    </postprocessor>
+    -->
+
+    <!-- Request Mappings -->
+
+    <request-map uri="importCatalog">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="importCatalog"/>
+        <response name="error" type="view" value="importCatalog"/>
+    </request-map>
+    
+    <request-map uri="importOrderInERPService">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importOrderInERPService"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+	<request-map uri="importCategoryInERPFromCsv">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importCategoryInERPFromCsv"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+	<request-map uri="importVehicleInERPFromCsv">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importVehicleInERPFromCsv"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+	<request-map uri="importProductInERPFromCsv">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importProductInERPFromCsv"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+	<request-map uri="importPVPriceInERPFromCsv">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importPVPriceInERPFromCsv"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+	<request-map uri="importProductInventoryFromCsv">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importProductInventoryFromCsv"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+	<request-map uri="importProductItemAssocFromCsv">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importProductItemAssocFromCsv"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+	<request-map uri="categoryList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="categoryList"/>
+        <response name="error" type="view" value="categoryList"/>
+    </request-map>
+    <request-map uri="vehicleList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="vehicleList"/>
+        <response name="error" type="view" value="vehicleList"/>
+    </request-map>
+    <request-map uri="productList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="productList"/>
+        <response name="error" type="view" value="productList"/>
+    </request-map>
+    <request-map uri="pvPriceList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="pvPriceList"/>
+        <response name="error" type="view" value="pvPriceList"/>
+    </request-map>
+    <request-map uri="customerList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="customerList"/>
+        <response name="error" type="view" value="customerList"/>
+    </request-map>
+    <request-map uri="supplierList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="supplierList"/>
+        <response name="error" type="view" value="supplierList"/>
+    </request-map>
+    <request-map uri="vendorList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="vendorList"/>
+        <response name="error" type="view" value="vendorList"/>
+    </request-map>
+    
+    <request-map uri="findCategoryList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="categoryList"/>
+        <response name="error" type="view" value="categoryList"/>
+    </request-map>
+    <request-map uri="findVehicleList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="vehicleList"/>
+        <response name="error" type="view" value="vehicleList"/>
+    </request-map>
+    <request-map uri="findProductList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="productList"/>
+        <response name="error" type="view" value="productList"/>
+    </request-map>
+    <request-map uri="findPVPriceList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="pvPriceList"/>
+        <response name="error" type="view" value="pvPriceList"/>
+    </request-map>
+    <request-map uri="findCustomerList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="customerList"/>
+        <response name="error" type="view" value="customerList"/>
+    </request-map>
+    <request-map uri="findSupplierList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="supplierList"/>
+        <response name="error" type="view" value="supplierList"/>
+    </request-map>
+    <request-map uri="findVendorList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="vendorList"/>
+        <response name="error" type="view" value="vendorList"/>
+    </request-map>
+    
+    <request-map uri="modifyCustomer">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="customerDetails"/>
+        <response name="error" type="view" value="customerDetails"/>
+    </request-map>
+    <request-map uri="modifySupplier">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="supplierDetails"/>
+        <response name="error" type="view" value="supplierDetails"/>
+    </request-map>
+    <request-map uri="modifyVendor">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="vendorDetails"/>
+        <response name="error" type="view" value="vendorDetails"/>
+    </request-map>
+    <request-map uri="modifyProduct">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="productDetails"/>
+        <response name="error" type="view" value="productDetails"/>
+    </request-map>
+    <request-map uri="modifyPVPrice">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="pvPriceDetails"/>
+        <response name="error" type="view" value="pvPriceDetails"/>
+    </request-map>
+    <request-map uri="modifyVehicle">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="vehicleDetails"/>
+        <response name="error" type="view" value="vehicleDetails"/>
+    </request-map>
+    <request-map uri="modifyCategory">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="categoryDetails"/>
+        <response name="error" type="view" value="categoryDetails"/>
+    </request-map>
+    <request-map uri="modifyCategory">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="categoryDetails"/>
+        <response name="error" type="view" value="categoryDetails"/>
+    </request-map>
+    <request-map uri="importCompanyInERPFromCsv">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importCompanyInERPFromCsv"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+    <request-map uri="createSparePart">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="createSparePart"/>
+		<response name="error" type="view" value="createSparePart"/>
+	</request-map>
+	<request-map uri="importChartOfAccountInERPFromCsv">
+		<security https="true" auth="true" />
+		<event type="service" invoke="importChartOfAccountInERPFromCsv"/>
+		<response name="success" type="view" value="importCatalog"/>
+		<response name="error" type="view" value="importCatalog"/>
+	</request-map>
+	<request-map uri="companyList">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="companyList"/>
+        <response name="error" type="view" value="companyList"/>
+    </request-map>
+    <request-map uri="companyDetail">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="companyDetail"/>
+        <response name="error" type="view" value="companyDetail"/>
+    </request-map>
+    <!-- View Mappings -->
+    <view-map name="importCatalog" type="screen" page="component://gaadizo/widget/AdminScreens.xml#importCatalog"/>
+    <view-map name="categoryList" type="screen" page="component://gaadizo/widget/AdminScreens.xml#categoryList"/>
+    <view-map name="vehicleList" type="screen" page="component://gaadizo/widget/AdminScreens.xml#vehicleList"/>
+    <view-map name="productList" type="screen" page="component://gaadizo/widget/AdminScreens.xml#productList"/>
+    <view-map name="pvPriceList" type="screen" page="component://gaadizo/widget/AdminScreens.xml#pvPriceList"/>
+    <view-map name="companyList" type="screen" page="component://gaadizo/widget/AdminScreens.xml#companyList"/>
+    <view-map name="customerList" type="screen" page="component://gaadizo/widget/AdminScreens.xml#customerList"/>
+    <view-map name="supplierList" type="screen" page="component://gaadizo/widget/AdminScreens.xml#supplierList"/>
+    <view-map name="vendorList" type="screen" page="component://gaadizo/widget/AdminScreens.xml#vendorList"/>
+    <!-- Details Screens-->
+    
+    <view-map name="customerDetails" type="screen" page="component://gaadizo/widget/AdminScreens.xml#customerDetails"/>
+    <view-map name="companyDetail" type="screen" page="component://gaadizo/widget/AdminScreens.xml#companyDetail"/>
+    <view-map name="supplierDetails" type="screen" page="component://gaadizo/widget/AdminScreens.xml#supplierDetails"/>
+    <view-map name="vendorDetails" type="screen" page="component://gaadizo/widget/AdminScreens.xml#vendorDetails"/>
+    <view-map name="productDetails" type="screen" page="component://gaadizo/widget/AdminScreens.xml#productDetails"/>
+    <view-map name="pvPriceDetails" type="screen" page="component://gaadizo/widget/AdminScreens.xml#pvPriceDetails"/>
+    <view-map name="vehicleDetails" type="screen" page="component://gaadizo/widget/AdminScreens.xml#vehicleDetails"/>
+    <view-map name="categoryDetails" type="screen" page="component://gaadizo/widget/AdminScreens.xml#categoryDetails"/>
+    <view-map name="createSparePart" type="screen" page="component://gaadizo/widget/GaadizoScreens.xml#createSparePart"/>
+
+</site-conf>

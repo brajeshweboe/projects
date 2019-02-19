@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductReview productReviewId="9000" productStoreId="9000" productId="GZ-2644" userLoginId="DemoCustomer" statusId="PRR_APPROVED" productRating="5.000000" productReview="It&apos;s useful." lastUpdatedStamp="2019-01-10 01:11:38.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:38.0" createdTxStamp="2019-01-10 01:11:30.0"/>
+</entity-engine-xml>

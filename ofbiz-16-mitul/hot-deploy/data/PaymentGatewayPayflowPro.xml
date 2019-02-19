@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PaymentGatewayPayflowPro paymentGatewayConfigId="PAYFLOWPRO_CONFIG" certsPath="${sys:getProperty(&apos;ofbiz.home&apos;)}/applications/accounting/pfcerts" hostAddress="pilot-payflowpro.paypal.com" hostPort="443" timeout="80" proxyPort="80" vendor="[Vendor]" userId="[PayFlow UserID]" pwd="[PayFlow Password]" partner="[PayFlow Partner]" checkAvs="Y" checkCvv2="Y" preAuth="Y" enableTransmit="true" logFileName="${sys:getProperty(&apos;ofbiz.home&apos;)}/runtime/logs/payflow_java.log" loggingLevel="6" maxLogFileSize="1000000" stackTraceOn="N" redirectUrl="[Express Checkout Customer Redirect URL]" returnUrl="[Express Checkout Return URL]" cancelReturnUrl="[Express Checkout Cancel Return URL]" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+</entity-engine-xml>

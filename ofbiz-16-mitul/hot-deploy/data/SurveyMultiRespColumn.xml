@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SurveyMultiRespColumn surveyId="1002" surveyMultiRespId="01" surveyMultiRespColId="01" columnTitle="Last Month" sequenceNum="1" lastUpdatedStamp="2019-01-10 01:11:38.0" lastUpdatedTxStamp="2019-01-10 01:11:38.0" createdStamp="2019-01-10 01:11:38.0" createdTxStamp="2019-01-10 01:11:38.0"/>
+    <SurveyMultiRespColumn surveyId="1002" surveyMultiRespId="01" surveyMultiRespColId="02" columnTitle="Last Six Months" sequenceNum="2" lastUpdatedStamp="2019-01-10 01:11:38.0" lastUpdatedTxStamp="2019-01-10 01:11:38.0" createdStamp="2019-01-10 01:11:38.0" createdTxStamp="2019-01-10 01:11:38.0"/>
+    <SurveyMultiRespColumn surveyId="1002" surveyMultiRespId="01" surveyMultiRespColId="03" columnTitle="Last Year" sequenceNum="3" lastUpdatedStamp="2019-01-10 01:11:38.0" lastUpdatedTxStamp="2019-01-10 01:11:38.0" createdStamp="2019-01-10 01:11:38.0" createdTxStamp="2019-01-10 01:11:38.0"/>
+</entity-engine-xml>

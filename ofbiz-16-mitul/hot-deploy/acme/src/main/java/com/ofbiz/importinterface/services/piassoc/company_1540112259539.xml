@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+  <Party partyId="GAADIZ11112327" partyTypeId="PARTY_GROUP" statusId="PARTY_ENABLED" createdDate="2018-10-21 08:57:39.523" preferredCurrencyUomId="INR" />
+  <PartyGroup partyId="GAADIZ11112327" groupName="Perfect Car Care" />
+  <PartyRole partyId="GAADIZ11112327" roleTypeId="_NA_" />
+  <PartyRole partyId="GAADIZ11112327" roleTypeId="INTERNAL_ORGANIZATIO" />
+  <PartyRole partyId="GAADIZ11112327" roleTypeId="BILL_FROM_VENDOR" />
+  <PartyRole partyId="GAADIZ11112327" roleTypeId="BILL_TO_CUSTOMER" />
+  <PartyStatus partyId="GAADIZ11112327" statusId="PARTY_ENABLED" statusDate="2018-10-21 08:57:39.523" />
+  <Facility facilityId="GAADIZ11112327" facilityTypeId="WAREHOUSE" ownerPartyId="GAADIZ11112327" defaultInventoryItemTypeId="NON_SERIAL_INV_ITEM" facilityName="WAREHOUSE" />
+  <ContactMech contactMechId="VA_GAADIZ11112327" contactMechTypeId="POSTAL_ADDRESS" />
+  <PartyContactMech partyId="GAADIZ11112327" contactMechId="VA_GAADIZ11112327" allowSolicitation="Y" fromDate="2018-10-21 08:57:39.528" />
+  <PartyContactMechPurpose partyId="GAADIZ11112327" contactMechId="VA_GAADIZ11112327" contactMechPurposeTypeId="BILLING_LOCATION" fromDate="2018-10-21 08:57:39.529" />
+  <PartyContactMechPurpose partyId="GAADIZ11112327" contactMechId="VA_GAADIZ11112327" contactMechPurposeTypeId="GENERAL_LOCATION" fromDate="2018-10-21 08:57:39.529" />
+  <PartyContactMechPurpose partyId="GAADIZ11112327" contactMechId="VA_GAADIZ11112327" contactMechPurposeTypeId="PAYMENT_LOCATION" fromDate="2018-10-21 08:57:39.529" />
+  <PostalAddress contactMechId="VA_GAADIZ11112327" toName="Perfect Car Care" contactNumber="8506002953" attnName="Perfect Car Care" address1="Perfect Car Care 17/18 Dividing Road Near Vatika Garden Sect-18" address2="NA" city="Gurugram" countryGeoId="IND" stateProvinceGeoId="HR" />
+  <FacilityContactMech facilityId="GAADIZ11112327" contactMechId="VA_GAADIZ11112327" fromDate="2018-10-21 08:57:39.532" />
+  <FacilityContactMechPurpose facilityId="GAADIZ11112327" contactMechId="VA_GAADIZ11112327" contactMechPurposeTypeId="SHIPPING_LOCATION" fromDate="2018-10-21 08:57:39.532" />
+  <FacilityContactMechPurpose facilityId="GAADIZ11112327" contactMechId="VA_GAADIZ11112327" contactMechPurposeTypeId="SHIP_ORIG_LOCATION" fromDate="2018-10-21 08:57:39.532" />
+  <ProductStore productStoreId="GAADIZ11112327" storeName="Perfect Car Care" companyName="Open For Business" title="ERP System" subtitle="Perfect Car Care" payToPartyId="GAADIZ11112327" daysToCancelNonPay="30" prorateShipping="Y" prorateTaxes="Y" inventoryFacilityId="GAADIZ11112327" oneInventoryFacility="Y" checkInventory="Y" reserveInventory="Y" balanceResOnOrderCreation="Y" reserveOrderEnumId="INVRO_FIFO_REC" requireInventory="N" defaultLocaleString="en_US" defaultCurrencyUomId="INR" defaultSalesChannelEnumId="WEB_SALES_CHANNEL" allowPassword="Y" explodeOrderItems="N" retryFailedAuths="Y" reqReturnInventoryReceive="N" headerApprovedStatus="ORDER_APPROVED" itemApprovedStatus="ITEM_APPROVED" digitalItemApprovedStatus="ITEM_APPROVED" headerDeclinedStatus="ORDER_REJECTED" itemDeclinedStatus="ITEM_REJECTED" headerCancelStatus="ORDER_CANCELLED" itemCancelStatus="ITEM_CANCELLED" orderNumberPrefix="WS" authDeclinedMessage="There has been a problem with your method of payment. Please try a different method or call customer service." authFraudMessage="Your order has been rejected and your account has been disabled due to fraud." authErrorMessage="Problem connecting to payment processor; we will continue to retry and notify you by email." storeCreditValidDays="90" storeCreditAccountEnumId="FIN_ACCOUNT" visualThemeId="EC_DEFAULT" prodSearchExcludeVariants="Y" autoApproveInvoice="Y" shipIfCaptureFails="Y" autoApproveOrder="Y" showOutOfStockProducts="Y" />
+</entity-engine-xml>
+

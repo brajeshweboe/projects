@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <GlAccountGroupType glAccountGroupTypeId="TAX_FIELD_US" description="Tax Form Field: USA" lastUpdatedStamp="2019-01-10 01:11:23.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:23.0" createdTxStamp="2019-01-10 01:11:23.0"/>
+</entity-engine-xml>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductDimension dimensionId="10000" productId="10000" productType="Finished Good" brandName="BOCST_001" internalName="BOCST_001" lastUpdatedStamp="2019-01-11 22:15:52.308" lastUpdatedTxStamp="2019-01-11 22:15:51.657" createdStamp="2019-01-11 22:15:52.308" createdTxStamp="2019-01-11 22:15:51.657"/>
+    <ProductDimension dimensionId="10001" productId="10001" productType="Finished Good" brandName="PRA10000" internalName="PRA10000" lastUpdatedStamp="2019-01-11 23:16:30.299" lastUpdatedTxStamp="2019-01-11 23:16:30.262" createdStamp="2019-01-11 23:16:30.299" createdTxStamp="2019-01-11 23:16:30.262"/>
+    <ProductDimension dimensionId="_NA_" lastUpdatedStamp="2019-01-10 01:11:26.484" lastUpdatedTxStamp="2019-01-10 01:11:26.399" createdStamp="2019-01-10 01:11:26.484" createdTxStamp="2019-01-10 01:11:26.399"/>
+    <ProductDimension dimensionId="_NF_" lastUpdatedStamp="2019-01-10 01:11:26.471" lastUpdatedTxStamp="2019-01-10 01:11:26.399" createdStamp="2019-01-10 01:11:26.471" createdTxStamp="2019-01-10 01:11:26.399"/>
+</entity-engine-xml>

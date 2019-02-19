@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OrderItemPriceInfo orderItemPriceInfoId="10001" orderId="DEMO10091" orderItemSeqId="00001" description="SupplierProduct [minimumOrderQuantity:5.0, lastPrice: 21.6]" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderItemPriceInfo orderItemPriceInfoId="10002" orderId="DEMO10091" orderItemSeqId="00001" description="SupplierProduct [minimumOrderQuantity:0.0, lastPrice: 24.0]" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderItemPriceInfo orderItemPriceInfoId="9000" orderId="DEMO10090" orderItemSeqId="00001" productPriceRuleId="9000" productPriceActionSeqId="01" modifyAmount="-9.600" description="[PRODUCT_CATEGORY_IDIsPROMOTIONS] [list:48.0;avgCost:48.0;margin:0.0] [type:PRICE_POL]" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+    <OrderItemPriceInfo orderItemPriceInfoId="9001" orderId="Demo1001" orderItemSeqId="00001" description="SupplierProduct [minimumOrderQuantity:0.000000, lastPrice: 24.000]" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
+</entity-engine-xml>

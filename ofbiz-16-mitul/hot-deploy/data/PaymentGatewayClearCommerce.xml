@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PaymentGatewayClearCommerce paymentGatewayConfigId="CLEARCOMMERCE_CONFIG" sourceId="mySource" groupId="myGroup" clientId="[ClearCommerce clientId]" username="[ClearCommerce username]" pwd="[ClearCommerce password]" userAlias="[ClearCommerce alias]" processMode="P" serverURL="https://test5x.clearcommerce.com:11500" enableCVM="N" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
+</entity-engine-xml>

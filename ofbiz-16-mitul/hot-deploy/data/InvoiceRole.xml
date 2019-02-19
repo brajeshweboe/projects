@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <InvoiceRole invoiceId="8100" partyId="Company" roleTypeId="BILL_FROM_VENDOR" datetimePerformed="2009-07-08 11:54:00.0" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+    <InvoiceRole invoiceId="8100" partyId="DemoCustAgent" roleTypeId="SALES_REP" datetimePerformed="2009-07-08 11:54:00.0" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:28.0"/>
+</entity-engine-xml>

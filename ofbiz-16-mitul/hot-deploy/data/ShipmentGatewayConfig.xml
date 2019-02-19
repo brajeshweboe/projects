@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentGatewayConfig shipmentGatewayConfigId="DHL_CONFIG" shipmentGatewayConfTypeId="DHL" description="DHL Config" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentGatewayConfig shipmentGatewayConfigId="FEDEX_CONFIG" shipmentGatewayConfTypeId="FEDEX" description="Fedex Config" lastUpdatedStamp="2019-01-10 01:11:19.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:19.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentGatewayConfig shipmentGatewayConfigId="UPS_CONFIG" shipmentGatewayConfTypeId="UPS" description="UPS Config" lastUpdatedStamp="2019-01-10 01:11:19.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:19.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+    <ShipmentGatewayConfig shipmentGatewayConfigId="USPS_CONFIG" shipmentGatewayConfTypeId="USPS" description="USPS Config" lastUpdatedStamp="2019-01-10 01:11:19.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:19.0" createdTxStamp="2019-01-10 01:11:18.0"/>
+</entity-engine-xml>

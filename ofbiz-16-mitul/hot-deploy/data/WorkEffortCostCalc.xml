@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <WorkEffortCostCalc workEffortId="TASK_COST" costComponentTypeId="OTHER_COST" costComponentCalcId="TASK_COST_CALC" fromDate="2005-12-31 00:01:00.0" lastUpdatedStamp="2019-01-10 01:11:42.0" lastUpdatedTxStamp="2019-01-10 01:11:42.0" createdStamp="2019-01-10 01:11:42.0" createdTxStamp="2019-01-10 01:11:42.0"/>
+</entity-engine-xml>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <CommunicationEventPrpTyp communicationEventPrpTypId="ACTIVITY_REQUEST" hasTable="N" description="Activity Request" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
+    <CommunicationEventPrpTyp communicationEventPrpTypId="CONFERENCE" hasTable="N" description="Conference" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
+    <CommunicationEventPrpTyp communicationEventPrpTypId="CUSTOMER_SERVICE_CAL" hasTable="N" description="Customer Service Call" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
+    <CommunicationEventPrpTyp communicationEventPrpTypId="INQUIRY" hasTable="N" description="Inquiry" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
+    <CommunicationEventPrpTyp communicationEventPrpTypId="MEETING" hasTable="N" description="Meeting" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
+    <CommunicationEventPrpTyp communicationEventPrpTypId="SALES_FOLLOW_UP" hasTable="N" description="Sales Follow Up" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
+    <CommunicationEventPrpTyp communicationEventPrpTypId="SEMINAR" hasTable="N" description="Seminar" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
+    <CommunicationEventPrpTyp communicationEventPrpTypId="SUPPORT_CALL" hasTable="N" description="Support Call" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
+</entity-engine-xml>

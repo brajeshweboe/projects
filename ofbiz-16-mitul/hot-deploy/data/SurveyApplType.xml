@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SurveyApplType surveyApplTypeId="CART_ADD" description="Add-To Cart" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <SurveyApplType surveyApplTypeId="CHECK_OUT" description="Check-Out" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <SurveyApplType surveyApplTypeId="CUSTOMER_PROFILE" description="Customer Profile" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <SurveyApplType surveyApplTypeId="GENERAL_POLL" description="General Poll" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <SurveyApplType surveyApplTypeId="PORDER_PLACE" description="Purchase Order Placement" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <SurveyApplType surveyApplTypeId="PORDITM_PLACE" description="Purchase Order Item Placement" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <SurveyApplType surveyApplTypeId="RANDOM_POLL" description="Random Poll" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <SurveyApplType surveyApplTypeId="SORDER_PLACE" description="Sales Order Placement" lastUpdatedStamp="2019-01-10 00:54:22.0" lastUpdatedTxStamp="2019-01-10 00:54:21.0" createdStamp="2019-01-10 00:54:22.0" createdTxStamp="2019-01-10 00:54:21.0"/>
+    <SurveyApplType surveyApplTypeId="TEST_SURVEY" description="Used for test a survey" lastUpdatedStamp="2019-01-10 01:11:43.0" lastUpdatedTxStamp="2019-01-10 01:11:43.0" createdStamp="2019-01-10 01:11:43.0" createdTxStamp="2019-01-10 01:11:43.0"/>
+</entity-engine-xml>

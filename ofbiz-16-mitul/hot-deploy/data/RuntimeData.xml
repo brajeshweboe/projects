@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <RuntimeData runtimeDataId="8501" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0">
+        <runtimeInfo><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+            <ofbiz-ser>
+                <map-HashMap>
+                    <map-Entry>
+                        <map-Key>
+                            <std-String value="recurrenceInfoId"/>
+                        </map-Key>
+                        <map-Value>
+                            <std-String value="400"/>
+                        </map-Value>
+                    </map-Entry>
+                </map-HashMap>
+            </ofbiz-ser>
+        ]]></runtimeInfo>
+    </RuntimeData>
+</entity-engine-xml>

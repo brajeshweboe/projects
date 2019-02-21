@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <PaymentGatewaySecurePay paymentGatewayConfigId="SECUREPAY_CONFIG" merchantId="[SecurePay MerchantID]" pwd="[SecurePay Password]" serverURL="[SecurePay serverURL]" processTimeout="80" enableAmountRound="N" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
-</entity-engine-xml>

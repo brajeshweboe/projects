@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <CommunicationEventRole communicationEventId="9000" partyId="admin" roleTypeId="ADDRESSEE" contactMechId="admin" statusId="COM_ROLE_CREATED" lastUpdatedStamp="2019-01-10 01:11:27.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:27.0" createdTxStamp="2019-01-10 01:11:26.0"/>
-</entity-engine-xml>

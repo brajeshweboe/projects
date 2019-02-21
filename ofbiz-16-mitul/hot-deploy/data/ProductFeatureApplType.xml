@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProductFeatureApplType productFeatureApplTypeId="DISTINGUISHING_FEAT" hasTable="N" description="Distinguishing" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
-    <ProductFeatureApplType productFeatureApplTypeId="OPTIONAL_FEATURE" hasTable="N" description="Optional" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
-    <ProductFeatureApplType productFeatureApplTypeId="REQUIRED_FEATURE" hasTable="N" description="Required" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
-    <ProductFeatureApplType productFeatureApplTypeId="SELECTABLE_FEATURE" hasTable="N" description="Selectable" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
-    <ProductFeatureApplType productFeatureApplTypeId="STANDARD_FEATURE" hasTable="N" description="Standard" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
-</entity-engine-xml>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <OAuth2GitHub productStoreId="9000" localRedirectUri="/ecomseo/gitHubRedirect" iconUrl="/passport/images/github.png" fromDate="2011-01-01 00:00:00.0" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
-</entity-engine-xml>

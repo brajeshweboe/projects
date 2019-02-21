@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProductFeaturePrice productFeatureId="9000" productPriceTypeId="AVERAGE_COST" currencyUomId="USD" fromDate="2000-01-01 00:00:00.0" price="2.300" lastUpdatedStamp="2019-01-10 01:11:34.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:34.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductFeaturePrice productFeatureId="9000" productPriceTypeId="DEFAULT_PRICE" currencyUomId="USD" fromDate="2000-01-01 00:00:00.0" price="4.300" lastUpdatedStamp="2019-01-10 01:11:34.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:34.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductFeaturePrice productFeatureId="9000" productPriceTypeId="LIST_PRICE" currencyUomId="USD" fromDate="2000-01-01 00:00:00.0" price="4.400" lastUpdatedStamp="2019-01-10 01:11:34.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:34.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductFeaturePrice productFeatureId="9001" productPriceTypeId="DEFAULT_PRICE" currencyUomId="USD" fromDate="2000-01-01 00:00:00.0" price="4.300" lastUpdatedStamp="2019-01-10 01:11:34.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:34.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductFeaturePrice productFeatureId="9002" productPriceTypeId="LIST_PRICE" currencyUomId="USD" fromDate="2000-01-01 00:00:00.0" price="5.300" lastUpdatedStamp="2019-01-10 01:11:34.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:34.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductFeaturePrice productFeatureId="9003" productPriceTypeId="AVERAGE_COST" currencyUomId="USD" fromDate="2000-01-01 00:00:00.0" price="2.300" lastUpdatedStamp="2019-01-10 01:11:34.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:34.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-</entity-engine-xml>

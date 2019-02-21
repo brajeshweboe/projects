@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <CostComponent costComponentId="6000" costComponentTypeId="EST_STD_MAT_COST" productId="MAT_A_COST" fromDate="2005-12-31 00:01:00.0" cost="9.000000" costUomId="USD" lastUpdatedStamp="2019-01-10 01:11:42.0" lastUpdatedTxStamp="2019-01-10 01:11:42.0" createdStamp="2019-01-10 01:11:42.0" createdTxStamp="2019-01-10 01:11:42.0"/>
-    <CostComponent costComponentId="6001" costComponentTypeId="EST_STD_MAT_COST" productId="MAT_B_COST" fromDate="2005-12-31 00:01:00.0" cost="7.000000" costUomId="USD" lastUpdatedStamp="2019-01-10 01:11:42.0" lastUpdatedTxStamp="2019-01-10 01:11:42.0" createdStamp="2019-01-10 01:11:42.0" createdTxStamp="2019-01-10 01:11:42.0"/>
-</entity-engine-xml>

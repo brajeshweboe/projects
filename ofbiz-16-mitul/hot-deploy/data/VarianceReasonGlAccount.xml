@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <VarianceReasonGlAccount varianceReasonId="VAR_DAMAGED" organizationPartyId="Company" glAccountId="514000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <VarianceReasonGlAccount varianceReasonId="VAR_FOUND" organizationPartyId="Company" glAccountId="514000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <VarianceReasonGlAccount varianceReasonId="VAR_INTEGR" organizationPartyId="Company" glAccountId="514000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <VarianceReasonGlAccount varianceReasonId="VAR_LOST" organizationPartyId="Company" glAccountId="514000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <VarianceReasonGlAccount varianceReasonId="VAR_SAMPLE" organizationPartyId="Company" glAccountId="625000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <VarianceReasonGlAccount varianceReasonId="VAR_STOLEN" organizationPartyId="Company" glAccountId="514000" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-</entity-engine-xml>

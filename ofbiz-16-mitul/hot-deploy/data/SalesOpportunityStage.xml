@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <SalesOpportunityStage opportunityStageId="SOSTG_CLOSED" description="Closed" defaultProbability="1.000000" sequenceNum="4" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <SalesOpportunityStage opportunityStageId="SOSTG_PROPOSAL" description="Proposal" defaultProbability="0.200000" sequenceNum="2" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <SalesOpportunityStage opportunityStageId="SOSTG_PROSPECT" description="Prospect" defaultProbability="0.050000" sequenceNum="1" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <SalesOpportunityStage opportunityStageId="SOSTG_QUOTED" description="Quoted" defaultProbability="0.400000" sequenceNum="3" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-</entity-engine-xml>

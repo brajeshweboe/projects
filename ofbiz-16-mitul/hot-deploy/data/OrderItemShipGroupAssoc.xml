@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <OrderItemShipGroupAssoc orderId="DEMO10090" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.000000" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-    <OrderItemShipGroupAssoc orderId="DEMO10091" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="5.000000" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-    <OrderItemShipGroupAssoc orderId="Demo1001" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.000000" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-    <OrderItemShipGroupAssoc orderId="Demo1002" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.000000" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-    <OrderItemShipGroupAssoc orderId="Demo1002" orderItemSeqId="00004" shipGroupSeqId="00001" quantity="1.000000" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-</entity-engine-xml>

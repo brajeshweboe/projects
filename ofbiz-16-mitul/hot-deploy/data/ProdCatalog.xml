@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProdCatalog prodCatalogId="DemoCatalog" catalogName="Demo Catalog" useQuickAdd="Y" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProdCatalog prodCatalogId="eBayCatalog" catalogName="eBay Catalog" useQuickAdd="Y" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
-    <ProdCatalog prodCatalogId="GoogleCatalog" catalogName="Google Catalog" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProdCatalog prodCatalogId="RentalCatalog" catalogName="Rental Catalog" useQuickAdd="N" lastUpdatedStamp="2019-01-10 01:11:40.0" lastUpdatedTxStamp="2019-01-10 01:11:40.0" createdStamp="2019-01-10 01:11:40.0" createdTxStamp="2019-01-10 01:11:40.0"/>
-    <ProdCatalog prodCatalogId="TestCatalog" catalogName="Test Catalog" useQuickAdd="N" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-</entity-engine-xml>

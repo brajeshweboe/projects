@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <PartyIdentification partyId="DemoCustomer" partyIdentificationTypeId="CARD_ID" idValue="987654321" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
-    <PartyIdentification partyId="DemoCustomer" partyIdentificationTypeId="INVOICE_EXPORT" idValue="DemoCustomer2" lastUpdatedStamp="2019-01-10 01:11:29.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:29.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <PartyIdentification partyId="DemoSupplier" partyIdentificationTypeId="SIRET" idValue="1234 5678 90123" lastUpdatedStamp="2019-01-10 01:11:27.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:27.0" createdTxStamp="2019-01-10 01:11:26.0"/>
-</entity-engine-xml>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProductPromoCode productPromoCodeId="9000" productPromoId="9012" userEntered="Y" requireEmailOrParty="N" useLimitPerCode="3" useLimitPerCustomer="1" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin" lastUpdatedStamp="2019-01-10 01:11:35.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:35.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductPromoCode productPromoCodeId="9001" productPromoId="9014" userEntered="Y" requireEmailOrParty="Y" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin" lastUpdatedStamp="2019-01-10 01:11:35.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:35.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductPromoCode productPromoCodeId="9021" productPromoId="9021" userEntered="Y" requireEmailOrParty="N" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin" lastUpdatedStamp="2019-01-10 01:11:36.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:36.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-</entity-engine-xml>

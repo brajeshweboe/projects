@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <PaymentGatewayCyberSource paymentGatewayConfigId="CYBERSOURCE_CONFIG" merchantId="[MerchantID]" apiVersion="1.43" production="false" keysDir="${sys:getProperty(&apos;ofbiz.home&apos;)}/applications/accounting/icskeys" keysFile="merchantID.p12" logEnabled="true" logDir="${sys:getProperty(&apos;ofbiz.home&apos;)}/runtime/logs" logFile="cybersource.log" logSize="10" merchantDescr="Some Nice Web Store" autoBill="false" enableDav="N" fraudScore="N" ignoreAvs="false" disableBillAvs="Y" lastUpdatedStamp="2019-01-10 01:11:26.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:26.0" createdTxStamp="2019-01-10 01:11:26.0"/>
-</entity-engine-xml>

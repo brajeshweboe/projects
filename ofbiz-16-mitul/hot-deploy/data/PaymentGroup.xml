@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <PaymentGroup paymentGroupId="9000" paymentGroupTypeId="CHECK_RUN" paymentGroupName="Check Run for 2009-07-11 12:28:44.95" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <PaymentGroup paymentGroupId="9001" paymentGroupTypeId="CHECK_RUN" paymentGroupName="Check run for 2009-08-11 12:28:45.315" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-</entity-engine-xml>

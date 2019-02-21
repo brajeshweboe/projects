@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProductStoreRole partyId="admin" roleTypeId="SALES_REP" productStoreId="9000" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductStoreRole partyId="admin" roleTypeId="SALES_REP" productStoreId="9100" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
-    <ProductStoreRole partyId="admin" roleTypeId="SALES_REP" productStoreId="RentalStore" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:40.0" lastUpdatedTxStamp="2019-01-10 01:11:40.0" createdStamp="2019-01-10 01:11:40.0" createdTxStamp="2019-01-10 01:11:40.0"/>
-    <ProductStoreRole partyId="DemoRepStore" roleTypeId="SALES_REP" productStoreId="9000" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-</entity-engine-xml>

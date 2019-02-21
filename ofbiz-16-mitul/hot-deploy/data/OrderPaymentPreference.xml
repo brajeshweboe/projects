@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <OrderPaymentPreference orderPaymentPreferenceId="9000" orderId="DEMO10090" paymentMethodTypeId="CREDIT_CARD" paymentMethodId="9015" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="50.85" processAttempt="1" statusId="PAYMENT_AUTHORIZED" needsNsfRetry="N" createdDate="2008-04-23 16:49:27.0" createdByUserLogin="admin" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="9001" orderId="Demo1002" paymentMethodTypeId="CREDIT_CARD" paymentMethodId="9015" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="127.09" processAttempt="1" statusId="PAYMENT_SETTLED" needsNsfRetry="N" createdDate="2009-08-17 14:56:44.0" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-</entity-engine-xml>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ShipmentReceipt receiptId="9000" inventoryItemId="9025" productId="GZ-2644" shipmentId="9997" orderId="Demo1001" orderItemSeqId="00001" datetimeReceived="2009-08-13 17:47:31.0" quantityAccepted="2.000000" quantityRejected="0.000000" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-</entity-engine-xml>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <PartyAcctgPreference partyId="Company" taxFormId="US_IRS_1120" cogsMethodId="COGS_LIFO" baseCurrencyUomId="USD" invoiceSeqCustMethId="INV_HOOK_ENF_SEQ" invoiceIdPrefix="CI" lastInvoiceNumber="1" quoteIdPrefix="CQ" orderIdPrefix="CO" errorGlJournalId="ERROR_JOURNAL" lastUpdatedStamp="2019-01-10 21:41:53.0" lastUpdatedTxStamp="2019-01-10 21:41:53.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-</entity-engine-xml>

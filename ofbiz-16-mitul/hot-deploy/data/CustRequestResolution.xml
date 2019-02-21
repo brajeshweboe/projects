@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <CustRequestResolution custRequestResolutionId="DUPLICATE" custRequestTypeId="RF_FEATURE" description="Duplicate" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-    <CustRequestResolution custRequestResolutionId="FIXED" custRequestTypeId="RF_BUGFIX" description="Fixed" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-    <CustRequestResolution custRequestResolutionId="IMPLEMENTED" custRequestTypeId="RF_FEATURE" description="Implemented" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-    <CustRequestResolution custRequestResolutionId="REJECTED" custRequestTypeId="RF_FEATURE" description="Rejected" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-    <CustRequestResolution custRequestResolutionId="WONTFIX" custRequestTypeId="RF_BUGFIX" description="Won&apos;t Fix" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-    <CustRequestResolution custRequestResolutionId="WORKS" custRequestTypeId="RF_BUGFIX" description="Works For Me" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-</entity-engine-xml>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <RequirementType requirementTypeId="CUSTOMER_REQUIREMENT" hasTable="N" description="Customer Requirement" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-    <RequirementType requirementTypeId="INTERNAL_REQUIREMENT" hasTable="N" description="Internal Requirement" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-    <RequirementType requirementTypeId="PRODUCT_REQUIREMENT" hasTable="N" description="Product Requirement" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-    <RequirementType requirementTypeId="WORK_REQUIREMENT" hasTable="N" description="Work Requirement" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-</entity-engine-xml>

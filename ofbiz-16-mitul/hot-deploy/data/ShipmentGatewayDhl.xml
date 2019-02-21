@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ShipmentGatewayDhl shipmentGatewayConfigId="DHL_CONFIG" connectUrl="https://eCommerce.airborne.com/ApiLandingTest.asp" connectTimeout="60" headVersion="1.1" headAction="Request" accessUserId="YOUR DHL ShipIT USER ID" accessPassword="YOUR DHL ShipIT ACCESS PASSWORD" accessAccountNbr="YOUR DHL ShipIT ACCOUNT NUMBER" accessShippingKey="YOUR DHL ShipIT SHIPPING KEY" labelImageFormat="PNG" rateEstimateTemplate="api.schema.DHL" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:18.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:18.0"/>
-</entity-engine-xml>

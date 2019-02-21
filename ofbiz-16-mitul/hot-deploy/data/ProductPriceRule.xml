@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProductPriceRule productPriceRuleId="9000" ruleName="Test Rule 1" isSale="Y" lastUpdatedStamp="2019-01-10 01:11:36.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:36.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductPriceRule productPriceRuleId="9001" ruleName="Test Rule 2" isSale="Y" lastUpdatedStamp="2019-01-10 01:11:36.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:36.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-</entity-engine-xml>

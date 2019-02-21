@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <TrainingClassType trainingClassTypeId="ADVAN_TRAINING" description="Advance Training" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
-    <TrainingClassType trainingClassTypeId="BASIC_TRAINING" description="Basic Training" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
-    <TrainingClassType trainingClassTypeId="IMPRO_TRAINING" description="Improvement Training" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
-    <TrainingClassType trainingClassTypeId="ONJOB_TRAINING" description="On Job Training" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:23.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:23.0"/>
-</entity-engine-xml>

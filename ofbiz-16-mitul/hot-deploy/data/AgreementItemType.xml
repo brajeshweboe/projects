@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <AgreementItemType agreementItemTypeId="AGREEMENT_COMMISSION" hasTable="N" description="Commission Rate" lastUpdatedStamp="2019-01-10 00:54:20.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:20.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-    <AgreementItemType agreementItemTypeId="AGREEMENT_EXHIBIT" hasTable="N" description="Exhibit" lastUpdatedStamp="2019-01-10 00:54:20.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:20.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-    <AgreementItemType agreementItemTypeId="AGREEMENT_PRICING_PR" hasTable="N" description="Pricing" lastUpdatedStamp="2019-01-10 00:54:20.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:20.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-    <AgreementItemType agreementItemTypeId="AGREEMENT_SECTION" hasTable="N" description="Section" lastUpdatedStamp="2019-01-10 00:54:20.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:20.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-    <AgreementItemType agreementItemTypeId="SUBAGREEMENT" hasTable="N" description="Sub-Agreement" lastUpdatedStamp="2019-01-10 00:54:20.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:20.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-</entity-engine-xml>

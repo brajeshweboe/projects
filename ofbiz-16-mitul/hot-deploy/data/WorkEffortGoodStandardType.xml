@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <WorkEffortGoodStandardType workEffortGoodStdTypeId="GENERAL_SALES" hasTable="N" description="Product to Represent General Sales of the WorkEffort" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:17.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:17.0"/>
-    <WorkEffortGoodStandardType workEffortGoodStdTypeId="PRUNT_PROD_DELIV" hasTable="N" description="Production Run Task and Deliverable Product Association" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:17.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:17.0"/>
-    <WorkEffortGoodStandardType workEffortGoodStdTypeId="PRUNT_PROD_NEEDED" hasTable="N" description="Production Run Task and Needed Product Association" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:17.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:17.0"/>
-    <WorkEffortGoodStandardType workEffortGoodStdTypeId="PRUN_PROD_DELIV" hasTable="N" description="Production Run and Product to Deliver Association" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:17.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:17.0"/>
-    <WorkEffortGoodStandardType workEffortGoodStdTypeId="ROU_PROD_TEMPLATE" hasTable="N" description="Product and Routing Association" lastUpdatedStamp="2019-01-10 01:11:18.0" lastUpdatedTxStamp="2019-01-10 01:11:17.0" createdStamp="2019-01-10 01:11:18.0" createdTxStamp="2019-01-10 01:11:17.0"/>
-    <WorkEffortGoodStandardType workEffortGoodStdTypeId="SCRUM_PRO_WORKEFF" hasTable="N" description="Product and Workeffort Association in scrum" lastUpdatedStamp="2019-01-10 01:11:25.0" lastUpdatedTxStamp="2019-01-10 01:11:25.0" createdStamp="2019-01-10 01:11:25.0" createdTxStamp="2019-01-10 01:11:25.0"/>
-</entity-engine-xml>

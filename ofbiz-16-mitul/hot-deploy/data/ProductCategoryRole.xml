@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProductCategoryRole productCategoryId="TSTLTDADMIN" partyId="ltdadmin" roleTypeId="LTD_ADMIN" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-    <ProductCategoryRole productCategoryId="TSTLTDADMIN" partyId="ltdadmin1" roleTypeId="LTD_ADMIN" fromDate="2001-05-13 12:00:00.0" lastUpdatedStamp="2019-01-10 01:11:30.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:30.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-</entity-engine-xml>

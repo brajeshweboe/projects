@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <TimeEntry timeEntryId="DEMO-TIMEENTRY1" partyId="SCRUMTEAM-1" fromDate="2010-10-19 00:00:00.0" rateTypeId="STANDARD" workEffortId="DEMO-TASK-3" timesheetId="DEMO-TIMESHEET3" hours="8.0" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:45.0" planHours="8.0"/>
-    <TimeEntry timeEntryId="DEMO-TIMEENTRY2" partyId="SCRUMTEAM-1" fromDate="2010-10-20 00:00:00.0" rateTypeId="STANDARD" workEffortId="DEMO-TASK-4" timesheetId="DEMO-TIMESHEET3" hours="8.0" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:45.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:45.0" planHours="8.0"/>
-</entity-engine-xml>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <GeoAssocType geoAssocTypeId="COUNTY_CITY" description="City in a county" lastUpdatedStamp="2019-01-10 00:54:17.0" lastUpdatedTxStamp="2019-01-10 00:54:17.0" createdStamp="2019-01-10 00:54:17.0" createdTxStamp="2019-01-10 00:54:17.0"/>
-    <GeoAssocType geoAssocTypeId="COUNTY_SEAT" description="Administrative Main City of a County" lastUpdatedStamp="2019-01-10 00:54:17.0" lastUpdatedTxStamp="2019-01-10 00:54:17.0" createdStamp="2019-01-10 00:54:17.0" createdTxStamp="2019-01-10 00:54:17.0"/>
-    <GeoAssocType geoAssocTypeId="GROUP_MEMBER" description="Geo Group Member" lastUpdatedStamp="2019-01-10 00:54:17.0" lastUpdatedTxStamp="2019-01-10 00:54:17.0" createdStamp="2019-01-10 00:54:17.0" createdTxStamp="2019-01-10 00:54:17.0"/>
-    <GeoAssocType geoAssocTypeId="POSTAL_CODE" description="Postal code associated to a GeoType" lastUpdatedStamp="2019-01-10 00:54:17.0" lastUpdatedTxStamp="2019-01-10 00:54:17.0" createdStamp="2019-01-10 00:54:17.0" createdTxStamp="2019-01-10 00:54:17.0"/>
-    <GeoAssocType geoAssocTypeId="REGIONS" description="For a region of a larger Geo, i.e. states, counties, provinces..." lastUpdatedStamp="2019-01-10 00:54:17.0" lastUpdatedTxStamp="2019-01-10 00:54:17.0" createdStamp="2019-01-10 00:54:17.0" createdTxStamp="2019-01-10 00:54:17.0"/>
-</entity-engine-xml>

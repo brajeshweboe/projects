@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <UomConversionDated uomId="EUR" uomIdTo="USD" fromDate="2001-01-01 00:00:00.0" conversionFactor="1.5" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <UomConversionDated uomId="USD" uomIdTo="EUR" fromDate="2001-01-01 00:00:00.0" conversionFactor="0.7" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <UomConversionDated uomId="USD" uomIdTo="USD" fromDate="2001-01-01 00:00:00.0" conversionFactor="1.0" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-</entity-engine-xml>

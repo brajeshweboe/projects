@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <PartyContentType partyContentTypeId="INTERNAL" description="Internal Content" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-    <PartyContentType partyContentTypeId="LGOIMGURL" description="Logo Image URL" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-    <PartyContentType partyContentTypeId="USERDEF" description="User Defined Content" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-    <PartyContentType partyContentTypeId="VNDSHPINF" description="Vendor Shipping Info" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-</entity-engine-xml>

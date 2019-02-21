@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <DateDimension dimensionId="_NA_" description="Date Not Set." lastUpdatedStamp="2019-01-10 01:11:26.458" lastUpdatedTxStamp="2019-01-10 01:11:26.399" createdStamp="2019-01-10 01:11:26.458" createdTxStamp="2019-01-10 01:11:26.399"/>
-    <DateDimension dimensionId="_NF_" description="Date Not Found." lastUpdatedStamp="2019-01-10 01:11:26.446" lastUpdatedTxStamp="2019-01-10 01:11:26.399" createdStamp="2019-01-10 01:11:26.446" createdTxStamp="2019-01-10 01:11:26.399"/>
-</entity-engine-xml>

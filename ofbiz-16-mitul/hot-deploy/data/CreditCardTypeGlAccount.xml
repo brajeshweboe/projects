@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <CreditCardTypeGlAccount cardType="CCT_AMERICANEXPRESS" organizationPartyId="Company" glAccountId="122100" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <CreditCardTypeGlAccount cardType="CCT_DINERSCLUB" organizationPartyId="Company" glAccountId="122100" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <CreditCardTypeGlAccount cardType="CCT_DISCOVER" organizationPartyId="Company" glAccountId="122200" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <CreditCardTypeGlAccount cardType="CCT_MASTERCARD" organizationPartyId="Company" glAccountId="122300" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-    <CreditCardTypeGlAccount cardType="CCT_VISA" organizationPartyId="Company" glAccountId="122300" lastUpdatedStamp="2019-01-10 01:11:28.0" lastUpdatedTxStamp="2019-01-10 01:11:28.0" createdStamp="2019-01-10 01:11:28.0" createdTxStamp="2019-01-10 01:11:28.0"/>
-</entity-engine-xml>

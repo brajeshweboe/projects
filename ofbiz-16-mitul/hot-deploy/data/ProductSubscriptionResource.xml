@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProductSubscriptionResource productId="GZ-NEWS-1MO" subscriptionResourceId="GZ-NEWS" fromDate="2001-05-13 12:00:00.0" useTime="1" useTimeUomId="TF_mon" gracePeriodOnExpiry="1" gracePeriodOnExpiryUomId="TF_mon" lastUpdatedStamp="2019-01-10 01:11:33.0" lastUpdatedTxStamp="2019-01-10 01:11:30.0" createdStamp="2019-01-10 01:11:33.0" createdTxStamp="2019-01-10 01:11:30.0"/>
-</entity-engine-xml>

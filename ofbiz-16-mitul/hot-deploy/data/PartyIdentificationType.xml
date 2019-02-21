@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <PartyIdentificationType partyIdentificationTypeId="CARD_ID" description="Person card identification number" lastUpdatedStamp="2019-01-10 01:11:46.0" lastUpdatedTxStamp="2019-01-10 01:11:46.0" createdStamp="2019-01-10 01:11:46.0" createdTxStamp="2019-01-10 01:11:46.0"/>
-    <PartyIdentificationType partyIdentificationTypeId="INVOICE_EXPORT" description="replacement value for partyId in the invoice export function in accounting" lastUpdatedStamp="2019-01-10 01:11:22.0" lastUpdatedTxStamp="2019-01-10 01:11:21.0" createdStamp="2019-01-10 01:11:22.0" createdTxStamp="2019-01-10 01:11:21.0"/>
-    <PartyIdentificationType partyIdentificationTypeId="PARTY_IMPORT" description="Original ID in the system where this record was imported from" lastUpdatedStamp="2019-01-10 00:54:21.0" lastUpdatedTxStamp="2019-01-10 00:54:20.0" createdStamp="2019-01-10 00:54:21.0" createdTxStamp="2019-01-10 00:54:20.0"/>
-    <PartyIdentificationType partyIdentificationTypeId="SIRET" description="French company identification number (SIRET)" lastUpdatedStamp="2019-01-10 01:11:27.0" lastUpdatedTxStamp="2019-01-10 01:11:26.0" createdStamp="2019-01-10 01:11:27.0" createdTxStamp="2019-01-10 01:11:26.0"/>
-    <PartyIdentificationType partyIdentificationTypeId="SVN_LOGIN" description="SVN login name" lastUpdatedStamp="2019-01-10 01:11:25.0" lastUpdatedTxStamp="2019-01-10 01:11:25.0" createdStamp="2019-01-10 01:11:25.0" createdTxStamp="2019-01-10 01:11:25.0"/>
-    <PartyIdentificationType partyIdentificationTypeId="VCARD_FN_ORIGIN" description="VCard reference origin" lastUpdatedStamp="2019-01-10 01:11:24.0" lastUpdatedTxStamp="2019-01-10 01:11:24.0" createdStamp="2019-01-10 01:11:24.0" createdTxStamp="2019-01-10 01:11:24.0"/>
-</entity-engine-xml>

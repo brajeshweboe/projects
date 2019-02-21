@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <CurrencyDimension dimensionId="_NA_" description="Currency Not Set." lastUpdatedStamp="2019-01-10 01:11:26.423" lastUpdatedTxStamp="2019-01-10 01:11:26.399" createdStamp="2019-01-10 01:11:26.423" createdTxStamp="2019-01-10 01:11:26.399"/>
-    <CurrencyDimension dimensionId="_NF_" description="Currency Not Found." lastUpdatedStamp="2019-01-10 01:11:26.41" lastUpdatedTxStamp="2019-01-10 01:11:26.399" createdStamp="2019-01-10 01:11:26.41" createdTxStamp="2019-01-10 01:11:26.399"/>
-</entity-engine-xml>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <OrderItemBilling orderId="Demo1001" orderItemSeqId="00001" invoiceId="8008" invoiceItemSeqId="00001" shipmentReceiptId="9000" quantity="2.000000" amount="24.00" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-    <OrderItemBilling orderId="Demo1002" orderItemSeqId="00001" invoiceId="8009" invoiceItemSeqId="00001" itemIssuanceId="9001" quantity="2.000000" amount="59.99" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-    <OrderItemBilling orderId="Demo1002" orderItemSeqId="00004" invoiceId="8009" invoiceItemSeqId="00005" itemIssuanceId="9002" quantity="1.000000" amount="59.99" lastUpdatedStamp="2019-01-10 01:11:41.0" lastUpdatedTxStamp="2019-01-10 01:11:41.0" createdStamp="2019-01-10 01:11:41.0" createdTxStamp="2019-01-10 01:11:41.0"/>
-</entity-engine-xml>
